@@ -2,12 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: var(--doc-sidebar-width);
   margin: 0;
+  width: 100%;
 }
 
 .navbar__brand {
   margin: 0;
   height: 100%;
   border-right: 2px solid var(--color-neutral-700-04);
+  min-width: var(--doc-sidebar-width);
 }

@@ -128,11 +128,14 @@
   --ifm-navbar-height: 112px;
   --ifm-navbar-padding-horizontal: 0;
   --ifm-navbar-padding-vertical: 0;
-  --ifm-navbar-shadow: 0 0 0 2px var(--color-neutral-700-04);
+  /* --ifm-navbar-shadow: 0 0 0 2px var(--color-neutral-700-04); */
+  --ifm-navbar-shadow: none;
 
   /* sidebar */
   --doc-sidebar-width: 300px;
   --doc-sidebar-hidden-width: 30px;
+
+  --ifm-toc-border-color: var(--color-neutral-700-04);
 
   background-color: #ffffff;
 }

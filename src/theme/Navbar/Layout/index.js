@@ -38,6 +38,7 @@ export default function NavbarLayout({ children }) {
       className={clsx(
         "navbar",
         "navbar--fixed-top",
+        styles.customStyles,
         hideOnScroll && [
           styles.navbarHideable,
           !isNavbarVisible && styles.navbarHidden,
