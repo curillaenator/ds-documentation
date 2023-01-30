@@ -70,7 +70,7 @@ const config = {
 
       navbar: {
         // title: "Platform V",
-        hideOnScroll: true,
+        // hideOnScroll: true,
         logo: {
           alt: "Platform V Logo",
           src: "img/logotype.svg",

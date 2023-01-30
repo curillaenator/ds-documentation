@@ -74,6 +74,8 @@
   --color-neutral-600: #141414;
   --color-neutral-700: #0a0a0a;
 
+  --color-neutral-700-04: rgba(10, 10, 10, 0.04);
+
   --ifm-color-primary: #0060ff;
   --ifm-color-primary-dark: #0056e6;
   --ifm-color-primary-darker: #0052d9;
@@ -121,6 +123,16 @@
   /* --ifm-code-font-size: 95%; */
 
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Navbar */
+  --ifm-navbar-height: 112px;
+  --ifm-navbar-padding-horizontal: 0;
+  --ifm-navbar-padding-vertical: 0;
+  --ifm-navbar-shadow: 0 0 0 2px var(--color-neutral-700-04);
+
+  /* sidebar */
+  --doc-sidebar-width: 300px;
+  --doc-sidebar-hidden-width: 30px;
 
   background-color: #ffffff;
 }
