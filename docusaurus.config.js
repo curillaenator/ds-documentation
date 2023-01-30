@@ -6,8 +6,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "XYZ",
-  // tagline: "Dinosaurs are cool",
+  title: "Platform V",
+  tagline: "Platform V Documentation",
   favicon: "img/favicon.ico",
   // Set the production url of your site here
   url: "https://your-docusaurus-test-site.com",
@@ -16,11 +16,13 @@ const config = {
   baseUrl: "/",
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  // organizationName: 'facebook', // Usually your GitHub org/user name.
+  organizationName: "SberTech",
   projectName: "xyz-documentation", // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
+
+  deploymentBranch: "master",
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -61,15 +63,17 @@ const config = {
 
       docs: {
         sidebar: {
+          // hideable: true,
           // autoCollapseCategories: true,
         },
       },
 
       navbar: {
-        title: "XYZ",
+        // title: "Platform V",
+        hideOnScroll: true,
         logo: {
-          alt: "XYZ Logo",
-          src: "img/logo.svg",
+          alt: "Platform V Logo",
+          src: "img/logotype.svg",
         },
         // items: [
         // {
