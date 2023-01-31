@@ -126,7 +126,8 @@ export default function DocSidebarItemCategory({
       className={clsx(
         ThemeClassNames.docs.docSidebarItemCategory,
         ThemeClassNames.docs.docSidebarItemCategoryLevel(level),
-        "menu__list-item",
+        // "menu__list-item",
+        [styles.menu_listItem],
         {
           "menu__list-item--collapsed": collapsed,
         },
@@ -182,7 +183,7 @@ export default function DocSidebarItemCategory({
           href={collapsible ? hrefWithSSRFallback ?? "#" : hrefWithSSRFallback}
           {...props}
         >
-          {label}
+          <span className={styles.fontControl}>{label}</span>
         </Link>
       </div>
 

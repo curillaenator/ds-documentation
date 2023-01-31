@@ -20,8 +20,9 @@ export default function DocPageLayoutMain({
     >
       <div
         className={clsx(
-          "container padding-top--md padding-bottom--lg",
-          styles.docItemWrapper,
+          // "container padding-top--md padding-bottom--lg",
+          styles.docWrapper,
+          // styles.docItemWrapper,
           hiddenSidebarContainer && styles.docItemWrapperEnhanced
         )}
       >

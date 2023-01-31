@@ -27,8 +27,11 @@ export default function DocSidebarItemLink({
       className={clsx(
         ThemeClassNames.docs.docSidebarItemLink,
         ThemeClassNames.docs.docSidebarItemLinkLevel(level),
-        "menu__list-item",
-        className
+        className,
+        {
+          [styles.menu_listItem]: level === 1,
+          "menu__list-item": level === 2,
+        }
       )}
       key={label}
     >
@@ -54,7 +57,7 @@ export default function DocSidebarItemLink({
         })}
         {...props}
       >
-        <span className={styles.label}>{label}</span>
+        <span className={clsx(styles.label, styles.fontControl)}>{label}</span>
 
         {!isInternalLink && <IconExternalLink />}
       </Link>

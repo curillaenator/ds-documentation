@@ -16,13 +16,25 @@
 
   /* Common */
   --ifm-toc-border-color: var(--color-neutral-700-04) !important;
+  --ifm-color-content: var(--color-neutral-700) !important;
 
   background-color: #ffffff;
 }
 
 [data-theme="dark"] {
+  --ifm-color-emphasis-100: var(--ifm-color-gray-700) !important;
+  --ifm-color-emphasis-200: var(--ifm-color-gray-600) !important;
+  --ifm-color-emphasis-300: var(--ifm-color-gray-500) !important;
+  --ifm-color-emphasis-400: var(--ifm-color-gray-400) !important;
+  --ifm-color-emphasis-500: var(--ifm-color-gray-300) !important;
+  --ifm-color-emphasis-600: var(--ifm-color-gray-200) !important;
+  --ifm-color-emphasis-700: var(--ifm-color-gray-100) !important;
+  --ifm-color-emphasis-800: var(--ifm-color-gray-100) !important;
+  --ifm-color-emphasis-900: var(--ifm-color-gray-100) !important;
+
   /* Common */
   --ifm-toc-border-color: var(--color-neutral-100-04) !important;
+  --ifm-color-content: var(--color-neutral-100) !important;
 
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 

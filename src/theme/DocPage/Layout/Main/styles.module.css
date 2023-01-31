@@ -4,13 +4,18 @@
   border-top: 2px solid var(--ifm-toc-border-color);
 }
 
+.docWrapper {
+  width: 100%;
+  padding: 64px;
+}
+
 @media (min-width: 997px) {
   .docMainContainer {
     flex-grow: 1;
     max-width: calc(100% - var(--doc-sidebar-width));
   }
 
-  .docMainContainerEnhanced {
+  /* .docMainContainerEnhanced {
     max-width: calc(100% - var(--doc-sidebar-hidden-width));
   }
 
@@ -18,5 +23,5 @@
     max-width: calc(
       var(--ifm-container-width) + var(--doc-sidebar-width)
     ) !important;
-  }
+  } */
 }
