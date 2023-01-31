@@ -4,7 +4,7 @@ import { useSettings } from "./hooks/useSettings";
 import { Icons } from "./icons";
 
 import { ColorModeToggleProps } from "./interfaces";
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 
 const ColorModeToggle: FC<ColorModeToggleProps> = React.memo((props) => {
   const { className, value, onChange } = props;
@@ -12,7 +12,7 @@ const ColorModeToggle: FC<ColorModeToggleProps> = React.memo((props) => {
 
   return (
     <div
-      className={cn(className, {
+      className={cn(styles.wrapper, className, {
         [styles.light]: value === "light",
         [styles.dark]: value === "dark",
       })}

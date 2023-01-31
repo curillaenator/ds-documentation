@@ -7,7 +7,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useThemeConfig } from "@docusaurus/theme-common";
 import ThemedImage from "@theme/ThemedImage";
 
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 
 function LogoThemedImage({ logo, alt, imageClassName }) {
   const sources = {

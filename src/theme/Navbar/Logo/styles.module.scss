@@ -1,0 +1,14 @@
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+}
+
+.navbar__brand {
+  margin: 0;
+  height: 100%;
+  // border-right: 2px solid var(--ifm-toc-border-color);
+  min-width: var(--doc-sidebar-width);
+}

@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import cn from "classnames";
 
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 
 export const Icons: Record<string, FC> = {
   Light: () => (

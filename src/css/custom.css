@@ -63,9 +63,10 @@
 }
 
 :root {
-  --ifm-font-family-base: "SB Sans Interface", "Arial", "Helvetica", sans-serif;
+  --ifm-font-family-base: "SB Sans Text", "Arial", "Helvetica", sans-serif;
   --ifm-font-family-monospace: "SB Sans Text Mono", monospace;
 
+  /* Theme */
   --color-neutral-100: #ffffff;
   --color-neutral-200: #f5f5f5;
   --color-neutral-300: #e0e0e0;
@@ -75,6 +76,22 @@
   --color-neutral-700: #0a0a0a;
 
   --color-neutral-700-04: rgba(10, 10, 10, 0.04);
+  --color-neutral-700-08: rgba(10, 10, 10, 0.08);
+  --color-neutral-700-40: rgba(10, 10, 10, 0.4);
+
+  --color-neutral-100-04: rgba(255, 255, 255, 0.04);
+  --color-neutral-100-08: rgba(255, 255, 255, 0.08);
+  --color-neutral-100-40: rgba(255, 255, 255, 0.4);
+
+  --ifm-color-gray-100: var(--color-neutral-100) !important;
+  --ifm-color-gray-200: var(--color-neutral-200) !important;
+  --ifm-color-gray-300: var(--color-neutral-300) !important;
+  --ifm-color-gray-400: var(--color-neutral-300) !important;
+  --ifm-color-gray-500: var(--color-neutral-400) !important;
+  --ifm-color-gray-600: var(--color-neutral-400) !important;
+  --ifm-color-gray-700: var(--color-neutral-500) !important;
+  --ifm-color-gray-800: var(--color-neutral-600) !important;
+  --ifm-color-gray-900: var(--color-neutral-700) !important;
 
   --ifm-color-primary: #0060ff;
   --ifm-color-primary-dark: #0056e6;
@@ -118,32 +135,32 @@
   --ifm-color-danger-lighter: #ff8870;
   --ifm-color-danger-lightest: #ffb0a0;
 
-  /* --ifm-background-color: #ffffff; */
-
   /* --ifm-code-font-size: 95%; */
 
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
   /* Navbar */
+  --ifm-navbar-background-color: transparent;
   --ifm-navbar-height: 112px;
   --ifm-navbar-padding-horizontal: 0;
   --ifm-navbar-padding-vertical: 0;
-  /* --ifm-navbar-shadow: 0 0 0 2px var(--color-neutral-700-04); */
   --ifm-navbar-shadow: none;
 
-  /* sidebar */
-  --doc-sidebar-width: 300px;
+  /* Sidebar (Drawer) */
+  --doc-sidebar-width: 384px !important;
   --doc-sidebar-hidden-width: 30px;
 
-  --ifm-toc-border-color: var(--color-neutral-700-04);
+  /* Common */
+  --ifm-toc-border-color: var(--color-neutral-700-04) !important;
 
   background-color: #ffffff;
 }
 
 [data-theme="dark"] {
-  /* --ifm-background-color: #999999; */
-
-  background-color: #171717;
+  /* Common */
+  --ifm-toc-border-color: var(--color-neutral-100-04) !important;
 
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  background-color: #171717;
 }

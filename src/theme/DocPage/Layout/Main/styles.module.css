@@ -1,6 +1,7 @@
 .docMainContainer {
   display: flex;
   width: 100%;
+  border-top: 2px solid var(--ifm-toc-border-color);
 }
 
 @media (min-width: 997px) {

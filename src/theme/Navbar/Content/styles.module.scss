@@ -1,0 +1,86 @@
+.navBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navBarleft {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  flex-shrink: 0;
+  width: fit-content;
+}
+
+.navBarRight {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 1;
+  width: 100%;
+  padding: 0 64px;
+}
+
+.navBarleft,
+.navBarRight {
+  gap: 64px;
+}
+
+.customTitle {
+  white-space: nowrap;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 28px;
+  padding: 10px;
+}
+
+.customButtoms {
+  display: flex;
+  gap: 16px;
+
+  .button {
+    outline: none;
+
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    width: fit-content;
+    height: 48px;
+    padding: 8px;
+    border: none;
+    background-color: var(--custom-btn-bg);
+    border-radius: 8px;
+
+    font-family: "SB Sans Text";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--custom-btn-c);
+
+    cursor: pointer;
+
+    & > span {
+      padding: 0 8px;
+    }
+
+    &_text {
+      --custom-btn-bg: transparent;
+      --custom-btn-c: var(--color-neutral-700);
+    }
+
+    &_contained {
+      --custom-btn-bg: var(--color-neutral-700);
+      --custom-btn-c: var(--color-neutral-100);
+    }
+  }
+}
+
+@media (max-width: 996px) {
+  .colorModeToggle {
+    display: none;
+  }
+}

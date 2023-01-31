@@ -61,14 +61,21 @@ const config = {
       },
     ],
     [
-      "@cmfcmf/docusaurus-search-local",
+      "docusaurus-lunr-search",
       {
-        indexDocs: true,
-        indexBlog: false,
-        language: ["en", "ru"],
-        maxSearchResults: 8,
+        languages: ["en", "de"],
+        indexBaseUrl: true,
       },
     ],
+    // [
+    //   "@cmfcmf/docusaurus-search-local",
+    //   {
+    //     indexDocs: true,
+    //     indexBlog: false,
+    //     language: ["en", "ru"],
+    //     maxSearchResults: 8,
+    //   },
+    // ],
   ],
 
   themeConfig:
@@ -79,8 +86,7 @@ const config = {
 
       docs: {
         sidebar: {
-          // hideable: true,
-          // autoCollapseCategories: true,
+          autoCollapseCategories: true,
         },
       },
 
@@ -88,18 +94,19 @@ const config = {
         // title: "Platform V",
         // hideOnScroll: true,
         logo: {
+          // target: "/intro",
           alt: "Platform V Logo",
           src: "img/logotype.svg",
         },
-        // items: [
-        // {
-        //   type: "doc",
-        //   docId: "intro",
-        //   position: "left",
-        //   label: "Components",
-        // },
-        // { to: "/blog", label: "Blog", position: "left" },
-        // ],
+        items: [
+          // {
+          //   type: "doc",
+          //   docId: "intro",
+          //   position: "left",
+          //   label: "Components",
+          // },
+          // { to: "/intro", label: "Design System & UI Kit", position: "right" },
+        ],
       },
 
       prism: {
