@@ -1,0 +1,14 @@
+@mixin navbar {
+  --ifm-navbar-background-color: transparent;
+  --ifm-navbar-height: 112px;
+  --ifm-navbar-padding-horizontal: 0;
+  --ifm-navbar-padding-vertical: 0;
+  --ifm-navbar-shadow: none;
+}
+
+@mixin sidebar {
+  --doc-sidebar-width: 384px !important;
+  --doc-sidebar-hidden-width: 30px;
+
+  // --ifm-menu-link-padding-horizontal: 48px;
+}

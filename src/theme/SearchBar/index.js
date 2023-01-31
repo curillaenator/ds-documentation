@@ -99,8 +99,6 @@ const Search = (props) => {
     loadAlgolia();
   }
 
-  console.log(colorMode);
-
   return (
     <div
       className={classnames(

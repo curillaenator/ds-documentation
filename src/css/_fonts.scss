@@ -1,0 +1,63 @@
+@font-face {
+  font-family: "SB Sans Interface";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("SBSansUI-Light"), local("SB Sans Interface Light"),
+    local("SBSansInterface-Light"),
+    url("../fonts/SBSansUI-Light.woff2") format("woff2"),
+    url("../fonts/SBSansUI-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SB Sans Interface";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("SBSansUI-Regular"), local("SB Sans Interface Regular"),
+    local("SBSansInterface-Regular"),
+    url("../fonts/SBSansUI-Regular.woff2") format("woff2"),
+    url("../fonts/SBSansUI-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SB Sans Interface";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("SBSansUI-SemiBold"), local("SB Sans Interface SemiBold"),
+    local("SBSansInterface-SemiBold"),
+    url("../fonts/SBSansUI-SemiBold.woff2") format("woff2"),
+    url("../fonts/SBSansUI-SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SB Sans Interface";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("SBSansUI-Bold"), local("SB Sans Interface Bold"),
+    local("SBSansInterface-Bold"),
+    url("../fonts/SBSansUI-Bold.woff2") format("woff2"),
+    url("../fonts/SBSansUI-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SB Sans Text Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("SBSansTextMono-Regular"), local("SB Sans TextMono Regular"),
+    url("../fonts/SBSansTextMono-Regular.woff2") format("woff2"),
+    url("../fonts/SBSansTextMono-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SB Sans Text Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("SBSansTextMono-Bold"), local("SB Sans TextMono Bold"),
+    url("../fonts/SBSansTextMono-Bold.woff2") format("woff2"),
+    url("../fonts/SBSansTextMono-Bold.woff") format("woff");
+}

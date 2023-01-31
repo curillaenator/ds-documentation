@@ -1,0 +1,30 @@
+@import "./fonts", "./colors", "./navbarSidebar";
+
+:root {
+  --ifm-font-family-base: "SB Sans Text", "Arial", "Helvetica", sans-serif;
+  --ifm-font-family-monospace: "SB Sans Text Mono", monospace;
+
+  /* Theme */
+  @include colors;
+
+  /* Navbar & Sidebar (Drawer)*/
+  @include navbar;
+  @include sidebar;
+
+  /* --ifm-code-font-size: 95%; */
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Common */
+  --ifm-toc-border-color: var(--color-neutral-700-04) !important;
+
+  background-color: #ffffff;
+}
+
+[data-theme="dark"] {
+  /* Common */
+  --ifm-toc-border-color: var(--color-neutral-100-04) !important;
+
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  background-color: #171717;
+}
