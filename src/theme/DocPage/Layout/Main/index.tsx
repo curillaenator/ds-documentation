@@ -11,6 +11,7 @@ export default function DocPageLayoutMain({
   children,
 }: Props): JSX.Element {
   const sidebar = useDocsSidebar();
+
   return (
     <main
       className={clsx(
