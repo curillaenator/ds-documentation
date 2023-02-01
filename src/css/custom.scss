@@ -9,6 +9,8 @@
 
   /* Navbar & Sidebar (Drawer)*/
   @include navbar;
+  @include navbarLight;
+
   @include sidebar;
 
   /* --ifm-code-font-size: 95%; */
@@ -31,6 +33,8 @@
   --ifm-color-emphasis-700: var(--ifm-color-gray-100) !important;
   --ifm-color-emphasis-800: var(--ifm-color-gray-100) !important;
   --ifm-color-emphasis-900: var(--ifm-color-gray-100) !important;
+
+  @include navbarDark;
 
   /* Common */
   --ifm-toc-border-color: var(--color-neutral-100-04) !important;

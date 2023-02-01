@@ -72,13 +72,13 @@ export default function NavbarContent(): JSX.Element {
 
           <span className={styles.customTitle}>Design System & UI Kit</span>
 
-          <div className={styles.customButtoms}>
+          {/* <div className={styles.customButtoms}>
             <Button startIcon="menu">Меню</Button>
 
             <Button appearance="text" startIcon="home">
               Главная
             </Button>
-          </div>
+          </div> */}
 
           {!searchBarItem && (
             <NavbarSearch>

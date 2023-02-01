@@ -1,10 +1,13 @@
-import React from 'react';
-import clsx from 'clsx';
-import {ThemeClassNames} from '@docusaurus/theme-common';
-import {useDoc} from '@docusaurus/theme-common/internal';
-import Heading from '@theme/Heading';
-import MDXContent from '@theme/MDXContent';
-import type {Props} from '@theme/DocItem/Content';
+import React from "react";
+import clsx from "clsx";
+import { ThemeClassNames } from "@docusaurus/theme-common";
+//@ts-ignore
+import { useDoc } from "@docusaurus/theme-common/internal";
+import MDXContent from "@theme/MDXContent";
+
+import { DocsHeader } from "./docsheader";
+
+import type { Props } from "@theme/DocItem/Content";
 
 /**
  Title can be declared inside md content or declared through
@@ -16,26 +19,22 @@ import type {Props} from '@theme/DocItem/Content';
  - user doesn't ask to hide it with front matter
  - the markdown content does not already contain a top-level h1 heading
 */
-function useSyntheticTitle(): string | null {
-  const {metadata, frontMatter, contentTitle} = useDoc();
-  const shouldRender =
-    !frontMatter.hide_title && typeof contentTitle === 'undefined';
-  if (!shouldRender) {
-    return null;
-  }
-  return metadata.title;
-}
 
-export default function DocItemContent({children}: Props): JSX.Element {
-  const syntheticTitle = useSyntheticTitle();
+const DocItemContent = ({ children }: Props): JSX.Element => {
+  const { metadata, frontMatter, contentTitle } = useDoc();
+
+  const shouldRender =
+    !frontMatter.hide_title && typeof contentTitle === "undefined";
+
+  const syntheticTitle = shouldRender ? metadata.title : null;
+
   return (
-    <div className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown')}>
-      {syntheticTitle && (
-        <header>
-          <Heading as="h1">{syntheticTitle}</Heading>
-        </header>
-      )}
+    <div className={clsx(ThemeClassNames.docs.docMarkdown, "markdown")}>
+      {syntheticTitle && <DocsHeader {...frontMatter} />}
+
       <MDXContent>{children}</MDXContent>
     </div>
   );
-}
+};
+
+export default DocItemContent;

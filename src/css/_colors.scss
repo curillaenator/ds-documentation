@@ -1,3 +1,20 @@
+@use "sass:color";
+
+$transparecies: (
+  "04": -0.96,
+  "08": -0.92,
+  "20": -0.8,
+  "40": -0.6,
+  "60": -0.4,
+  "80": -0.2,
+);
+
+@mixin makeTransparentVars($name: "--color-neutral-100", $value: #ffffff) {
+  @each $transparency, $alphaAdj in $transparecies {
+    #{$name}-#{$transparency}: color.adjust($value, $alpha: $alphaAdj);
+  }
+}
+
 @mixin colors {
   --color-neutral-100: #ffffff;
   --color-neutral-200: #f5f5f5;
@@ -8,13 +25,8 @@
   --color-neutral-700: #0a0a0a;
 
   // transparent
-  --color-neutral-700-04: rgba(10, 10, 10, 0.04);
-  --color-neutral-700-08: rgba(10, 10, 10, 0.08);
-  --color-neutral-700-40: rgba(10, 10, 10, 0.4);
-
-  --color-neutral-100-04: rgba(255, 255, 255, 0.04);
-  --color-neutral-100-08: rgba(255, 255, 255, 0.08);
-  --color-neutral-100-40: rgba(255, 255, 255, 0.4);
+  @include makeTransparentVars("--color-neutral-100", #ffffff);
+  @include makeTransparentVars("--color-neutral-700", #0a0a0a);
 
   // docasaurus reasign
   --ifm-color-gray-100: var(--color-neutral-100) !important;
