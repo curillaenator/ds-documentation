@@ -1,0 +1,77 @@
+.light {
+  --bdg-label-c: var(--color-neutral-700-40);
+
+  --bdg-primary-bg: var(--ifm-color-primary);
+  --bdg-primary-c: var(--ifm-color-white);
+  --bdg-primary-bdc: transparent;
+
+  --bdg-default-bg: var(--color-neutral-700-08);
+  --bdg-default-c: var(--color-neutral-700);
+  --bdg-default-bdc: transparent;
+
+  --bdg-outline-bg: transparent;
+  --bdg-outline-c: var(--color-neutral-700);
+  --bdg-outline-bdc: var(--color-neutral-700-08);
+}
+
+.dark {
+  --bdg-label-c: var(--color-neutral-100-40);
+
+  --bdg-primary-bg: var(--ifm-color-primary);
+  --bdg-primary-c: var(--ifm-color-white);
+  --bdg-primary-bdc: transparent;
+
+  --bdg-default-bg: var(--color-neutral-100-08);
+  --bdg-default-c: var(--color-neutral-100);
+  --bdg-default-bdc: transparent;
+
+  --bdg-outline-bg: transparent;
+  --bdg-outline-c: var(--color-neutral-100);
+  --bdg-outline-bdc: var(--color-neutral-100-08);
+}
+
+.badgeWrapper {
+  display: flex;
+  gap: 8px;
+
+  .label {
+    padding: 6px 12px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--bdg-label-c);
+  }
+
+  .badge {
+    width: fit-content;
+    height: 32px;
+    padding: 6px 12px;
+    border-radius: 6px;
+
+    background-color: var(--bdg-bg);
+    box-shadow: inset 0 0 0 2px var(--bdg-bdc);
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--bdg-c);
+  }
+
+  .primary {
+    --bdg-bg: var(--bdg-primary-bg);
+    --bdg-c: var(--bdg-primary-c);
+    --bdg-bdc: var(--bdg-primary-bdc);
+  }
+
+  .neutral {
+    --bdg-bg: var(--bdg-default-bg);
+    --bdg-c: var(--bdg-default-c);
+    --bdg-bdc: var(--bdg-default-bdc);
+  }
+
+  .outline {
+    --bdg-bg: var(--bdg-outline-bg);
+    --bdg-c: var(--bdg-outline-c);
+    --bdg-bdc: var(--bdg-outline-bdc);
+  }
+}

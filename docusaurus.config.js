@@ -1,5 +1,4 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
@@ -17,7 +16,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "SberTech",
-  projectName: "xyz-documentation", // Usually your repo name.
+  projectName: "platformV-documentation", // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -40,8 +39,6 @@ const config = {
         docs: {
           routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.js"),
-          // link на репозиторий
-          // editUrl: "https://github.com/facebook/docusaurus",
         },
 
         blog: false,
@@ -81,7 +78,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Preview image on sharing
+      // Preview image on sharing via direct link
       image: "img/docusaurus-social-card.jpg",
 
       docs: {
@@ -91,21 +88,20 @@ const config = {
       },
 
       navbar: {
-        // title: "Platform V",
         // hideOnScroll: true,
+
         logo: {
-          // target: "/intro",
           alt: "Platform V Logo",
           src: "img/logotype.svg",
         },
+
         items: [
-          // {
-          //   type: "doc",
-          //   docId: "intro",
-          //   position: "left",
-          //   label: "Components",
-          // },
-          // { to: "/intro", label: "Design System & UI Kit", position: "right" },
+          {
+            type: "doc",
+            docId: "/category/style",
+            position: "right",
+            label: "Design System & UI Kit Docs",
+          },
         ],
       },
 

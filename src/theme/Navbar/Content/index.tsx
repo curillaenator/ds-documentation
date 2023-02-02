@@ -1,22 +1,22 @@
-import React, { ReactNode } from "react";
-import cn from "classnames";
-import { useThemeConfig } from "@docusaurus/theme-common";
+import React, { ReactNode } from 'react';
+import cn from 'classnames';
+import { useThemeConfig } from '@docusaurus/theme-common';
 
 import {
   splitNavbarItems,
   useNavbarMobileSidebar,
   //@ts-ignore
-} from "@docusaurus/theme-common/internal";
+} from '@docusaurus/theme-common/internal';
 
-import NavbarItem, { type Props as NavbarItemConfig } from "@theme/NavbarItem";
-import NavbarColorModeToggle from "@theme/Navbar/ColorModeToggle";
-import SearchBar from "@theme/SearchBar";
-import NavbarMobileSidebarToggle from "@theme/Navbar/MobileSidebar/Toggle";
-import NavbarLogo from "@theme/Navbar/Logo";
-import NavbarSearch from "@theme/Navbar/Search";
+import NavbarItem, { type Props as NavbarItemConfig } from '@theme/NavbarItem';
+import NavbarColorModeToggle from '@theme/Navbar/ColorModeToggle';
+import SearchBar from '@theme/SearchBar';
+import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
+import NavbarLogo from '@theme/Navbar/Logo';
+import NavbarSearch from '@theme/Navbar/Search';
 
-import { Button } from "./Button";
-import styles from "./styles.module.scss";
+// import { Button } from "./Button";
+import styles from './styles.module.scss';
 
 function useNavbarItems() {
   // TODO temporary casting until ThemeConfig type is improved
@@ -33,13 +33,7 @@ function NavbarItems({ items }: { items: NavbarItemConfig[] }): JSX.Element {
   );
 }
 
-function NavbarContentLayout({
-  left,
-  right,
-}: {
-  left: ReactNode;
-  right: ReactNode;
-}) {
+function NavbarContentLayout({ left, right }: { left: ReactNode; right: ReactNode }) {
   return (
     <div className={cn(styles.navBar)}>
       <div className={cn(styles.navBarleft)}>{left}</div>
@@ -55,24 +49,20 @@ export default function NavbarContent(): JSX.Element {
   const items = useNavbarItems();
   const [leftItems, rightItems] = splitNavbarItems(items);
 
-  const searchBarItem = items.find((item) => item.type === "search");
+  const searchBarItem = items.find((item) => item.type === 'search');
 
   return (
-    <NavbarContentLayout
-      left={
-        <>
-          {!mobileSidebar.disabled && <NavbarMobileSidebarToggle />}
-          <NavbarLogo />
-          <NavbarItems items={leftItems} />
-        </>
-      }
-      right={
-        <>
-          <NavbarItems items={rightItems} />
+    <div className={cn(styles.navBarLayout)}>
+      <div className={cn(styles.navBarleft)}>
+        {!mobileSidebar.disabled && <NavbarMobileSidebarToggle />}
+        <NavbarLogo />
+        <NavbarItems items={leftItems} />
+      </div>
 
-          <span className={styles.customTitle}>Design System & UI Kit</span>
+      <div className={cn(styles.navBarRight)}>
+        <NavbarItems items={rightItems} />
 
-          {/* <div className={styles.customButtoms}>
+        {/* <div className={styles.customButtoms}>
             <Button startIcon="menu">Меню</Button>
 
             <Button appearance="text" startIcon="home">
@@ -80,15 +70,14 @@ export default function NavbarContent(): JSX.Element {
             </Button>
           </div> */}
 
-          {!searchBarItem && (
-            <NavbarSearch>
-              <SearchBar />
-            </NavbarSearch>
-          )}
+        {!searchBarItem && (
+          <NavbarSearch>
+            <SearchBar />
+          </NavbarSearch>
+        )}
 
-          <NavbarColorModeToggle className={styles.colorModeToggle} />
-        </>
-      }
-    />
+        <NavbarColorModeToggle className={styles.colorModeToggle} />
+      </div>
+    </div>
   );
 }

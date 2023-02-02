@@ -3,7 +3,7 @@
 }
 
 .light {
-  --toggle-btn-bg: rgba(10, 10, 10, 0.08);
+  --toggle-btn-bg: var(--color-neutral-700-08);
   --toggle-btn-toggler-bg: var(--color-neutral-700);
 
   --toggle-btn-toggler-ic-l: var(--color-neutral-100);
@@ -11,7 +11,7 @@
 }
 
 .dark {
-  --toggle-btn-bg: rgba(255, 255, 255, 0.08);
+  --toggle-btn-bg: var(--color-neutral-100-08);
   --toggle-btn-toggler-bg: var(--color-neutral-700);
 
   --toggle-btn-toggler-ic-l: var(--color-neutral-700);

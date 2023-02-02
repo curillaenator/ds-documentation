@@ -1,13 +1,13 @@
-import React from "react";
-import clsx from "clsx";
-import { ThemeClassNames } from "@docusaurus/theme-common";
+import React from 'react';
+import clsx from 'clsx';
+import { ThemeClassNames } from '@docusaurus/theme-common';
 //@ts-ignore
-import { useDoc } from "@docusaurus/theme-common/internal";
-import MDXContent from "@theme/MDXContent";
+import { useDoc } from '@docusaurus/theme-common/internal';
+import MDXContent from '@theme/MDXContent';
 
-import { DocsHeader } from "./docsheader";
+import { DocsHeader } from '@site/src/components/DocsHeader';
 
-import type { Props } from "@theme/DocItem/Content";
+import type { Props } from '@theme/DocItem/Content';
 
 /**
  Title can be declared inside md content or declared through
@@ -23,13 +23,12 @@ import type { Props } from "@theme/DocItem/Content";
 const DocItemContent = ({ children }: Props): JSX.Element => {
   const { metadata, frontMatter, contentTitle } = useDoc();
 
-  const shouldRender =
-    !frontMatter.hide_title && typeof contentTitle === "undefined";
+  const shouldRender = !frontMatter.hide_title && typeof contentTitle === 'undefined';
 
   const syntheticTitle = shouldRender ? metadata.title : null;
 
   return (
-    <div className={clsx(ThemeClassNames.docs.docMarkdown, "markdown")}>
+    <div className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown')}>
       {syntheticTitle && <DocsHeader {...frontMatter} />}
 
       <MDXContent>{children}</MDXContent>

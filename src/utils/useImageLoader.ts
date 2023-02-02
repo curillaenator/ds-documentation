@@ -12,11 +12,11 @@ type UseImageLoaderProps = (src: string) => {
  */
 export const useImageLoader: UseImageLoaderProps = (src) => {
   const [dataUrl, setDataUrl] = useState<string>("");
-  const [error, setError] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(true);
 
   useEffect(() => {
     if (!src) {
-      setError(false);
+      setError(true);
       setDataUrl("");
       return;
     }
