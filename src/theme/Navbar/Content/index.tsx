@@ -1,11 +1,11 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import { useThemeConfig } from '@docusaurus/theme-common';
 
 import {
   splitNavbarItems,
   useNavbarMobileSidebar,
-  //@ts-ignore
+  // @ts-expect-error no types for import
 } from '@docusaurus/theme-common/internal';
 
 import NavbarItem, { type Props as NavbarItemConfig } from '@theme/NavbarItem';
@@ -30,16 +30,6 @@ function NavbarItems({ items }: { items: NavbarItemConfig[] }): JSX.Element {
         <NavbarItem {...item} key={i} />
       ))}
     </>
-  );
-}
-
-function NavbarContentLayout({ left, right }: { left: ReactNode; right: ReactNode }) {
-  return (
-    <div className={cn(styles.navBar)}>
-      <div className={cn(styles.navBarleft)}>{left}</div>
-
-      <div className={cn(styles.navBarRight)}>{right}</div>
-    </div>
   );
 }
 

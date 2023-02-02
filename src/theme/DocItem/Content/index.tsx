@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import { ThemeClassNames } from '@docusaurus/theme-common';
-//@ts-ignore
+// @ts-expect-error no types for import
 import { useDoc } from '@docusaurus/theme-common/internal';
 import MDXContent from '@theme/MDXContent';
 

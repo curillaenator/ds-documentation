@@ -1,25 +1,19 @@
-import React, { type ComponentProps } from "react";
-import clsx from "clsx";
-import { useThemeConfig } from "@docusaurus/theme-common";
+import React, { type ComponentProps } from 'react';
+import clsx from 'clsx';
+import { useThemeConfig } from '@docusaurus/theme-common';
 import {
   useHideableNavbar,
   useNavbarMobileSidebar,
-  //@ts-ignore
-} from "@docusaurus/theme-common/internal";
-import { translate } from "@docusaurus/Translate";
-import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
-import type { Props } from "@theme/Navbar/Layout";
+  // @ts-expect-error no types for import
+} from '@docusaurus/theme-common/internal';
+import { translate } from '@docusaurus/Translate';
+import NavbarMobileSidebar from '@theme/Navbar/MobileSidebar';
+import type { Props } from '@theme/Navbar/Layout';
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
-function NavbarBackdrop(props: ComponentProps<"div">) {
-  return (
-    <div
-      role="presentation"
-      {...props}
-      className={clsx("navbar-sidebar__backdrop", props.className)}
-    />
-  );
+function NavbarBackdrop(props: ComponentProps<'div'>) {
+  return <div role='presentation' {...props} className={clsx('navbar-sidebar__backdrop', props.className)} />;
 }
 
 export default function NavbarLayout({ children }: Props): JSX.Element {
@@ -33,22 +27,19 @@ export default function NavbarLayout({ children }: Props): JSX.Element {
     <nav
       ref={navbarRef}
       aria-label={translate({
-        id: "theme.NavBar.navAriaLabel",
-        message: "Main",
-        description: "The ARIA label for the main navigation",
+        id: 'theme.NavBar.navAriaLabel',
+        message: 'Main',
+        description: 'The ARIA label for the main navigation',
       })}
       className={clsx(
-        "navbar",
-        "navbar--fixed-top",
-        hideOnScroll && [
-          styles.navbarHideable,
-          !isNavbarVisible && styles.navbarHidden,
-        ],
+        'navbar',
+        'navbar--fixed-top',
+        hideOnScroll && [styles.navbarHideable, !isNavbarVisible && styles.navbarHidden],
         {
-          "navbar--dark": style === "dark",
-          "navbar--primary": style === "primary",
-          "navbar-sidebar--show": mobileSidebar.shown,
-        }
+          'navbar--dark': style === 'dark',
+          'navbar--primary': style === 'primary',
+          'navbar-sidebar--show': mobileSidebar.shown,
+        },
       )}
     >
       {children}

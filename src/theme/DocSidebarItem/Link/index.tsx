@@ -1,21 +1,21 @@
-import React from "react";
-import clsx from "clsx";
-import { ThemeClassNames } from "@docusaurus/theme-common";
-//@ts-ignore
-import { isActiveSidebarItem } from "@docusaurus/theme-common/internal";
-import Link from "@docusaurus/Link";
-import isInternalUrl from "@docusaurus/isInternalUrl";
-import IconExternalLink from "@theme/Icon/ExternalLink";
-import type { Props } from "@theme/DocSidebarItem/Link";
+import React from 'react';
+import clsx from 'clsx';
+import { ThemeClassNames } from '@docusaurus/theme-common';
+// @ts-expect-error no types for import
+import { isActiveSidebarItem } from '@docusaurus/theme-common/internal';
+import Link from '@docusaurus/Link';
+import isInternalUrl from '@docusaurus/isInternalUrl';
+import IconExternalLink from '@theme/Icon/ExternalLink';
+import type { Props } from '@theme/DocSidebarItem/Link';
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
 export default function DocSidebarItemLink({
   item,
   onItemClick,
   activePath,
   level,
-  index,
+  // index,
   ...props
 }: Props): JSX.Element {
   const { href, label, className, autoAddBaseUrl } = item;
@@ -30,14 +30,14 @@ export default function DocSidebarItemLink({
         className,
         {
           [styles.menu_listItem]: level === 1,
-          "menu__list-item": level === 2,
-        }
+          'menu__list-item': level === 2,
+        },
       )}
       key={label}
     >
       <Link
         className={clsx(
-          "menu__link",
+          'menu__link',
 
           !isInternalLink && styles.menuExternalLink,
           {
@@ -47,10 +47,10 @@ export default function DocSidebarItemLink({
             [styles.menu_linkLv2]: level === 2,
             [styles.menu_linkLv2_active]: isActive && level === 2,
             // "menu__link--active": isActive,
-          }
+          },
         )}
         autoAddBaseUrl={autoAddBaseUrl}
-        aria-current={isActive ? "page" : undefined}
+        aria-current={isActive ? 'page' : undefined}
         to={href}
         {...(isInternalLink && {
           onClick: onItemClick ? () => onItemClick(item) : undefined,

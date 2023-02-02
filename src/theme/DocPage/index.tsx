@@ -1,21 +1,17 @@
-import React from "react";
-import clsx from "clsx";
-import {
-  HtmlClassNameProvider,
-  ThemeClassNames,
-  PageMetadata,
-} from "@docusaurus/theme-common";
+import React from 'react';
+import clsx from 'clsx';
+import { HtmlClassNameProvider, ThemeClassNames, PageMetadata } from '@docusaurus/theme-common';
 import {
   docVersionSearchTag,
   DocsSidebarProvider,
   DocsVersionProvider,
   useDocRouteMetadata,
-  //@ts-ignore
-} from "@docusaurus/theme-common/internal";
-import DocPageLayout from "@theme/DocPage/Layout";
-import NotFound from "@theme/NotFound";
-import SearchMetadata from "@theme/SearchMetadata";
-import type { Props } from "@theme/DocPage";
+  // @ts-expect-error no types for import
+} from '@docusaurus/theme-common/internal';
+import DocPageLayout from '@theme/DocPage/Layout';
+import NotFound from '@theme/NotFound';
+import SearchMetadata from '@theme/SearchMetadata';
+import type { Props } from '@theme/DocPage';
 
 function DocPageMetadata(props: Props): JSX.Element {
   const { versionMetadata } = props;
@@ -23,16 +19,9 @@ function DocPageMetadata(props: Props): JSX.Element {
     <>
       <SearchMetadata
         version={versionMetadata.version}
-        tag={docVersionSearchTag(
-          versionMetadata.pluginId,
-          versionMetadata.version
-        )}
+        tag={docVersionSearchTag(versionMetadata.pluginId, versionMetadata.version)}
       />
-      <PageMetadata>
-        {versionMetadata.noIndex && (
-          <meta name="robots" content="noindex, nofollow" />
-        )}
-      </PageMetadata>
+      <PageMetadata>{versionMetadata.noIndex && <meta name='robots' content='noindex, nofollow' />}</PageMetadata>
     </>
   );
 }
@@ -52,7 +41,7 @@ export default function DocPage(props: Props): JSX.Element {
           // TODO: it should be removed from here
           ThemeClassNames.wrapper.docsPages,
           ThemeClassNames.page.docsDocPage,
-          props.versionMetadata.className
+          props.versionMetadata.className,
         )}
       >
         <DocsVersionProvider version={versionMetadata}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import { useWindowSize } from '@docusaurus/theme-common';
-//@ts-ignore
+// @ts-expect-error no types for import
 import { useDoc } from '@docusaurus/theme-common/internal';
 import DocItemPaginator from '@theme/DocItem/Paginator';
 import DocVersionBanner from '@theme/DocVersionBanner';
@@ -15,9 +15,8 @@ import type { Props } from '@theme/DocItem/Layout';
 
 import styles from './styles.module.css';
 
-/**
- * Decide if the toc should be rendered, on mobile or desktop viewports
- */
+// Decide if the toc should be rendered, on mobile or desktop viewports
+
 function useDocTOC() {
   const { frontMatter, toc } = useDoc();
   const windowSize = useWindowSize();

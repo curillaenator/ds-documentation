@@ -34,11 +34,6 @@
     "import/no-unresolved": "off",
     "no-console": "warn",
     "@typescript-eslint/no-empty-function": "off",
-    "no-restricted-imports": [
-      "error",
-      {
-        "patterns": ["@mui/*/*/*"]
-      }
-    ]
+    "require-jsdoc": "off"
   }
 }

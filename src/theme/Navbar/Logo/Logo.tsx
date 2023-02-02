@@ -1,15 +1,25 @@
-import React from "react";
-import clsx from "clsx";
+/* eslint-disable react/prop-types */
 
-import Link from "@docusaurus/Link";
-import useBaseUrl from "@docusaurus/useBaseUrl";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { useThemeConfig } from "@docusaurus/theme-common";
-import ThemedImage from "@theme/ThemedImage";
+import React, { FC } from 'react';
+import clsx from 'clsx';
 
-import styles from "./styles.module.scss";
+import Link from '@docusaurus/Link';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { useThemeConfig, NavbarLogo } from '@docusaurus/theme-common';
+import ThemedImage from '@theme/ThemedImage';
 
-function LogoThemedImage({ logo, alt, imageClassName }) {
+import styles from './styles.module.scss';
+
+interface LogoThemedImage {
+  logo: NavbarLogo;
+  alt: string;
+  imageClassName: string;
+}
+
+const LogoThemedImage: FC<LogoThemedImage> = (props) => {
+  const { logo, alt, imageClassName } = props;
+
   const sources = {
     light: useBaseUrl(logo.src),
     dark: useBaseUrl(logo.srcDark || logo.src),
@@ -27,9 +37,11 @@ function LogoThemedImage({ logo, alt, imageClassName }) {
       />
     </div>
   );
-}
+};
 
 export default function Logo(props) {
+  const { imageClassName, titleClassName, className, ...propsRest } = props;
+
   const {
     siteConfig: { title },
   } = useDocusaurusContext();
@@ -38,12 +50,11 @@ export default function Logo(props) {
     navbar: { title: navbarTitle, logo },
   } = useThemeConfig();
 
-  const { imageClassName, titleClassName, className, ...propsRest } = props;
-  const logoLink = useBaseUrl(logo?.href || "/");
+  const logoLink = useBaseUrl(logo?.href || '/');
 
   // If visible title is shown, fallback alt text should be
   // an empty string to mark the logo as decorative.
-  const fallbackAlt = navbarTitle ? "" : title;
+  const fallbackAlt = navbarTitle ? '' : title;
   // Use logo alt text if provided (including empty string),
   // and provide a sensible fallback otherwise.
   const alt = logo?.alt ?? fallbackAlt;
@@ -53,18 +64,13 @@ export default function Logo(props) {
       to={logoLink}
       className={clsx({
         [className]: !!className,
-        [styles.navbar__brand]: className === "navbar__brand",
+        [styles.navbar__brand]: className === 'navbar__brand',
       })}
       {...propsRest}
       {...(logo?.target && { target: logo.target })}
     >
-      {logo && (
-        <LogoThemedImage
-          logo={logo}
-          alt={alt}
-          imageClassName={imageClassName}
-        />
-      )}
+      {logo && <LogoThemedImage logo={logo} alt={alt} imageClassName={imageClassName} />}
+
       {navbarTitle != null && <b className={titleClassName}>{navbarTitle}</b>}
     </Link>
   );
