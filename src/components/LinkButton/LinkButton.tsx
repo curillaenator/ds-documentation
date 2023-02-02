@@ -12,7 +12,7 @@ export const LinkButton: FC<LinkButtonProps> = (props) => {
   const { colorMode } = useColorMode();
 
   return (
-    <a className={cn(styles.link, styles[appearance], styles[colorMode])} href={href} target='_blank'>
+    <a className={cn(styles.link, styles[appearance], styles[colorMode])} href={href} target='_blank' rel='noreferrer'>
       {icon && ICONS_ASSOC[icon]}
 
       <span>{children}</span>

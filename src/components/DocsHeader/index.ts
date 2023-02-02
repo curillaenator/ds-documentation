@@ -1,1 +1,1 @@
-export { DocsHeader } from "./DocsHeader";
+export { DocsHeader } from './DocsHeader';
