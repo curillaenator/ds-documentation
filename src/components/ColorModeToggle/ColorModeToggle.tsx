@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+
 import React, { FC } from 'react';
 import cn from 'classnames';
 import { useSettings } from './hooks/useSettings';
@@ -6,7 +8,7 @@ import { Icons } from './icons';
 import { ColorModeToggleProps } from './interfaces';
 import styles from './styles.module.scss';
 
-export const ColorModeToggle: FC<ColorModeToggleProps> = React.memo((props) => {
+const ColorModeToggle: FC<ColorModeToggleProps> = React.memo((props) => {
   const { className, value, onChange } = props;
   const { isBrowser, title } = useSettings(value);
 
@@ -43,3 +45,7 @@ export const ColorModeToggle: FC<ColorModeToggleProps> = React.memo((props) => {
     </div>
   );
 });
+
+ColorModeToggle.displayName = 'ColorModeToggle';
+
+export { ColorModeToggle };
