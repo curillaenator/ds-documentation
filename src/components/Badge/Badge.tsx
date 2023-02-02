@@ -11,10 +11,10 @@ export const Badge: FC<BadgeProps> = (props) => {
   const { colorMode } = useColorMode();
 
   return (
-    <span className={styles.badgeWrapper}>
+    <span className={cn(styles.badgeWrapper, styles[colorMode])}>
       {label && <span className={styles.label}>{label}</span>}
 
-      <span className={cn(styles.badge, styles[appearance], styles[colorMode])}>{children}</span>
+      <span className={cn(styles.badge, styles[appearance])}>{children}</span>
     </span>
   );
 };

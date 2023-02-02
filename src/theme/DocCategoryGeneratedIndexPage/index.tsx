@@ -13,6 +13,8 @@ import { DocsHeader } from '@site/src/components/DocsHeader';
 import styles from './styles.module.css';
 
 function DocCategoryGeneratedIndexPageMetadata({ categoryGeneratedIndex }: Props): JSX.Element {
+  // console.log(categoryGeneratedIndex);
+
   return (
     <PageMetadata
       title={categoryGeneratedIndex.title}

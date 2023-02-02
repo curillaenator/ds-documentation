@@ -1,11 +1,10 @@
 import React from 'react';
 import clsx from 'clsx';
 import { ThemeClassNames } from '@docusaurus/theme-common';
-// @ts-expect-error no types for import
-import { useDoc } from '@docusaurus/theme-common/internal';
+// import { useDoc } from '@docusaurus/theme-common/internal';
 import MDXContent from '@theme/MDXContent';
 
-import { DocsHeader } from '@site/src/components/DocsHeader';
+// import { DocsHeader } from '@site/src/components/DocsHeader';
 
 import type { Props } from '@theme/DocItem/Content';
 
@@ -21,15 +20,15 @@ import type { Props } from '@theme/DocItem/Content';
 */
 
 const DocItemContent = ({ children }: Props): JSX.Element => {
-  const { metadata, frontMatter, contentTitle } = useDoc();
+  // const { metadata, frontMatter, contentTitle } = useDoc();
 
-  const shouldRender = !frontMatter.hide_title && typeof contentTitle === 'undefined';
+  // const shouldRender = !frontMatter.hide_title && typeof contentTitle === 'undefined';
 
-  const syntheticTitle = shouldRender ? metadata.title : null;
+  // const syntheticTitle = shouldRender ? metadata.title : null;
 
   return (
     <div className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown')}>
-      {syntheticTitle && <DocsHeader {...frontMatter} />}
+      {/* {syntheticTitle && <DocsHeader {...frontMatter} />} */}
 
       <MDXContent>{children}</MDXContent>
     </div>

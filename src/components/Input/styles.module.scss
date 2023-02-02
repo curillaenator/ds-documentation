@@ -1,0 +1,109 @@
+.light {
+  --inp-bdc: var(--color-neutral-700-40);
+  --inp-bdc-f: var(--ifm-color-primary);
+  --inp-bdc-db: var(--color-neutral-700-08);
+
+  --inp-c: var(--color-neutral-700);
+  --inp-c-f: var(--color-neutral-700);
+  --inp-c-db: var(--color-neutral-700-08);
+
+  --inp-ic-c: var(--color-neutral-700-40);
+  --inp-ic-c-f: var(--color-neutral-700);
+  --inp-ic-c-db: var(--color-neutral-700-08);
+
+  --inp-ph-c: var(--color-neutral-700-40);
+  --inp-ph-c-f: var(--color-neutral-700-40);
+  --inp-ph-c-db: var(--color-neutral-700-08);
+}
+
+.dark {
+  --inp-bdc: var(--color-neutral-100-40);
+  --inp-bdc-f: var(--ifm-color-primary);
+  --inp-bdc-db: var(--color-neutral-100-08);
+
+  --inp-c: var(--color-neutral-100);
+  --inp-c-f: var(--color-neutral-100);
+  --inp-c-db: var(--color-neutral-100-08);
+
+  --inp-ic-c: var(--color-neutral-100-40);
+  --inp-ic-c-f: var(--color-neutral-100);
+  --inp-ic-c-db: var(--color-neutral-100-08);
+
+  --inp-ph-c: var(--color-neutral-100-40);
+  --inp-ph-c-f: var(--color-neutral-100-40);
+  --inp-ph-c-db: var(--color-neutral-100-08);
+}
+
+.neutral {
+  //   --inp-bdc: var(--color-neutral-700-40);
+  //   --inp-ic-c: var(--color-neutral-700-40);
+  //   --inp-ph-c: var(--color-neutral-700-40);
+}
+
+.focused {
+  --inp-bdc: var(--inp-bdc-f);
+  --inp-ic-c: var(--inp-ic-c-f);
+  --inp-ph-c: var(--inp-ph-c-f);
+}
+
+.inputContainer {
+  position: relative;
+  width: 100%;
+
+  .input {
+    appearance: none;
+    outline: none;
+    min-width: 256px;
+    width: 100%;
+    height: 48px;
+    border-radius: 8px;
+    background: none;
+    border: none;
+    box-shadow: inset 0 0 0 2px var(--inp-bdc);
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+
+    font-family: 'SB Sans Interface', 'Arial', 'Helvetica', sans-serif;
+    font-size: 16px;
+    color: var(--inp-c);
+
+    &_hasLeftIcon {
+      padding-left: 48px;
+    }
+
+    &_hasRightIcon {
+      padding-right: 48px;
+    }
+
+    &::placeholder {
+      color: var(--inp-ph-c);
+    }
+
+    &:disabled {
+      --inp-bdc: var(--inp-bdc-db);
+      --inp-ic-c: var(--inp-ic-c-db);
+      --inp-ph-c: var(--inp-ph-c-db);
+    }
+  }
+
+  .leftIcon,
+  .rightIcon {
+    position: absolute;
+    top: 50%;
+
+    width: 32px;
+    height: 32px;
+    transform: translateY(-50%);
+    stroke: var(--inp-ic-c);
+  }
+
+  .leftIcon {
+    left: 8px;
+  }
+
+  .rightIcon {
+    right: 8px;
+  }
+}

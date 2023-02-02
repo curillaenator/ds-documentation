@@ -39,7 +39,7 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
   const docTOC = useDocTOC();
 
   return (
-    <div className='row'>
+    <div className={clsx('row', styles.docItemRowReset)}>
       <div className={clsx('col', !docTOC.hidden && styles.docItemCol)}>
         <DocVersionBanner />
 
@@ -60,7 +60,7 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
         </div>
       </div>
 
-      {/* {docTOC.desktop && <div className="col col--3">{docTOC.desktop}</div>} */}
+      {docTOC.desktop && <div className='col col--3'>{docTOC.desktop}</div>}
     </div>
   );
 }

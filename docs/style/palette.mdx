@@ -3,22 +3,61 @@
 sidebar_label: 'Palette'
 sidebar_position: 1
 # slug: /
-
-# doc meta
-title: 'Palette'
-designer: 'Олег Астахов'
-developer: 'Кирилл Артуров'
-description: 'Раздел включает в себя, набор системных компонентов, используемыхдля построения базовых компонентов дизайн-системы. Отношения между цветами и их свойствами для создания масштабируемой основы для цвета.'
-status: 'Work in progress'
-bitbucketLink: 'https://google.com'
-figmaLink: 'https://google.com'
-jiraLink: 'https://google.com'
-version: '1.0'
-json: 'JSON'
-sass: 'SASS'
-headerImagepath: 'img/docheaded/palette.png'
 ---
+
+import palletteImage from './images/palette.png';
+import basicColor from './images/basicColor.png';
+
+import effectWhite from './images/effectWhite.png';
+import effectWhiteOverlay from './images/effectWhiteOverlay.png';
+import effectBlack from './images/effectBlack.png';
+import effectBlackOverlay from './images/effectBlackOverlay.png';
+
+<docheader
+  title='Palette'
+  description='Раздел включает в себя, набор системных компонентов, используемыхдля построения базовых компонентов дизайн-системы. Отношения между цветами и их свойствами для создания масштабируемой основы для цвета.'
+  designer='Олег Астахов'
+  developer='Кирилл Артуров'
+  version='1.0'
+  status='Work in progress'
+  json='JSON'
+  sass='SASS'
+  bitbucketLink='https://google.com'
+  figmaLink='https://google.com'
+  jiraLink='https://google.com'
+  headerImagepath={palletteImage}
+/>
 
 ## Basic color
 
+<docsection
+  id='palette-basic-color'
+  title='Basic Color'
+  description={
+    <span style={{ display: 'block', maxWidth: '40%' }}>
+      <p>Основные цвета в X.Y.Z для набора стилей определеяющих наполненость компонентов фирменного стиля</p>
+    </span>
+  }
+>
+  <img src={basicColor} />
+</docsection>
+
 ## Effect
+
+<docsection
+  id='palette-basic-color'
+  title='Effect'
+  description={
+    <span style={{ display: 'block', maxWidth: '40%' }}>
+      <p>
+        Тональный переход через черный и белый слой, cтандартное значение в дизайн системе X.Y.Z имеет шаг прозрачности
+        в 4%, но может варироваться при необходимости создания своего шага в определении тонального перехода под проект
+      </p>
+    </span>
+  }
+>
+  <img src={effectWhite} style={{ marginBottom: '40px' }} />
+  <img src={effectWhiteOverlay} style={{ marginBottom: '40px' }} />
+  <img src={effectBlack} style={{ marginBottom: '40px' }} />
+  <img src={effectBlackOverlay} />
+</docsection>

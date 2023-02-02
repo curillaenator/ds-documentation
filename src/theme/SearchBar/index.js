@@ -7,9 +7,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { usePluginData } from '@docusaurus/useGlobalData';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 
-import { useColorMode } from '@docusaurus/theme-common';
-
 import { MGlass } from './MGlass';
+import { Input } from '@site/src/components/Input';
 
 import styles from './styles.module.scss';
 
@@ -19,7 +18,6 @@ const Search = (props) => {
   const history = useHistory();
   const isBrowser = useIsBrowser();
   const { siteConfig = {} } = useDocusaurusContext();
-  const { colorMode } = useColorMode();
   const { baseUrl } = siteConfig;
 
   const [focused, setFocused] = useState(false);
@@ -94,13 +92,7 @@ const Search = (props) => {
   }
 
   return (
-    <div
-      className={classnames('navbar__search', styles.searchContainer, styles[colorMode], {
-        [styles.searchContainer_f]: focused,
-        [styles.searchContainer_db]: !indexReady,
-      })}
-      key='search-box'
-    >
+    <div className='navbar__search' key='search-box'>
       <span
         aria-label='expand searchbar'
         role='button'
@@ -111,28 +103,26 @@ const Search = (props) => {
         onKeyDown={toggleSearchIconClick}
         tabIndex={0}
       />
-      <input
+
+      <Input
         ref={searchBarRef}
         id='search_input_react'
         type='search'
         placeholder={indexReady ? 'Поиск' : 'Дев режим...'}
         aria-label='Search'
-        className={classnames(
-          // "navbar__search-input",
-          styles.searchInput,
-          {
-            'search-bar-expanded': props.isSearchBarExpanded,
-            'search-bar': !props.isSearchBarExpanded,
-          },
-        )}
+        appearance={focused ? 'focused' : 'neutral'}
         onClick={loadAlgolia}
         onMouseOver={loadAlgolia}
         onFocus={toggleSearchIconClick}
         onBlur={toggleSearchIconClick}
         disabled={!indexReady}
+        leftIcon={<MGlass />}
+        wrapperClassName={styles.searchBox}
+        inputClassName={classnames({
+          'search-bar-expanded': props.isSearchBarExpanded,
+          'search-bar': !props.isSearchBarExpanded,
+        })}
       />
-
-      <MGlass />
     </div>
   );
 };

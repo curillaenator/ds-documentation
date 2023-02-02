@@ -1,68 +1,7 @@
-.light {
-  --search-box-bdc: var(--color-neutral-700-40);
-  --search-box-bdc-db: var(--color-neutral-700-08);
-
-  --search-ic-c: var(--color-neutral-700-40);
-  --search-ic-c-f: var(--color-neutral-700);
-  --search-ic-c-db: var(--color-neutral-700-08);
-
-  --search-ph-c: var(--color-neutral-700-40);
-  --search-ph-c-db: var(--color-neutral-700-08);
-}
-
-.dark {
-  --search-box-bdc: var(--color-neutral-100-40);
-  --search-box-bdc-db: var(--color-neutral-100-08);
-
-  --search-ic-c: var(--color-neutral-100-40);
-  --search-ic-c-f: var(--color-neutral-100);
-  --search-ic-c-db: var(--color-neutral-100-08);
-
-  --search-ph-c: var(--color-neutral-100-40);
-  --search-ph-c-db: var(--color-neutral-100-08);
-}
-
-.searchContainer {
-  position: relative;
-  width: 100%;
-
-  &_f {
-    --search-ic-c: var(--search-ic-c-f);
-    --search-box-bdc: var(--ifm-color-primary);
+.searchBox {
+  :global {
+    .algolia-autocomplete {
+      display: block !important;
+    }
   }
-
-  &_db {
-    --search-box-bdc: var(--search-box-bdc-db);
-    --search-ic-c: var(--search-ic-c-db);
-    --search-ph-c: var(--search-ph-c-db);
-  }
-}
-
-.searchInput {
-  appearance: none;
-  outline: none;
-  min-width: 256px;
-  width: 100%;
-  height: 48px;
-  border-radius: 8px;
-  background: none;
-  border: none;
-  box-shadow: inset 0 0 0 2px var(--search-box-bdc);
-  padding: 8px 8px 8px 48px;
-
-  font-family: "SB Sans Interface", "Arial", "Helvetica", sans-serif;
-  font-size: 16px;
-  color: var(--color-neutral-700);
-
-  &::placeholder {
-    color: var(--search-ph-c);
-  }
-}
-
-.searchIcon {
-  position: absolute;
-  top: 50%;
-  left: 8px;
-  transform: translateY(-50%);
-  stroke: var(--search-ic-c);
 }
