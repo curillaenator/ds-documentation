@@ -1,23 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 type UseImageLoaderProps = (src: string) => {
   dataImg: string;
   error: boolean;
 };
 
-/**
- * Хук обеспечивающий загрузку изображения, через new Image();
- *
- * @param src - путь до изображения
- */
 export const useImageLoader: UseImageLoaderProps = (src) => {
-  const [dataUrl, setDataUrl] = useState<string>("");
+  const [dataUrl, setDataUrl] = useState<string>('');
   const [error, setError] = useState<boolean>(true);
 
   useEffect(() => {
     if (!src) {
       setError(true);
-      setDataUrl("");
+      setDataUrl('');
       return;
     }
 
