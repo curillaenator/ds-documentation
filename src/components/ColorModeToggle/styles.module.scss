@@ -8,6 +8,7 @@
 
   --toggle-btn-toggler-ic-l: var(--color-neutral-100);
   --toggle-btn-toggler-ic-d: var(--color-neutral-700);
+  --toggle-btn-toggler-ic-c: var(--color-neutral-700);
 }
 
 .dark {
@@ -16,15 +17,38 @@
 
   --toggle-btn-toggler-ic-l: var(--color-neutral-700);
   --toggle-btn-toggler-ic-d: var(--color-neutral-100);
+  --toggle-btn-toggler-ic-c: var(--color-neutral-700);
+}
+
+.color {
+  --toggle-btn-bg: var(--color-neutral-100-08);
+  --toggle-btn-toggler-bg: var(--color-neutral-700);
+
+  --toggle-btn-toggler-ic-l: var(--color-neutral-700);
+  --toggle-btn-toggler-ic-d: var(--color-neutral-700);
+  --toggle-btn-toggler-ic-c: var(--color-neutral-100);
+}
+
+@each $modesCnt in (1 2 3) {
+  .#{'togleLength' + $modesCnt} {
+    --toggle-btn-w: calc(48px * #{$modesCnt} + 16px * #{$modesCnt} - 16px);
+  }
+}
+
+@each $mode in ('light', 'dark', 'color') {
+  .#{'transition' + $mode} {
+    --transition-movement: var(--toggle-move-#{$mode});
+  }
 }
 
 .toggleButton {
-  --toggle-btn-w: 112px;
   --toggle-btn-h: 48px;
   --toggle-btn-bdrs: 8px;
   --toggle-animation: 0.12s ease-in-out;
 
-  --transition-movement: calc(var(--toggle-btn-w) - 48px);
+  --toggle-move-light: 0;
+  --toggle-move-dark: calc(48px + 16px);
+  --toggle-move-color: calc(var(--toggle-btn-w) - 48px);
 
   display: flex;
   align-items: center;
@@ -39,45 +63,47 @@
   border-radius: var(--toggle-btn-bdrs);
   cursor: pointer;
   padding: 0;
-}
 
-.toggler {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: var(--toggle-animation);
-  width: var(--toggle-btn-h);
-  height: var(--toggle-btn-h);
+  .toggler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: var(--toggle-animation);
+    width: var(--toggle-btn-h);
+    height: var(--toggle-btn-h);
 
-  background-color: var(--toggle-btn-toggler-bg);
-  border-radius: var(--toggle-btn-bdrs);
-}
+    background-color: var(--toggle-btn-toggler-bg);
+    border-radius: var(--toggle-btn-bdrs);
+    transform: translateX(var(--transition-movement));
+  }
 
-.togglerActive {
-  transform: translateX(var(--transition-movement));
-}
+  .iconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.iconWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: var(--toggle-btn-h);
+    height: var(--toggle-btn-h);
 
-  width: var(--toggle-btn-h);
-  height: var(--toggle-btn-h);
-}
+    .icon {
+      position: relative;
+      z-index: 10;
+      transition: var(--toggle-animation);
+    }
 
-.icon {
-  position: relative;
-  z-index: 10;
-  transition: var(--toggle-animation);
-}
+    .bulb {
+      stroke: var(--toggle-btn-toggler-ic-l);
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
 
-.bulb {
-  stroke: var(--toggle-btn-toggler-ic-l);
-  stroke-width: 2;
-  stroke-linecap: round;
-}
+    .moon {
+      fill: var(--toggle-btn-toggler-ic-d);
+    }
 
-.moon {
-  fill: var(--toggle-btn-toggler-ic-d);
+    .star {
+      stroke: var(--toggle-btn-toggler-ic-c);
+      stroke-width: 2;
+    }
+  }
 }

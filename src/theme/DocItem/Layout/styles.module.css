@@ -1,10 +1,20 @@
+.docItemContainer {
+  padding-right: 64px;
+  /* border-right: 2px solid var(--ifm-toc-border-color); */
+}
+
 .docItemContainer header + *,
 .docItemContainer article > *:first-child {
   margin-top: 0;
 }
 
-.docItemRowReset {
+.docItemRow {
   margin: 0 !important;
+  /* gap: 64px; */
+}
+
+.tocBorder {
+  border-left: 2px solid var(--ifm-toc-border-color);
 }
 
 @media (min-width: 997px) {

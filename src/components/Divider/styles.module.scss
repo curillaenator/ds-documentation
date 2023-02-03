@@ -1,0 +1,13 @@
+.light {
+  --divider-c: var(--color-neutral-700-04);
+}
+
+.dark {
+  --divider-c: var(--color-neutral-100-04);
+}
+
+.divider {
+  width: 100%;
+  height: 0;
+  border: 1px solid var(--divider-c);
+}

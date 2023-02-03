@@ -1,21 +1,32 @@
 ---
-# doc settings
 sidebar_label: 'Palette'
 sidebar_position: 1
-# slug: /
+title: 'Palette'
+description: 'Набор системных компонентов'
 ---
 
-import palletteImage from './images/palette.png';
-import basicColor from './images/basicColor.png';
+import palletteImage from './palette/palette.png';
 
-import effectWhite from './images/effectWhite.png';
-import effectWhiteOverlay from './images/effectWhiteOverlay.png';
-import effectBlack from './images/effectBlack.png';
-import effectBlackOverlay from './images/effectBlackOverlay.png';
+import basicColor from './palette/basicColor.png';
+
+import effectWhite from './palette/effectWhite.png';
+import effectWhiteOverlay from './palette/effectWhiteOverlay.png';
+import effectBlack from './palette/effectBlack.png';
+import effectBlackOverlay from './palette/effectBlackOverlay.png';
+
+import sampleCard from './palette/sampleCard.png';
+
+import comb1 from './palette/comb1.png';
+import comb2 from './palette/comb2.png';
+import comb3 from './palette/comb3.png';
+import comb4 from './palette/comb4.png';
+import comb5 from './palette/comb5.png';
+import comb6 from './palette/comb6.png';
+import comb7 from './palette/comb7.png';
 
 <docheader
   title='Palette'
-  description='Раздел включает в себя, набор системных компонентов, используемыхдля построения базовых компонентов дизайн-системы. Отношения между цветами и их свойствами для создания масштабируемой основы для цвета.'
+  description='Раздел включает в себя набор системных компонентов, используемыхдля построения базовых компонентов дизайн-системы. Отношения между цветами и их свойствами для создания масштабируемой основы для цвета.'
   designer='Олег Астахов'
   developer='Кирилл Артуров'
   version='1.0'
@@ -28,36 +39,53 @@ import effectBlackOverlay from './images/effectBlackOverlay.png';
   headerImagepath={palletteImage}
 />
 
+<divider />
+
 ## Basic color
 
-<docsection
-  id='palette-basic-color'
-  title='Basic Color'
-  description={
-    <span style={{ display: 'block', maxWidth: '40%' }}>
-      <p>Основные цвета в X.Y.Z для набора стилей определеяющих наполненость компонентов фирменного стиля</p>
-    </span>
-  }
->
+Основные цвета в X.Y.Z для набора стилей определеяющих наполненость компонентови фирменного стиля
+
+<docviewport>
   <img src={basicColor} />
-</docsection>
+</docviewport>
+
+<divider />
 
 ## Effect
 
-<docsection
-  id='palette-basic-color'
-  title='Effect'
-  description={
-    <span style={{ display: 'block', maxWidth: '40%' }}>
-      <p>
-        Тональный переход через черный и белый слой, cтандартное значение в дизайн системе X.Y.Z имеет шаг прозрачности
-        в 4%, но может варироваться при необходимости создания своего шага в определении тонального перехода под проект
-      </p>
-    </span>
-  }
->
+Тональный переход через черный и белый слой, cтандартное значение в дизайн системе X.Y.Z имеет шаг прозрачности в 4%, но может варироваться при необходимости создания своего шага в определении тонального перехода под проект
+
+<docviewport>
   <img src={effectWhite} style={{ marginBottom: '40px' }} />
   <img src={effectWhiteOverlay} style={{ marginBottom: '40px' }} />
   <img src={effectBlack} style={{ marginBottom: '40px' }} />
   <img src={effectBlackOverlay} />
-</docsection>
+</docviewport>
+
+<divider />
+
+## Sample
+
+Компонент содержащий слои, которые накладываются поверх основного цвета, и дает возможность настроить тональный спект основного цвета
+
+<docviewport>
+  <img src={sampleCard} />
+</docviewport>
+
+<divider />
+
+## Sample combination
+
+Совмещенная палитра, базовых цветов и наложение эффектов, для выбора цветовых оттенков
+
+<docviewport>
+  <img src={comb1} style={{ marginBottom: '40px' }} />
+  <img src={comb2} style={{ marginBottom: '40px' }} />
+  <img src={comb3} style={{ marginBottom: '40px' }} />
+  <img src={comb4} style={{ marginBottom: '40px' }} />
+  <img src={comb5} style={{ marginBottom: '40px' }} />
+  <img src={comb6} style={{ marginBottom: '40px' }} />
+  <img src={comb7} />
+</docviewport>
+
+<divider marginTop={128} marginBottom={0} />

@@ -1,17 +1,11 @@
-@import "./fonts", "./colors", "./navbarSidebar";
+@import './fonts', './colors', './navbarSidebar', './headings', './paragraph';
 
 :root {
-  --ifm-font-family-base: "SB Sans Text", "Arial", "Helvetica", sans-serif;
-  --ifm-font-family-monospace: "SB Sans Text Mono", monospace;
+  --ifm-font-family-base: 'SB Sans Text', 'Arial', 'Helvetica', sans-serif;
+  --ifm-font-family-monospace: 'SB Sans Text Mono', monospace;
 
   /* Theme */
   @include colors;
-
-  /* Navbar & Sidebar (Drawer)*/
-  @include navbar;
-  @include navbarLight;
-
-  @include sidebar;
 
   /* --ifm-code-font-size: 95%; */
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
@@ -20,10 +14,23 @@
   --ifm-toc-border-color: var(--color-neutral-700-04) !important;
   --ifm-color-content: var(--color-neutral-700) !important;
 
-  background-color: #ffffff;
+  --site-common-bgc: var(--color-neutral-100);
+
+  --paragraph-common-color: var(--color-neutral-700-40);
+  --paragraph-bold-color: var(--color-neutral-700);
+
+  background-color: var(--site-common-bgc);
+
+  // Content
+  @include headings;
+  @include paragraph;
+
+  /* Navbar & Sidebar (Drawer)*/
+  @include navbar;
+  @include sidebar;
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   --ifm-color-emphasis-100: var(--ifm-color-gray-700) !important;
   --ifm-color-emphasis-200: var(--ifm-color-gray-600) !important;
   --ifm-color-emphasis-300: var(--ifm-color-gray-500) !important;
@@ -34,13 +41,14 @@
   --ifm-color-emphasis-800: var(--ifm-color-gray-100) !important;
   --ifm-color-emphasis-900: var(--ifm-color-gray-100) !important;
 
-  @include navbarDark;
-
   /* Common */
   --ifm-toc-border-color: var(--color-neutral-100-04) !important;
   --ifm-color-content: var(--color-neutral-100) !important;
 
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 
-  background-color: #171717;
+  --site-common-bgc: var(--color-neutral-700);
+
+  --paragraph-common-color: var(--color-neutral-100-40);
+  --paragraph-bold-color: var(--color-neutral-100);
 }

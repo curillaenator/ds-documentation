@@ -1,0 +1,12 @@
+@mixin paragraph {
+  p {
+    color: var(--paragraph-common-color);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 28px;
+
+    & > b {
+      color: var(--paragraph-bold-color);
+    }
+  }
+}

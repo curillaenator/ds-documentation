@@ -1,0 +1,24 @@
+@mixin headings {
+  --ifm-h1-font-size: 55px !important;
+  --ifm-h2-font-size: 44px !important;
+  --ifm-h3-font-size: 1.25rem;
+  --ifm-h4-font-size: 1rem;
+  --ifm-h5-font-size: 0.875rem;
+  --ifm-h6-font-size: 0.85rem;
+
+  --heading-h1-lh: 64px;
+  --heading-h2-lh: 56px;
+  --heading-h3-lh: 1.27;
+  --heading-h4-lh: 1.27;
+  --heading-h5-lh: 1.27;
+  --heading-h6-lh: 1.27;
+
+  --ifm-heading-font-weight: 600 !important;
+
+  --heading-h1-mb: 32px;
+  --heading-h2-mb: 32px;
+  --heading-h3-mb: 32px;
+  --heading-h4-mb: 32px;
+  --heading-h5-mb: 32px;
+  --heading-h6-mb: 32px;
+}

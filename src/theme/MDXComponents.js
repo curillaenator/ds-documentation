@@ -3,8 +3,10 @@
 import React from 'react';
 // Import the original mapper
 import MDXComponents from '@theme-original/MDXComponents';
+// Import custom components
 import { DocsHeader } from '@site/src/components/DocsHeader';
-import { DocSection } from '@site/src/components/DocSection';
+import { DocViewport } from '@site/src/components/DocViewport';
+import { Divider } from '@site/src/components/Divider';
 
 export default {
   // Re-use the default mapping
@@ -12,5 +14,6 @@ export default {
   // Map the "highlight" tag to our <Highlight /> component!
   // `Highlight` will receive all props that were passed to `highlight` in MDX
   docheader: DocsHeader,
-  docsection: DocSection,
+  docviewport: DocViewport,
+  divider: Divider,
 };

@@ -1,0 +1,33 @@
+.light {
+  --vp-bgc: var(--color-neutral-200);
+}
+
+.dark {
+  --vp-bgc: var(--color-neutral-600);
+}
+
+.color {
+  --vp-bgc: var(--ifm-color-primary);
+}
+
+.viewport {
+  position: relative;
+  padding: 176px 128px;
+  margin-top: 64px;
+  background-color: var(--vp-bgc);
+  border-radius: 24px;
+  overflow: hidden;
+
+  .modes {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 32px;
+  }
+
+  .interactive {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}

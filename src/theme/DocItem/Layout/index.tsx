@@ -1,5 +1,5 @@
 import React from 'react';
-import clsx from 'clsx';
+import cn from 'classnames';
 import { useWindowSize } from '@docusaurus/theme-common';
 // @ts-expect-error no types for import
 import { useDoc } from '@docusaurus/theme-common/internal';
@@ -39,8 +39,8 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
   const docTOC = useDocTOC();
 
   return (
-    <div className={clsx('row', styles.docItemRowReset)}>
-      <div className={clsx('col', !docTOC.hidden && styles.docItemCol)}>
+    <div className={cn('row', styles.docItemRow)}>
+      <div className={cn('col', !docTOC.hidden && styles.docItemCol)}>
         <DocVersionBanner />
 
         <div className={styles.docItemContainer}>
@@ -60,7 +60,7 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
         </div>
       </div>
 
-      {docTOC.desktop && <div className='col col--3'>{docTOC.desktop}</div>}
+      {docTOC.desktop && <div className={cn('col col--3', styles.tocBorder)}>{docTOC.desktop}</div>}
     </div>
   );
 }
