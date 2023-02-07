@@ -15,6 +15,7 @@
   --ifm-color-content: var(--color-neutral-700) !important;
 
   --site-common-bgc: var(--color-neutral-100);
+  --prism-background-color: var(--color-neutral-100);
 
   --paragraph-common-color: var(--color-neutral-700-40);
   --paragraph-bold-color: var(--color-neutral-700);
@@ -31,6 +32,7 @@
 }
 
 [data-theme='dark'] {
+  // нужно чтобы корректно инвертнуть нейтрал цвета для интерфеса
   --ifm-color-emphasis-100: var(--ifm-color-gray-700) !important;
   --ifm-color-emphasis-200: var(--ifm-color-gray-600) !important;
   --ifm-color-emphasis-300: var(--ifm-color-gray-500) !important;
@@ -48,6 +50,7 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 
   --site-common-bgc: var(--color-neutral-700);
+  --prism-background-color: var(--color-neutral-600);
 
   --paragraph-common-color: var(--color-neutral-100-40);
   --paragraph-bold-color: var(--color-neutral-100);

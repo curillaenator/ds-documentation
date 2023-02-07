@@ -26,6 +26,7 @@
   width: fit-content;
   height: 64px;
   padding: 16px;
+  flex-shrink: 0;
 
   background: var(--lnk-bg);
   border-radius: 12px;

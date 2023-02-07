@@ -1,12 +1,15 @@
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+.header {
+  padding: 64px 192px;
+  border-bottom: 2px solid var(--ifm-toc-border-color);
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.section {
+  padding: 128px 192px;
+  border-bottom: 2px solid var(--ifm-toc-border-color);
+
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 }

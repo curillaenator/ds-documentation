@@ -61,7 +61,7 @@
   border: none;
   background-color: var(--toggle-btn-bg);
   border-radius: var(--toggle-btn-bdrs);
-  cursor: pointer;
+
   padding: 0;
 
   .toggler {
@@ -78,9 +78,16 @@
   }
 
   .iconWrapper {
+    cursor: pointer;
+    outline: none;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    border: none;
+    border-radius: var(--toggle-btn-bdrs);
+    background-color: transparent;
 
     width: var(--toggle-btn-h);
     height: var(--toggle-btn-h);

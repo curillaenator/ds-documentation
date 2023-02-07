@@ -7,6 +7,7 @@ import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { useThemeConfig, NavbarLogo } from '@docusaurus/theme-common';
+import { useLocation } from '@docusaurus/router';
 import ThemedImage from '@theme/ThemedImage';
 
 import styles from './styles.module.scss';
@@ -42,6 +43,8 @@ const LogoThemedImage: FC<LogoThemedImage> = (props) => {
 export default function Logo(props) {
   const { imageClassName, titleClassName, className, ...propsRest } = props;
 
+  const { pathname } = useLocation();
+
   const {
     siteConfig: { title },
   } = useDocusaurusContext();
@@ -59,12 +62,16 @@ export default function Logo(props) {
   // and provide a sensible fallback otherwise.
   const alt = logo?.alt ?? fallbackAlt;
 
+  const isRoot = pathname === '/';
+
   return (
     <Link
       to={logoLink}
       className={clsx({
         [className]: !!className,
         [styles.navbar__brand]: className === 'navbar__brand',
+        [styles.rootPage]: isRoot,
+        [styles.docsPage]: !isRoot,
       })}
       {...propsRest}
       {...(logo?.target && { target: logo.target })}

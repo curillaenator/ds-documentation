@@ -1,10 +1,10 @@
-type Modes = 'light' | 'dark' | 'color';
+export type ModesType = 'light' | 'dark' | 'color';
 
 export interface ColorModeToggleProps {
-  value: Modes;
-  onChange: (value: Modes) => void;
+  value: ModesType;
+  onChange: (value: ModesType) => void;
   disabled?: boolean;
   title?: string;
-  modes?: Modes[];
+  modes?: ModesType[];
   className?: string;
 }

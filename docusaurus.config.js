@@ -39,7 +39,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath: '/',
+          // routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
         },
 
@@ -56,7 +56,7 @@ const config = {
     [
       'docusaurus-plugin-sass',
       {
-        // uagcuas
+        // sass-plugin opts
       },
     ],
     [
@@ -76,6 +76,7 @@ const config = {
 
       docs: {
         sidebar: {
+          // hideable: true,
           autoCollapseCategories: true,
         },
       },

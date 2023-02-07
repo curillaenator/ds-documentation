@@ -5,24 +5,28 @@ title: 'Palette'
 description: 'Набор системных компонентов'
 ---
 
-import palletteImage from './palette/palette.png';
+import CodeBlock from '@theme/CodeBlock';
+import CardSource from '!!raw-loader!./components/Card.tsx';
 
-import basicColor from './palette/basicColor.png';
+import {Card} from './components/Card.tsx'
+import {PALETTE} from './constants.ts'
 
-import effectWhite from './palette/effectWhite.png';
-import effectWhiteOverlay from './palette/effectWhiteOverlay.png';
-import effectBlack from './palette/effectBlack.png';
-import effectBlackOverlay from './palette/effectBlackOverlay.png';
+import palletteImage from './assets/palette.png';
 
-import sampleCard from './palette/sampleCard.png';
+import effectWhite from './assets/effectWhite.png';
+import effectWhiteOverlay from './assets/effectWhiteOverlay.png';
+import effectBlack from './assets/effectBlack.png';
+import effectBlackOverlay from './assets/effectBlackOverlay.png';
 
-import comb1 from './palette/comb1.png';
-import comb2 from './palette/comb2.png';
-import comb3 from './palette/comb3.png';
-import comb4 from './palette/comb4.png';
-import comb5 from './palette/comb5.png';
-import comb6 from './palette/comb6.png';
-import comb7 from './palette/comb7.png';
+import sampleCard from './assets/sampleCard.png';
+
+import comb1 from './assets/comb1.png';
+import comb2 from './assets/comb2.png';
+import comb3 from './assets/comb3.png';
+import comb4 from './assets/comb4.png';
+import comb5 from './assets/comb5.png';
+import comb6 from './assets/comb6.png';
+import comb7 from './assets/comb7.png';
 
 <docheader
   title='Palette'
@@ -46,8 +50,15 @@ import comb7 from './palette/comb7.png';
 Основные цвета в X.Y.Z для набора стилей определеяющих наполненость компонентови фирменного стиля
 
 <docviewport>
-  <img src={basicColor} />
+  <examples cols={2}>
+    {PALETTE.map((card) => (
+      <Card {...card}/>
+    ))}
+  </examples>
 </docviewport>
+
+
+<codedemo title='Code Demo'>{CardSource}</codedemo>
 
 <divider />
 
@@ -89,3 +100,4 @@ import comb7 from './palette/comb7.png';
 </docviewport>
 
 <divider marginTop={128} marginBottom={0} />
+

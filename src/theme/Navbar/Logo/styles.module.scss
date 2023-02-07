@@ -9,6 +9,13 @@
 .navbar__brand {
   margin: 0;
   height: 100%;
-  border-right: 2px solid var(--ifm-toc-border-color);
   min-width: var(--doc-sidebar-width);
+}
+
+.rootPage {
+  border-bottom: 2px solid var(--ifm-toc-border-color);
+}
+
+.docsPage {
+  border-right: 2px solid var(--ifm-toc-border-color);
 }
