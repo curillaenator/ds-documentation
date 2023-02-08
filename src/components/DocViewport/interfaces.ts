@@ -1,9 +1,12 @@
 import { ReactNode } from 'react';
+import { Props } from '@theme/CodeBlock';
 
 export interface DocViewportProps {
   id?: string;
-  // title: string;
-  // description: ReactNode;
   modes?: ('light' | 'dark' | 'color')[];
   children: ReactNode;
+
+  // codeblock
+  codeBlock?: ReactNode;
+  language?: Props['language'];
 }

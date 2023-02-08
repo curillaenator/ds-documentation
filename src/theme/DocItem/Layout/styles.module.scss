@@ -1,6 +1,9 @@
+.docItemHeaderWrapper {
+  padding: 64px;
+}
+
 .docItemContainer {
-  padding-right: 64px;
-  /* border-right: 2px solid var(--ifm-toc-border-color); */
+  padding: 64px;
 }
 
 .docItemContainer header + *,
@@ -10,6 +13,7 @@
 
 .docItemRow {
   margin: 0 !important;
+  border-top: 2px solid var(--ifm-toc-border-color);
   /* gap: 64px; */
 }
 

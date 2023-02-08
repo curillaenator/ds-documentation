@@ -1,1 +1,0 @@
-export { DocDemoComponent } from './DocDemoComponent';

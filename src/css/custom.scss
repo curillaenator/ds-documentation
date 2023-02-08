@@ -8,14 +8,15 @@
   @include colors;
 
   /* --ifm-code-font-size: 95%; */
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  // --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
   /* Common */
   --ifm-toc-border-color: var(--color-neutral-700-04) !important;
   --ifm-color-content: var(--color-neutral-700) !important;
 
+  --ifm-pre-border-radius: 24px;
+
   --site-common-bgc: var(--color-neutral-100);
-  --prism-background-color: var(--color-neutral-100);
 
   --paragraph-common-color: var(--color-neutral-700-40);
   --paragraph-bold-color: var(--color-neutral-700);
@@ -47,10 +48,9 @@
   --ifm-toc-border-color: var(--color-neutral-100-04) !important;
   --ifm-color-content: var(--color-neutral-100) !important;
 
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  // --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 
   --site-common-bgc: var(--color-neutral-700);
-  --prism-background-color: var(--color-neutral-600);
 
   --paragraph-common-color: var(--color-neutral-100-40);
   --paragraph-bold-color: var(--color-neutral-100);

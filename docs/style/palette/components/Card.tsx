@@ -30,7 +30,7 @@ export const Card: FC<CardProps> = (props) => {
         <span>{`HEX: ${hex}`}</span>
       </div>
 
-      <Badge>{name}</Badge>
+      <Badge colorMode={colorMode}>{name}</Badge>
     </div>
   );
 };

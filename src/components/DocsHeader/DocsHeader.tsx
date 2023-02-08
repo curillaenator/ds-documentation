@@ -1,31 +1,26 @@
 import React, { FC } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
-// import useBaseUrl from '@docusaurus/useBaseUrl';
 import cn from 'classnames';
 
 import { Badge, BadgeProps } from '../Badge';
 import { LinkButton } from '../LinkButton';
 
 import { useMeta } from './hooks/useMeta';
-import { useImageLoader } from '../../utils';
 
 import { DocsHeaderProps } from './interfaces';
 import styles from './styles.module.scss';
 
 export const DocsHeader: FC<DocsHeaderProps> = (props) => {
-  const { title, description, designer, developer, headerImagepath } = props;
-
-  const { dataImg, error } = useImageLoader(headerImagepath);
+  const { title, description, designer, developer, headerImage } = props;
 
   const { colorMode } = useColorMode();
   const { links, badges } = useMeta(props);
 
   return (
     <header className={cn(styles.header, styles[colorMode])}>
-      {/* <div className={styles.container}> */}
-      {!error && (
+      {!!headerImage && (
         <div className={styles.imageWrapper}>
-          <img src={dataImg} />
+          <img src={headerImage} />
         </div>
       )}
 
@@ -73,7 +68,6 @@ export const DocsHeader: FC<DocsHeaderProps> = (props) => {
           {developer && <Badge label='Разработка:'>{developer}</Badge>}
         </div>
       )}
-      {/* </div> */}
     </header>
   );
 };

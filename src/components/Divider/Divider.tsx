@@ -6,7 +6,7 @@ import { DividerProps } from './interfaces';
 import styles from './styles.module.scss';
 
 export const Divider: FC<DividerProps> = (props) => {
-  const { enlargeX = 64, marginTop = 64, marginBottom = 128 } = props;
+  const { enlargeX = 64, marginTop = 0, marginBottom = 64 } = props;
   const { colorMode } = useColorMode();
 
   const enlargeStyles: CSSProperties = enlargeX

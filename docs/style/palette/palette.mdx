@@ -6,10 +6,14 @@ description: 'Набор системных компонентов'
 ---
 
 import CodeBlock from '@theme/CodeBlock';
-import CardSource from '!!raw-loader!./components/Card.tsx';
 
-import {Card} from './components/Card.tsx'
-import {PALETTE} from './constants.ts'
+import CardSource from '!!raw-loader!./components/Card';
+import BlackSource from '!!raw-loader!./examples/Black';
+import WhiteSource from '!!raw-loader!./examples/White';
+import ColorSource from '!!raw-loader!./examples/Color';
+
+import {Card} from './components/Card'
+import {PALETTE} from './constants'
 
 import palletteImage from './assets/palette.png';
 
@@ -28,9 +32,9 @@ import comb5 from './assets/comb5.png';
 import comb6 from './assets/comb6.png';
 import comb7 from './assets/comb7.png';
 
-<docheader
-  title='Palette'
-  description='Раздел включает в себя набор системных компонентов, используемыхдля построения базовых компонентов дизайн-системы. Отношения между цветами и их свойствами для создания масштабируемой основы для цвета.'
+<headermeta
+ title='Palette'
+ description='Раздел включает в себя набор системных компонентов, используемыхдля построения базовых компонентов дизайн-системы. Отношения между цветами и их свойствами для создания масштабируемой основы для цвета.'
   designer='Олег Астахов'
   developer='Кирилл Артуров'
   version='1.0'
@@ -40,25 +44,24 @@ import comb7 from './assets/comb7.png';
   bitbucketLink='https://google.com'
   figmaLink='https://google.com'
   jiraLink='https://google.com'
-  headerImagepath={palletteImage}
+  headerImage={palletteImage}
 />
-
-<divider />
 
 ## Basic color
 
 Основные цвета в X.Y.Z для набора стилей определеяющих наполненость компонентови фирменного стиля
 
-<docviewport>
+<docviewport codeTitle='Preview' codeBlock={CardSource}>
   <examples cols={2}>
+    
     {PALETTE.map((card) => (
-      <Card {...card}/>
+      <example key={card.name} exampleCode={card.exampleCode}>
+        <Card {...card} />
+      </example>
+      
     ))}
   </examples>
 </docviewport>
-
-
-<codedemo title='Code Demo'>{CardSource}</codedemo>
 
 <divider />
 

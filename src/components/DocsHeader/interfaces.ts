@@ -8,7 +8,7 @@ type FrontMatterHeaderMeta =
   | 'developer'
   | 'status'
   | 'version'
-  | 'headerImagepath'
+  | 'headerImage'
   | 'json'
   | 'sass';
 

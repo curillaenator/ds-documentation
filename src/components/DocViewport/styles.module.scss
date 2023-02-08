@@ -1,13 +1,19 @@
 .light {
   --vp-bgc: var(--color-neutral-200);
+
+  --customButton-color: var(--color-neutral-700);
 }
 
 .dark {
   --vp-bgc: var(--color-neutral-600);
+
+  --customButton-color: var(--color-neutral-100);
 }
 
 .color {
   --vp-bgc: var(--ifm-color-primary-light);
+
+  --customButton-color: var(--color-neutral-100);
 }
 
 .viewport {
@@ -17,6 +23,7 @@
   background-color: var(--vp-bgc);
   border-radius: 24px;
   overflow: hidden;
+  margin-bottom: 64px;
 
   .modes {
     position: absolute;
@@ -29,5 +36,17 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    padding: 32px;
+  }
+}
+
+.codeBlock {
+  max-height: 0;
+  transition: max-height 0.2s ease-in-out;
+  overflow: hidden;
+
+  &_open {
+    margin-bottom: 64px;
+    max-height: 2000px;
   }
 }
