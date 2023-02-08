@@ -7,7 +7,6 @@ import MDXComponents from '@theme-original/MDXComponents';
 import { HeaderMetaProvider } from '@site/src/components/DocsHeader';
 import { DocViewport } from '@site/src/components/DocViewport';
 import { Divider } from '@site/src/components/Divider';
-import { Collapsible } from '@site/src/components/Collapsible';
 import { ExamplesGrid, Example } from '@site/src/components/ExamplesGrid';
 
 export default {
@@ -18,7 +17,6 @@ export default {
   headermeta: HeaderMetaProvider,
   docviewport: DocViewport,
   divider: Divider,
-  collapsible: Collapsible,
   examples: ExamplesGrid,
   example: Example,
 };

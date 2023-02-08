@@ -7,6 +7,7 @@ export interface DocViewportProps {
   children: ReactNode;
 
   // codeblock
+  hasCodeBlock?: boolean;
   codeBlock?: ReactNode;
   language?: Props['language'];
 }

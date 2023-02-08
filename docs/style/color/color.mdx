@@ -6,14 +6,8 @@ description: 'Библиотека для работы с цветом'
 ---
 
 import headerImage from './assets/header.png';
-
-import c1 from './assets/c1.png';
-import c2 from './assets/c2.png';
-import c3 from './assets/c3.png';
-import c4 from './assets/c4.png';
-import c5 from './assets/c5.png';
-import c6 from './assets/c6.png';
-import c7 from './assets/c7.png';
+import {Card} from '../components/Card'
+import {COLORS} from './constants'
 
 <headermeta
   title='Color'
@@ -33,7 +27,21 @@ import c7 from './assets/c7.png';
 ## Neutral
 
 <docviewport>
-  <img src={c1} />
+   <examples cols={3} mb={32}>
+    {COLORS.neutral.slice(0, 3).map((card) => (
+      <example key={card.name} exampleCode={card.exampleCode}>
+        <Card {...card} />
+      </example>
+    ))}
+  </examples>
+
+  <examples cols={4}>
+    {COLORS.neutral.slice(3).map((card) => (
+      <example key={card.name} exampleCode={card.exampleCode}>
+        <Card {...card} />
+      </example>
+    ))}
+  </examples>
 </docviewport>
 
 <divider />
@@ -41,7 +49,21 @@ import c7 from './assets/c7.png';
 ## Accent-1
 
 <docviewport>
-  <img src={c2} />
+   <examples cols={3} mb={32}>
+    {COLORS['accent-1'].slice(0, 3).map((card) => (
+      <example key={card.name} exampleCode={card.exampleCode}>
+        <Card {...card} />
+      </example>
+    ))}
+  </examples>
+
+  <examples cols={4}>
+    {COLORS['accent-1'].slice(3).map((card) => (
+      <example key={card.name} exampleCode={card.exampleCode}>
+        <Card {...card} />
+      </example>
+    ))}
+  </examples>
 </docviewport>
 
 <divider />
@@ -49,7 +71,21 @@ import c7 from './assets/c7.png';
 ## Accent-2
 
 <docviewport>
-  <img src={c3} />
+   <examples cols={3} mb={32}>
+    {COLORS['accent-2'].slice(0, 3).map((card) => (
+      <example key={card.name} exampleCode={card.exampleCode}>
+        <Card {...card} />
+      </example>
+    ))}
+  </examples>
+
+  <examples cols={4}>
+    {COLORS['accent-2'].slice(3).map((card) => (
+      <example key={card.name} exampleCode={card.exampleCode}>
+        <Card {...card} />
+      </example>
+    ))}
+  </examples>
 </docviewport>
 
 <divider />
@@ -57,7 +93,21 @@ import c7 from './assets/c7.png';
 ## Informative
 
 <docviewport>
-  <img src={c4} />
+   <examples cols={3} mb={32}>
+    {COLORS['informative'].slice(0, 3).map((card) => (
+      <example key={card.name} exampleCode={card.exampleCode}>
+        <Card {...card} />
+      </example>
+    ))}
+  </examples>
+
+  <examples cols={4}>
+    {COLORS['informative'].slice(3).map((card) => (
+      <example key={card.name} exampleCode={card.exampleCode}>
+        <Card {...card} />
+      </example>
+    ))}
+  </examples>
 </docviewport>
 
 <divider />
@@ -65,7 +115,21 @@ import c7 from './assets/c7.png';
 ## Positive
 
 <docviewport>
-  <img src={c5} />
+   <examples cols={3} mb={32}>
+    {COLORS['positive'].slice(0, 3).map((card) => (
+      <example key={card.name} exampleCode={card.exampleCode}>
+        <Card {...card} />
+      </example>
+    ))}
+  </examples>
+
+  <examples cols={4}>
+    {COLORS['positive'].slice(3).map((card) => (
+      <example key={card.name} exampleCode={card.exampleCode}>
+        <Card {...card} />
+      </example>
+    ))}
+  </examples>
 </docviewport>
 
 <divider />
@@ -73,7 +137,21 @@ import c7 from './assets/c7.png';
 ## Attention
 
 <docviewport>
-  <img src={c6} />
+   <examples cols={3} mb={32}>
+    {COLORS['attention'].slice(0, 3).map((card) => (
+      <example key={card.name} exampleCode={card.exampleCode}>
+        <Card {...card} />
+      </example>
+    ))}
+  </examples>
+
+  <examples cols={4}>
+    {COLORS['attention'].slice(3).map((card) => (
+      <example key={card.name} exampleCode={card.exampleCode}>
+        <Card {...card} />
+      </example>
+    ))}
+  </examples>
 </docviewport>
 
 <divider />
@@ -81,7 +159,21 @@ import c7 from './assets/c7.png';
 ## Negative
 
 <docviewport>
-  <img src={c7} />
+   <examples cols={3} mb={32}>
+    {COLORS['negative'].slice(0, 3).map((card) => (
+      <example key={card.name} exampleCode={card.exampleCode}>
+        <Card {...card} />
+      </example>
+    ))}
+  </examples>
+
+  <examples cols={4}>
+    {COLORS['negative'].slice(3).map((card) => (
+      <example key={card.name} exampleCode={card.exampleCode}>
+        <Card {...card} />
+      </example>
+    ))}
+  </examples>
 </docviewport>
 
 <divider marginTop={128} marginBottom={0} />

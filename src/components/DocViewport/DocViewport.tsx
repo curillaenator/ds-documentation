@@ -46,7 +46,7 @@ export const DocViewport: FC<DocViewportProps> = (props) => {
           {children}
 
           <div className={styles.interactive}>
-            {<Button onClick={() => setOpen((prev) => !prev)}>Код компонента</Button>}
+            {!!selectedCodeBlock && <Button onClick={() => setOpen((prev) => !prev)}>Код компонента</Button>}
           </div>
         </div>
 

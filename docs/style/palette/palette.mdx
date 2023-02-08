@@ -5,14 +5,12 @@ title: 'Palette'
 description: 'Набор системных компонентов'
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-
-import CardSource from '!!raw-loader!./components/Card';
+import CardSource from '!!raw-loader!../components/Card';
 import BlackSource from '!!raw-loader!./examples/Black';
 import WhiteSource from '!!raw-loader!./examples/White';
 import ColorSource from '!!raw-loader!./examples/Color';
 
-import {Card} from './components/Card'
+import {Card} from '../components/Card'
 import {PALETTE} from './constants'
 
 import palletteImage from './assets/palette.png';
@@ -49,9 +47,9 @@ import comb7 from './assets/comb7.png';
 
 ## Basic color
 
-Основные цвета в X.Y.Z для набора стилей определеяющих наполненость компонентови фирменного стиля
+Основные цвета в X.Y.Z для набора стилей определеяющих наполненость компонентов и фирменного стиля
 
-<docviewport codeTitle='Preview' codeBlock={CardSource}>
+<docviewport codeBlock={CardSource}>
   <examples cols={2}>
     
     {PALETTE.map((card) => (
@@ -70,10 +68,12 @@ import comb7 from './assets/comb7.png';
 Тональный переход через черный и белый слой, cтандартное значение в дизайн системе X.Y.Z имеет шаг прозрачности в 4%, но может варироваться при необходимости создания своего шага в определении тонального перехода под проект
 
 <docviewport>
-  <img src={effectWhite} style={{ marginBottom: '40px' }} />
-  <img src={effectWhiteOverlay} style={{ marginBottom: '40px' }} />
-  <img src={effectBlack} style={{ marginBottom: '40px' }} />
-  <img src={effectBlackOverlay} />
+  <examples cols={1}>
+    <img src={effectWhite} />
+    <img src={effectWhiteOverlay} />
+    <img src={effectBlack} />
+    <img src={effectBlackOverlay} />
+  </examples>
 </docviewport>
 
 <divider />

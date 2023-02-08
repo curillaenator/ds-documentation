@@ -19,8 +19,8 @@ export const Card: FC<CardProps> = (props) => {
   const { colorMode } = useViewportContext();
 
   return (
-    <div className={cn(styles.card, styles[colorMode], styles[name])}>
-      <div className={cn(styles.colorValue)} />
+    <div className={cn(styles.card, styles[colorMode])}>
+      <div className={cn(styles.colorValue)} style={{ backgroundColor: hex }} />
 
       <span className={styles.title}>{title}</span>
 
