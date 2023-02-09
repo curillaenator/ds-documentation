@@ -35,11 +35,16 @@ export const COLORS = Object.fromEntries(
       if (key.includes(name) && reKEY.test(key)) {
         const hexTest = reHEX.test(color[key].value);
 
+        const hexValue = hexTest ? color[key].value : rgbaToHex(color[key].value);
+
+        const hexColor = `HEX: ${hexValue}`;
+        const rgbColor = `RGB: ${hexTest ? hexToRgba(color[key].value) : color[key].value}`;
+
         current.push({
           title: key,
+          subtitles: [hexColor, rgbColor],
           name: `color/${key}`,
-          hex: hexTest ? color[key].value : rgbaToHex(color[key].value),
-          rgb: hexTest ? hexToRgba(color[key].value) : color[key].value,
+          valueStyle: { backgroundColor: hexValue },
         });
       }
     }

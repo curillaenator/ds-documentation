@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, CSSProperties } from 'react';
 import cn from 'classnames';
 
 import { Badge } from '@site/src/components/Badge';
@@ -8,27 +8,29 @@ import styles from './styles.module.scss';
 
 interface CardProps {
   title: string;
-  rgb: string;
-  hex: string;
+  subtitles?: string[];
   name: string;
+  valueStyle: CSSProperties;
 }
 
 export const Card: FC<CardProps> = (props) => {
-  const { title, rgb, hex, name } = props;
+  const { title, name, subtitles = [], valueStyle } = props;
 
   const { colorMode } = useViewportContext();
 
   return (
     <div className={cn(styles.card, styles[colorMode])}>
-      <div className={cn(styles.colorValue)} style={{ backgroundColor: hex }} />
+      <div className={cn(styles.colorValue)} style={valueStyle} />
 
       <span className={styles.title}>{title}</span>
 
-      <div className={styles.values}>
-        <span>{`RGB: ${rgb}`}</span>
-
-        <span>{`HEX: ${hex}`}</span>
-      </div>
+      {subtitles.length && (
+        <div className={styles.values}>
+          {subtitles.map((subtitle) => (
+            <span key={subtitle}>{subtitle}</span>
+          ))}
+        </div>
+      )}
 
       <Badge colorMode={colorMode}>{name}</Badge>
     </div>

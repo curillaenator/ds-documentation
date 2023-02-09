@@ -6,9 +6,6 @@ description: 'Набор системных компонентов'
 ---
 
 import CardSource from '!!raw-loader!../components/Card';
-import BlackSource from '!!raw-loader!./examples/Black';
-import WhiteSource from '!!raw-loader!./examples/White';
-import ColorSource from '!!raw-loader!./examples/Color';
 
 import {Card} from '../components/Card'
 import {PALETTE} from './constants'
@@ -50,13 +47,27 @@ import comb7 from './assets/comb7.png';
 Основные цвета в X.Y.Z для набора стилей определеяющих наполненость компонентов и фирменного стиля
 
 <docviewport codeBlock={CardSource}>
-  <examples cols={2}>
-    
-    {PALETTE.map((card) => (
+   <examples cols={2} mb={32}>
+    {PALETTE.slice(0, 2).map((card) => (
       <example key={card.name} exampleCode={card.exampleCode}>
-        <Card {...card} />
+        <Card {...card}  />
       </example>
-      
+    ))}
+  </examples>
+
+  <examples cols={2} mb={32}>
+    {PALETTE.slice(2, 4).map((card) => (
+      <example key={card.name} exampleCode={card.exampleCode}>
+        <Card {...card}  />
+      </example>
+    ))}
+  </examples>
+
+  <examples cols={4}>
+    {PALETTE.slice(4).map((card) => (
+      <example key={card.name} exampleCode={card.exampleCode}>
+        <Card {...card}  />
+      </example>
     ))}
   </examples>
 </docviewport>

@@ -17,7 +17,6 @@
   .colorValue {
     width: 100%;
     height: 64px;
-    background: var(--card-color-value);
     border-radius: 6px;
     margin-bottom: 48px;
   }
@@ -47,20 +46,3 @@
     }
   }
 }
-
-// $colors: (
-//   black: #000000,
-//   white: #ffffff,
-//   indigo: #4020e0,
-//   purple: #6020e0,
-//   blue: #0060ff,
-//   green: #00c060,
-//   yellow: #ffa020,
-//   red: #ff6040,
-// );
-
-// @each $colorName, $colorValue in $colors {
-//   .palette-#{'' + $colorName} {
-//     --card-color-value: #{'' + $colorValue};
-//   }
-// }

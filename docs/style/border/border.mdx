@@ -7,7 +7,9 @@ description: 'Значения по толщине обводки, их скру
 
 import headerImage from './assets/headerImage.png';
 
-import borderXl from './assets/border_xl.png';
+import {Card} from '../components/Card'
+import {BORDER_WIDTHS, BORDER_RADIUSES, BORDER_STYLES} from './constants'
+
 
 <headermeta
   title='Border'
@@ -30,24 +32,11 @@ import borderXl from './assets/border_xl.png';
 
 <docviewport>
   <examples cols={3}>
-    <example>
-      <img src={borderXl} />
-    </example>
-    <example>
-      <img src={borderXl} />
-    </example>
-    <example>
-      <img src={borderXl} />
-    </example>
-    <example>
-      <img src={borderXl} />
-    </example>
-    <example>
-      <img src={borderXl} />
-    </example>
-    <example>
-      <img src={borderXl} />
-    </example>
+     {BORDER_WIDTHS.map((card) => (
+      <example key={card.name} exampleCode={card.exampleCode}>
+        <Card {...card} />
+      </example>
+    ))}
   </examples>
 </docviewport>
 
@@ -59,26 +48,14 @@ import borderXl from './assets/border_xl.png';
 
 <docviewport>
   <examples cols={3}>
-    <example>
-      <img src={borderXl} />
-    </example>
-    <example>
-      <img src={borderXl} />
-    </example>
-    <example>
-      <img src={borderXl} />
-    </example>
-    <example>
-      <img src={borderXl} />
-    </example>
-    <example>
-      <img src={borderXl} />
-    </example>
-    <example>
-      <img src={borderXl} />
-    </example>
+    {BORDER_RADIUSES.map((card) => (
+      <example key={card.name} exampleCode={card.exampleCode}>
+        <Card {...card} />
+      </example>
+    ))}
   </examples>
 </docviewport>
+
 
 <divider />
 
@@ -88,13 +65,13 @@ import borderXl from './assets/border_xl.png';
 
 <docviewport>
   <examples cols={2}>
-    <example>
-      <img src={borderXl} />
-    </example>
-    <example>
-      <img src={borderXl} />
-    </example>
+    {BORDER_STYLES.map((card) => (
+      <example key={card.name} exampleCode={card.exampleCode}>
+        <Card {...card} />
+      </example>
+    ))}
   </examples>
 </docviewport>
+
 
 <divider marginTop={128} marginBottom={0} />
