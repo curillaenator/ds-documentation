@@ -2,12 +2,31 @@
   width: 100%;
   display: grid;
   gap: 32px;
+  grid-template-columns: var(--examples-cols-template);
   grid-auto-rows: minmax(64px, auto);
 }
 
-@each $template in (1 2 3 4 5 6) {
-  .cols_#{$template} {
-    grid-template-columns: repeat(#{$template}, 1fr);
+@each $max, $min in (1: 1, 2: 1, 3: 1) {
+  .cols_#{$max} {
+    --examples-cols-template: repeat(#{$min}, 1fr);
+  }
+
+  @media (min-width: 1920px) {
+    .cols_#{$max} {
+      --examples-cols-template: repeat(#{$max}, 1fr);
+    }
+  }
+}
+
+@each $max, $min in (4: 2) {
+  .cols_#{$max} {
+    --examples-cols-template: repeat(#{$min}, 1fr);
+  }
+
+  @media (min-width: 1921px) {
+    .cols_#{$max} {
+      --examples-cols-template: repeat(#{$max}, 1fr);
+    }
   }
 }
 

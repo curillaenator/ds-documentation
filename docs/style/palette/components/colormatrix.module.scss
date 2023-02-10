@@ -1,15 +1,59 @@
+.light {
+  --matrix-bgc: var(--color-neutral-300);
+}
+
+.dark {
+  --matrix-bgc: var(--color-neutral-500);
+}
+
+.color {
+  --matrix-bgc: var(--ifm-color-primary);
+}
+
 .container {
   display: grid;
-  grid-template-columns: repeat(26, 1fr);
   gap: 8px;
   grid-auto-rows: minmax(34px, auto);
 
   padding: 32px;
   border-radius: 16px;
-  background-color: gray;
+  background-color: var(--matrix-bgc);
+
+  &_matrix {
+    grid-template-columns: repeat(26, 1fr);
+  }
+
+  &_row {
+    grid-template-columns: repeat(51, 1fr);
+  }
 
   .tile {
-    height: 34px;
+    position: relative;
     border-radius: 6px;
+    overflow: hidden;
+
+    .dot {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+      border-radius: 50%;
+      background-color: var(--color-neutral-100);
+
+      &_matrix {
+        width: 16px;
+        height: 16px;
+      }
+
+      &_row {
+        width: 6px;
+        height: 6px;
+      }
+
+      &_visible {
+        display: block;
+      }
+    }
   }
 }

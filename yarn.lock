@@ -2357,6 +2357,53 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@kit-base/badge@npm:0.5.0":
+  version: 0.5.0
+  resolution: "@kit-base/badge@npm:0.5.0"
+  dependencies:
+    classnames: 2.3.1
+  peerDependencies:
+    react: "*"
+  checksum: 74a45199a457f2f2ebe541f29cf634522a551afb7c281898f481f733e563cc36ddcdb3cf92d93a6445172638f59a78731ae696394d804c4e851b2ccbcbeb54fb
+  languageName: node
+  linkType: hard
+
+"@kit-base/icon@npm:0.2.4":
+  version: 0.2.4
+  resolution: "@kit-base/icon@npm:0.2.4"
+  dependencies:
+    classnames: 2.3.1
+  peerDependencies:
+    react: "*"
+  checksum: b75070950418948e65e895f145ddacefddb5e851ff278515a3873e4f1de60fff1ef7b2fdc7d62f89e79515317c528fee77a430ee382f4d399be09d91aa007976
+  languageName: node
+  linkType: hard
+
+"@kit-xyz/badge@npm:^0.6.5":
+  version: 0.6.5
+  resolution: "@kit-xyz/badge@npm:0.6.5"
+  dependencies:
+    "@kit-base/badge": 0.5.0
+    classnames: 2.3.1
+  peerDependencies:
+    "@kit-xyz/icon": "*"
+    react: "*"
+  checksum: cdf82e553f0799da8e1bac09f5cddfda5ca9e9592a5476e4a9a138d617ad9f48fdd0b9ce59befe853d17039303f240f1c58b8b186bde4e38cf5ffac0ca8a6839
+  languageName: node
+  linkType: hard
+
+"@kit-xyz/icon@npm:^0.3.5":
+  version: 0.3.5
+  resolution: "@kit-xyz/icon@npm:0.3.5"
+  dependencies:
+    "@kit-base/icon": 0.2.4
+    classnames: 2.3.1
+  peerDependencies:
+    react: "*"
+  checksum: d3051efba1fbd718ec8c5a8dc4314df9871bd24087a8804adbff09487d09a2fa619e73d27a5e9c96de40bf85d70a070f9249e8b070d3f945e65a46fc844f4016
+  languageName: node
+  linkType: hard
+
 "@leichtgewicht/ip-codec@npm:^2.0.1":
   version: 2.0.4
   resolution: "@leichtgewicht/ip-codec@npm:2.0.4"
@@ -4373,7 +4420,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"classnames@npm:^2.2.6, classnames@npm:^2.3.2":
+"classnames@npm:2.3.1":
+  version: 2.3.1
+  resolution: "classnames@npm:2.3.1"
+  checksum: 14db8889d56c267a591f08b0834989fe542d47fac659af5a539e110cc4266694e8de86e4e3bbd271157dbd831361310a8293e0167141e80b0f03a0f175c80960
+  languageName: node
+  linkType: hard
+
+"classnames@npm:^2.2.6":
   version: 2.3.2
   resolution: "classnames@npm:2.3.2"
   checksum: 2c62199789618d95545c872787137262e741f9db13328e216b093eea91c85ef2bfb152c1f9e63027204e2559a006a92eb74147d46c800a9f96297ae1d9f96f4e
@@ -13235,12 +13289,14 @@ __metadata:
     "@docusaurus/module-type-aliases": ^2.3.1
     "@docusaurus/preset-classic": ^2.3.1
     "@ecp/yarn-ecp-ldap-auth-plugin": 1.0.2
+    "@kit-xyz/badge": ^0.6.5
+    "@kit-xyz/icon": ^0.3.5
     "@mdx-js/react": ^1.6.22
     "@pcbl-ui-v4/theme": ^8.51.7
     "@tsconfig/docusaurus": ^1.0.5
     "@typescript-eslint/eslint-plugin": ^5.50.0
     "@typescript-eslint/parser": ^5.50.0
-    classnames: ^2.3.2
+    classnames: 2.3.1
     clsx: ^1.2.1
     docusaurus-lunr-search: ^2.3.2
     docusaurus-plugin-sass: ^0.2.3

@@ -1,5 +1,7 @@
+import Gradient from 'javascript-color-gradient';
 import hexRgb from 'hex-rgb';
-import rgbHex from 'rgb-hex';
+
+import json from '@site/packages/theme/src/dist/XYZ.json';
 
 // @ts-expect-error no types
 import CardSource from '!!raw-loader!../components/Card';
@@ -10,15 +12,19 @@ import WhiteSource from '!!raw-loader!./examples/White';
 // @ts-expect-error no types
 import ColorSource from '!!raw-loader!./examples/Color';
 
+const COLOR_JSON = json.values.style.palette;
+
+const c = (colorName: string) => COLOR_JSON[colorName].value;
+
 export const DEFAULT = [
-  { title: 'black', hex: '#000000', exampleCode: BlackSource },
-  { title: 'white', hex: '#ffffff', exampleCode: WhiteSource },
-  { title: 'indigo', hex: '#4020E0', exampleCode: ColorSource },
-  { title: 'purple', hex: '#6020E0' },
-  { title: 'blue', hex: '#0060FF' },
-  { title: 'green', hex: '#00C060' },
-  { title: 'yellow', hex: '#FFA020' },
-  { title: 'red', hex: '#FF6040', exampleCode: CardSource },
+  { title: 'black', hex: c('black'), exampleCode: BlackSource },
+  { title: 'white', hex: c('white'), exampleCode: WhiteSource },
+  { title: 'indigo', hex: c('indigo-700'), exampleCode: ColorSource },
+  { title: 'purple', hex: c('purple-700') },
+  { title: 'blue', hex: c('blue-700') },
+  { title: 'green', hex: c('green-700') },
+  { title: 'yellow', hex: c('yellow-700') },
+  { title: 'red', hex: c('red-700'), exampleCode: CardSource },
 ];
 
 const hexToRgba = (hex) => {
@@ -36,47 +42,46 @@ export const PALETTE = DEFAULT.map((palette) => {
   };
 });
 
-const newShade = (hexColor: string, magnitude: number) => {
-  hexColor = hexColor.replace(`#`, ``);
+// Sample combination
 
-  if (hexColor.length !== 6) return '#ff0000';
-
-  const decimalColor = parseInt(hexColor, 16);
-
-  let r = (decimalColor >> 16) + magnitude;
-
-  r > 255 && (r = 255);
-  r < 0 && (r = 0);
-
-  let g = (decimalColor & 0x0000ff) + magnitude;
-
-  g > 255 && (g = 255);
-  g < 0 && (g = 0);
-
-  let b = ((decimalColor >> 8) & 0x00ff) + magnitude;
-
-  b > 255 && (b = 255);
-  b < 0 && (b = 0);
-
-  const rgb = `rgb(${r}, ${g}, ${b})`;
-
-  return `#${rgbHex(rgb)}`;
+const makeGradient = (from: string, to: string, steps = 25): string[] => {
+  return [from, ...new Gradient().setColorGradient(from, to).setMidpoint(steps).getColors()];
 };
 
-const STEP = 16;
+interface MatrixColor {
+  value: string;
+  position: { x: number; y: number };
+}
 
-const makeColorMatrix = (hexColor) => {
-  const colorsToBlack = new Array(26)
-    .fill(0)
-    .map((el, i) => el + i * STEP)
-    .map((magnitude) => newShade(hexColor, magnitude * -1));
+const makeColorMatrix = (hexColor: string, darkest: string, lightest: string): MatrixColor[] => {
+  const colorToDarkest = makeGradient(hexColor, darkest);
+  const lightestToDarkest = makeGradient(lightest, darkest);
 
-  return colorsToBlack.map((color) => {
-    return new Array(26)
-      .fill(0)
-      .map((el, i) => el + i * STEP)
-      .map((magnitude) => newShade(color, magnitude));
-  });
+  return colorToDarkest
+    .map((color, y) =>
+      makeGradient(color, lightestToDarkest[y]).map((color, x) => ({ value: color, position: { x, y } })),
+    )
+    .flat();
 };
 
-export const COLOR_MATRIX = makeColorMatrix('#0060FF');
+export const DOT_POSITIONS_MATRIX = ['25_3', '25_12', '25_21', '25_23', '25_24'];
+export const COLOR_MATRIX = makeColorMatrix(c('blue-700'), c('neutral-700'), c('white'));
+
+const makeColorRow = (mid: string) => {
+  const start = c('neutral-700');
+  const end = c('white');
+
+  const startToMid = makeGradient(start, mid, 25);
+  startToMid.pop();
+  const midToEnd = makeGradient(mid, end, 25);
+
+  return [...startToMid, ...midToEnd].map((color, x) => ({ value: color, position: { x, y: 0 } }));
+};
+
+export const DOT_POSITIONS_ROW = ['25_0', '27_0', '31_0', '37_0', '42_0', '46_0', '48_0'];
+export const INDIGO = makeColorRow(c('indigo-700'));
+export const PURPLE = makeColorRow(c('purple-700'));
+export const BLUE = makeColorRow(c('blue-700'));
+export const GREEN = makeColorRow(c('green-700'));
+export const YELLOW = makeColorRow(c('yellow-700'));
+export const RED = makeColorRow(c('red-700'));

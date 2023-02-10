@@ -8,9 +8,20 @@ description: 'Набор системных компонентов'
 import CardSource from '!!raw-loader!../components/Card';
 
 import { Card } from '../components/Card';
-import { Opacities } from '../components/Opacities';
-import { ColorMatrix } from './components/ColorMatrix';
-import { PALETTE } from './constants';
+
+import { ColorMatrix, Opacities } from './components';
+import {
+  PALETTE,
+  COLOR_MATRIX,
+  DOT_POSITIONS_MATRIX,
+  INDIGO,
+  PURPLE,
+  BLUE,
+  GREEN,
+  YELLOW,
+  RED,
+  DOT_POSITIONS_ROW,
+} from './constants';
 
 import palletteImage from './assets/palette.png';
 
@@ -18,7 +29,7 @@ import sampleCard from './assets/sampleCard.png';
 
 <headermeta
   title='Palette'
-  description='Раздел включает в себя набор системных компонентов, используемыхдля построения базовых компонентов дизайн-системы. Отношения между цветами и их свойствами для создания масштабируемой основы для цвета.'
+  description='Раздел включает в себя, набор системных компонентов, используемых для построения базовых компонентов дизайн-системы. Отношения между цветами и их свойствами для создания масштабируемой основы для цвета.'
   designer='Олег Астахов'
   developer='Кирилл Артуров'
   version='1.0'
@@ -37,14 +48,7 @@ import sampleCard from './assets/sampleCard.png';
 
 <docviewport codeBlock={CardSource}>
   <examples cols={2} mb={32}>
-    {PALETTE.slice(0, 2).map((card) => (
-      <example key={card.name} exampleCode={card.exampleCode}>
-        <Card {...card} />
-      </example>
-    ))}
-  </examples>
-  <examples cols={2} mb={32}>
-    {PALETTE.slice(2, 4).map((card) => (
+    {PALETTE.slice(0, 4).map((card) => (
       <example key={card.name} exampleCode={card.exampleCode}>
         <Card {...card} />
       </example>
@@ -119,7 +123,13 @@ import sampleCard from './assets/sampleCard.png';
 Совмещенная палитра, базовых цветов и наложение эффектов, для выбора цветовых оттенков
 
 <docviewport>
-  <ColorMatrix />
+  <ColorMatrix colorMatrix={COLOR_MATRIX} dotsPositions={DOT_POSITIONS_MATRIX} mb={48} />
+  <ColorMatrix colorMatrix={INDIGO} dotsPositions={DOT_POSITIONS_ROW} tileHeight={64} type='row' mb={48} />
+  <ColorMatrix colorMatrix={PURPLE} dotsPositions={DOT_POSITIONS_ROW} tileHeight={64} type='row' mb={48} />
+  <ColorMatrix colorMatrix={BLUE} dotsPositions={DOT_POSITIONS_ROW} tileHeight={64} type='row' mb={48} />
+  <ColorMatrix colorMatrix={GREEN} dotsPositions={DOT_POSITIONS_ROW} tileHeight={64} type='row' mb={48} />
+  <ColorMatrix colorMatrix={YELLOW} dotsPositions={DOT_POSITIONS_ROW} tileHeight={64} type='row' mb={48} />
+  <ColorMatrix colorMatrix={RED} dotsPositions={DOT_POSITIONS_ROW} tileHeight={64} type='row' />
 </docviewport>
 
 <divider marginTop={128} marginBottom={0} />
