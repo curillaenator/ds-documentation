@@ -32,7 +32,7 @@ $modeColors: (
 
   @each $mode, $bgColor in $modeColors {
     &_#{'' + $mode} {
-      background: #{$bgColor};
+      background-color: #{$bgColor};
     }
   }
 }

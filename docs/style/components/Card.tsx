@@ -1,38 +1,45 @@
-import React, { FC, CSSProperties } from 'react';
+import React, { FC, CSSProperties, ReactNode } from 'react';
 import cn from 'classnames';
 
 import { Badge } from '@site/src/components/Badge';
 import { useViewportContext } from '@site/src/components/DocViewport';
 
-import styles from './styles.module.scss';
+import styles from './card.module.scss';
 
 interface CardProps {
   title: string;
   subtitles?: string[];
   name: string;
   valueStyle: CSSProperties;
+  valueComp?: ReactNode;
+  colorMode?: 'light' | 'dark' | 'color';
 }
 
 export const Card: FC<CardProps> = (props) => {
-  const { title, name, subtitles = [], valueStyle } = props;
+  const { title, name, subtitles = [], valueStyle, valueComp, colorMode: extarnalColorMode } = props;
 
-  const { colorMode } = useViewportContext();
+  const { colorMode: viewportColorMode } = useViewportContext();
+  const colorMode = extarnalColorMode || viewportColorMode;
 
   return (
     <div className={cn(styles.card, styles[colorMode])}>
-      <div className={cn(styles.colorValue)} style={valueStyle} />
+      {!!valueComp ? valueComp : <div className={cn(styles.colorValue)} style={valueStyle} />}
 
       <span className={styles.title}>{title}</span>
 
-      {subtitles.length && (
-        <div className={styles.values}>
+      {!!subtitles.length && (
+        <div
+          className={cn(styles.values, {
+            [styles.values_mb]: !!name,
+          })}
+        >
           {subtitles.map((subtitle) => (
             <span key={subtitle}>{subtitle}</span>
           ))}
         </div>
       )}
 
-      <Badge colorMode={colorMode}>{name}</Badge>
+      {!!name && <Badge colorMode={colorMode}>{name}</Badge>}
     </div>
   );
 };

@@ -7,29 +7,17 @@ description: 'Набор системных компонентов'
 
 import CardSource from '!!raw-loader!../components/Card';
 
-import {Card} from '../components/Card'
-import {PALETTE} from './constants'
+import { Card } from '../components/Card';
+import { Opacities } from '../components/Opacities';
+import { PALETTE } from './constants';
 
 import palletteImage from './assets/palette.png';
 
-import effectWhite from './assets/effectWhite.png';
-import effectWhiteOverlay from './assets/effectWhiteOverlay.png';
-import effectBlack from './assets/effectBlack.png';
-import effectBlackOverlay from './assets/effectBlackOverlay.png';
-
 import sampleCard from './assets/sampleCard.png';
 
-import comb1 from './assets/comb1.png';
-import comb2 from './assets/comb2.png';
-import comb3 from './assets/comb3.png';
-import comb4 from './assets/comb4.png';
-import comb5 from './assets/comb5.png';
-import comb6 from './assets/comb6.png';
-import comb7 from './assets/comb7.png';
-
 <headermeta
- title='Palette'
- description='Раздел включает в себя набор системных компонентов, используемыхдля построения базовых компонентов дизайн-системы. Отношения между цветами и их свойствами для создания масштабируемой основы для цвета.'
+  title='Palette'
+  description='Раздел включает в себя набор системных компонентов, используемыхдля построения базовых компонентов дизайн-системы. Отношения между цветами и их свойствами для создания масштабируемой основы для цвета.'
   designer='Олег Астахов'
   developer='Кирилл Артуров'
   version='1.0'
@@ -47,26 +35,24 @@ import comb7 from './assets/comb7.png';
 Основные цвета в X.Y.Z для набора стилей определеяющих наполненость компонентов и фирменного стиля
 
 <docviewport codeBlock={CardSource}>
-   <examples cols={2} mb={32}>
+  <examples cols={2} mb={32}>
     {PALETTE.slice(0, 2).map((card) => (
       <example key={card.name} exampleCode={card.exampleCode}>
-        <Card {...card}  />
+        <Card {...card} />
       </example>
     ))}
   </examples>
-
   <examples cols={2} mb={32}>
     {PALETTE.slice(2, 4).map((card) => (
       <example key={card.name} exampleCode={card.exampleCode}>
-        <Card {...card}  />
+        <Card {...card} />
       </example>
     ))}
   </examples>
-
   <examples cols={4}>
     {PALETTE.slice(4).map((card) => (
       <example key={card.name} exampleCode={card.exampleCode}>
-        <Card {...card}  />
+        <Card {...card} />
       </example>
     ))}
   </examples>
@@ -80,10 +66,38 @@ import comb7 from './assets/comb7.png';
 
 <docviewport>
   <examples cols={1}>
-    <img src={effectWhite} />
-    <img src={effectWhiteOverlay} />
-    <img src={effectBlack} />
-    <img src={effectBlackOverlay} />
+    <example colorMode='dark' style={{ backgroundColor: 'var(--color-neutral-500)' }}>
+      <Card
+        title='white'
+        colorMode='dark'
+        subtitles={['color name: neutral-100', 'HEX: #ffffff']}
+        valueComp={<Opacities color='#ffffff' />}
+      />
+    </example>
+    <example colorMode='dark' style={{ backgroundColor: 'var(--color-neutral-500)' }}>
+      <Card
+        title='white overlay'
+        colorMode='dark'
+        subtitles={['color name: neutral-100', 'HEX: #ffffff']}
+        valueComp={<Opacities color='#ffffff' blendMode='overlay' />}
+      />
+    </example>
+    <example colorMode='dark' style={{ backgroundColor: 'var(--color-neutral-500)' }}>
+      <Card
+        title='black'
+        colorMode='dark'
+        subtitles={['color name: neutral-700', 'HEX: #0a0a0a']}
+        valueComp={<Opacities color='#0a0a0a' />}
+      />
+    </example>
+    <example colorMode='dark' style={{ backgroundColor: 'var(--color-neutral-500)' }}>
+      <Card
+        title='black overlay'
+        colorMode='dark'
+        subtitles={['color name: neutral-700', 'HEX: #0a0a0a']}
+        valueComp={<Opacities color='#0a0a0a' blendMode='overlay' />}
+      />
+    </example>
   </examples>
 </docviewport>
 
@@ -103,15 +117,6 @@ import comb7 from './assets/comb7.png';
 
 Совмещенная палитра, базовых цветов и наложение эффектов, для выбора цветовых оттенков
 
-<docviewport>
-  <img src={comb1} style={{ marginBottom: '40px' }} />
-  <img src={comb2} style={{ marginBottom: '40px' }} />
-  <img src={comb3} style={{ marginBottom: '40px' }} />
-  <img src={comb4} style={{ marginBottom: '40px' }} />
-  <img src={comb5} style={{ marginBottom: '40px' }} />
-  <img src={comb6} style={{ marginBottom: '40px' }} />
-  <img src={comb7} />
-</docviewport>
+<docviewport></docviewport>
 
 <divider marginTop={128} marginBottom={0} />
-
