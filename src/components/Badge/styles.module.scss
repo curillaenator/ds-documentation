@@ -30,6 +30,22 @@
   --bdg-outline-bdc: var(--color-neutral-100-08);
 }
 
+.color {
+  --bdg-label-c: var(--color-neutral-100-40);
+
+  --bdg-primary-bg: var(--ifm-color-primary);
+  --bdg-primary-c: var(--ifm-color-white);
+  --bdg-primary-bdc: transparent;
+
+  --bdg-default-bg: var(--color-neutral-100-08);
+  --bdg-default-c: var(--color-neutral-100);
+  --bdg-default-bdc: transparent;
+
+  --bdg-outline-bg: transparent;
+  --bdg-outline-c: var(--color-neutral-100);
+  --bdg-outline-bdc: var(--color-neutral-100-08);
+}
+
 .badgeWrapper {
   display: flex;
   gap: 8px;

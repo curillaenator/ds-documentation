@@ -11,12 +11,16 @@
 }
 
 .header {
-  position: relative;
-  width: 100%;
   padding: 64px;
-  background: linear-gradient(to right, var(--header-bgc), transparent);
-  border-radius: 24px;
-  overflow: hidden;
+
+  .headerInner {
+    position: relative;
+    width: 100%;
+    padding: 64px;
+    background: linear-gradient(to right, var(--header-bgc), transparent);
+    border-radius: 24px;
+    overflow: hidden;
+  }
 
   .imageWrapper {
     position: absolute;

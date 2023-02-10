@@ -25,7 +25,7 @@ export const Card: FC<CardProps> = (props) => {
     <div className={cn(styles.card, styles[colorMode])}>
       {!!valueComp ? valueComp : <div className={cn(styles.colorValue)} style={valueStyle} />}
 
-      <span className={styles.title}>{title}</span>
+      <span className={styles.title}>{title.toLowerCase()}</span>
 
       {!!subtitles.length && (
         <div

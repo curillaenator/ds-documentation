@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import { useWindowSize } from '@docusaurus/theme-common';
 // @ts-expect-error no types for import
@@ -13,13 +13,9 @@ import DocItemContent from '@theme/DocItem/Content';
 // import DocBreadcrumbs from "@theme/DocBreadcrumbs";
 import type { Props } from '@theme/DocItem/Layout';
 
-import { DocItemContext } from '@site/src/services/docItemContext';
-import { DocsHeader, DocsHeaderProps } from '@site/src/components/DocsHeader';
-
 import styles from './styles.module.scss';
 
 // Decide if the toc should be rendered, on mobile or desktop viewports
-
 function useDocTOC() {
   const { frontMatter, toc } = useDoc();
   const windowSize = useWindowSize();
@@ -42,45 +38,29 @@ function useDocTOC() {
 export default function DocItemLayout({ children }: Props): JSX.Element {
   const { hidden, mobile, desktop } = useDocTOC();
 
-  const [headerMeta, setHeaderMeta] = useState<DocsHeaderProps | null>(null);
-  const handleHeaderMeta = useCallback((newHeaderMeta: DocsHeaderProps) => setHeaderMeta(newHeaderMeta), []);
-
   return (
-    <DocItemContext.Provider
-      value={{
-        ...headerMeta,
-        setHeaderContext: handleHeaderMeta,
-      }}
-    >
-      <>
-        <div className={styles.docItemHeaderWrapper}>
-          <DocsHeader {...headerMeta} />
+    <div className={cn('row', styles.docItemRow)}>
+      <div className={cn('col', !hidden && styles.docItemCol)}>
+        <DocVersionBanner />
+
+        <div className={styles.docItemContainer}>
+          <article>
+            {/* <DocBreadcrumbs /> */}
+
+            <DocVersionBadge />
+
+            {mobile}
+
+            <DocItemContent>{children}</DocItemContent>
+
+            <DocItemFooter />
+          </article>
+
+          <DocItemPaginator />
         </div>
+      </div>
 
-        <div className={cn('row', styles.docItemRow)}>
-          <div className={cn('col', !hidden && styles.docItemCol)}>
-            <DocVersionBanner />
-
-            <div className={styles.docItemContainer}>
-              <article>
-                {/* <DocBreadcrumbs /> */}
-
-                <DocVersionBadge />
-
-                {mobile}
-
-                <DocItemContent>{children}</DocItemContent>
-
-                <DocItemFooter />
-              </article>
-
-              <DocItemPaginator />
-            </div>
-          </div>
-
-          {desktop && <div className={cn('col col--3', styles.tocBorder)}>{desktop}</div>}
-        </div>
-      </>
-    </DocItemContext.Provider>
+      {desktop && <div className={cn('col col--2', styles.tocBorder)}>{desktop}</div>}
+    </div>
   );
 }
