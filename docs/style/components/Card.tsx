@@ -1,19 +1,11 @@
-import React, { FC, CSSProperties, ReactNode } from 'react';
+import React, { FC } from 'react';
 import cn from 'classnames';
 
 import { Badge } from '@site/src/components/Badge';
 import { useViewportContext } from '@site/src/components/DocViewport';
 
+import { CardProps } from '../interfaces';
 import styles from './card.module.scss';
-
-interface CardProps {
-  title: string;
-  subtitles?: string[];
-  name: string;
-  valueStyle: CSSProperties;
-  valueComp?: ReactNode;
-  colorMode?: 'light' | 'dark' | 'color';
-}
 
 export const Card: FC<CardProps> = (props) => {
   const { title, name, subtitles = [], valueStyle, valueComp, colorMode: extarnalColorMode } = props;

@@ -2,6 +2,8 @@ import json from '@site/packages/theme/src/dist/XYZ.json';
 import rgbHex from 'rgb-hex';
 import hexRgb from 'hex-rgb';
 
+import { CardProps } from '../interfaces';
+
 const color = json.values.style.color;
 
 const COLOR_NAMES = [
@@ -27,7 +29,7 @@ const rgbaToHex = (rgba: string) => {
   return `#${rgbHex(rgba)}`;
 };
 
-export const COLORS = Object.fromEntries(
+export const COLORS: Record<string, CardProps[]> = Object.fromEntries(
   COLOR_NAMES.map((name) => {
     const current = [];
 

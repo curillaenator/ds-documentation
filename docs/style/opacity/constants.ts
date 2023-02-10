@@ -1,8 +1,10 @@
 import json from '@site/packages/theme/src/dist/XYZ.json';
 
+import { CardProps } from '../interfaces';
+
 const opacitiesJson = json.values.style['opacity'] as Record<string, { value: string }>;
 
-export const OPACITIES = Object.entries(opacitiesJson).map(([key, { value }]) => ({
+export const OPACITIES: CardProps[] = Object.entries(opacitiesJson).map(([key, { value }]) => ({
   title: `opacity-${key}`,
   name: `opacity/${key}`,
   value,
