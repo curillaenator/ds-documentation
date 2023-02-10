@@ -1,5 +1,6 @@
 .docusaurus
 .husky
+.yarn
 build
 node_modules
 .eslintrc.json
