@@ -7,9 +7,9 @@ description: 'Значения по толщине обводки, их скру
 
 import headerImage from './assets/headerImage.png';
 
-import {Card} from '../components/Card'
-import {BORDER_WIDTHS, BORDER_RADIUSES, BORDER_STYLES} from './constants'
-
+import { Card } from '../components/Card';
+import { Border } from './components/Border';
+import { BORDER_WIDTHS, BORDER_RADIUSES, BORDER_STYLES } from './constants';
 
 <headermeta
   title='Border'
@@ -32,9 +32,9 @@ import {BORDER_WIDTHS, BORDER_RADIUSES, BORDER_STYLES} from './constants'
 
 <docviewport>
   <examples cols={3}>
-     {BORDER_WIDTHS.map((card) => (
+    {BORDER_WIDTHS.map((card) => (
       <example key={card.name} exampleCode={card.exampleCode}>
-        <Card {...card} />
+        <Card {...card} valueComp={<Border style={card.valueStyle} />} />
       </example>
     ))}
   </examples>
@@ -50,12 +50,11 @@ import {BORDER_WIDTHS, BORDER_RADIUSES, BORDER_STYLES} from './constants'
   <examples cols={3}>
     {BORDER_RADIUSES.map((card) => (
       <example key={card.name} exampleCode={card.exampleCode}>
-        <Card {...card} />
+        <Card {...card} valueComp={<Border style={card.valueStyle} />} />
       </example>
     ))}
   </examples>
 </docviewport>
-
 
 <divider />
 
@@ -67,11 +66,10 @@ import {BORDER_WIDTHS, BORDER_RADIUSES, BORDER_STYLES} from './constants'
   <examples cols={2}>
     {BORDER_STYLES.map((card) => (
       <example key={card.name} exampleCode={card.exampleCode}>
-        <Card {...card} />
+        <Card {...card} valueComp={<Border style={card.valueStyle} />} />
       </example>
     ))}
   </examples>
 </docviewport>
-
 
 <divider marginTop={128} marginBottom={0} />

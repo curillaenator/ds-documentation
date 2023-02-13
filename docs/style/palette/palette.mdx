@@ -9,7 +9,7 @@ import CardSource from '!!raw-loader!../components/Card';
 
 import { Card } from '../components/Card';
 
-import { ColorMatrix, Opacities, Color } from './components';
+import { ColorMatrix, Opacities, Color, Effect } from './components';
 import {
   PALETTE,
   COLOR_MATRIX,
@@ -24,8 +24,6 @@ import {
 } from './constants';
 
 import palletteImage from './assets/palette.png';
-
-import sampleCard from './assets/sampleCard.png';
 
 <headermeta
   title='Palette'
@@ -113,7 +111,7 @@ import sampleCard from './assets/sampleCard.png';
 Компонент содержащий слои, которые накладываются поверх основного цвета, и дает возможность настроить тональный спект основного цвета
 
 <docviewport>
-  <img src={sampleCard} />
+  <Effect />
 </docviewport>
 
 <divider />

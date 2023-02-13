@@ -8,7 +8,7 @@ export const BORDER_WIDTHS = Object.entries(widths).map(([key, { value }]) => ({
   title: key,
   subtitles: [`stroke: ${value}`, 'type: inside'],
   name: `border-width/${key}`,
-  valueStyle: { height: 72, border: `${value} solid var(--card-c-gn)` },
+  valueStyle: { border: `${value} solid var(--card-c-gn)` },
 }));
 
 export const BORDER_RADIUSES = Object.entries(radiuses).map(([key, { value }]) => ({
@@ -16,7 +16,6 @@ export const BORDER_RADIUSES = Object.entries(radiuses).map(([key, { value }]) =
   subtitles: [`radius: ${value}`, 'type: inside'],
   name: `border-radius/${key}`,
   valueStyle: {
-    height: 72,
     border: `2px solid var(--card-c-gn)`,
     borderRadius: value,
   },
@@ -26,8 +25,5 @@ export const BORDER_STYLES = Object.entries(styles).map(([key, { value }]) => ({
   title: key,
   subtitles: [`stroke: ${value}`, 'type: inside'],
   name: `border-style/${key}`,
-  valueStyle: {
-    height: 72,
-    border: `2px ${value} var(--card-c-gn)`,
-  },
+  valueStyle: { border: `2px ${value} var(--card-c-gn)` },
 }));
