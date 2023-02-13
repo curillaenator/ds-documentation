@@ -7,21 +7,22 @@ import styles from './colormatrix.module.scss';
 import { ColorMatrixProps } from './interfaces';
 
 export const ColorMatrix: FC<ColorMatrixProps> = (props) => {
-  const { colorMatrix, dotsPositions, colorMode: externalColorMode, tileHeight = 34, mb = 0, type = 'matrix' } = props;
-
+  const { colorMatrix, dotsPositions, mb = 48, type = 'row' } = props;
   const { colorMode: viewportColorMode } = useViewportContext();
-  const colorMode = externalColorMode || viewportColorMode;
 
   return (
-    <div className={cn(styles.container, styles[colorMode], styles[`container_${type}`])} style={{ marginBottom: mb }}>
+    <div
+      className={cn(styles.container, styles[viewportColorMode], styles[`container_${type}`])}
+      style={{ marginBottom: mb }}
+    >
       {colorMatrix.map((color, i) => {
         const { x, y } = color.position;
 
         return (
           <div
             key={`${color}-${i}`}
-            className={styles.tile}
-            style={{ backgroundColor: color.value, height: tileHeight }}
+            className={cn(styles.tile, styles[`tile_${type}`])}
+            style={{ backgroundColor: color.value }}
           >
             <div
               className={cn(styles.dot, styles[`dot_${type}`], {

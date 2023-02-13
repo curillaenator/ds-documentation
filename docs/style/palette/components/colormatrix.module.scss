@@ -1,3 +1,5 @@
+$breakpoint: 1660px;
+
 .light {
   --matrix-bgc: var(--color-neutral-300);
 }
@@ -24,13 +26,25 @@
   }
 
   &_row {
-    grid-template-columns: repeat(51, 1fr);
+    grid-template-columns: repeat(17, 1fr);
+
+    @media (min-width: $breakpoint) {
+      grid-template-columns: repeat(51, 1fr);
+    }
   }
 
   .tile {
     position: relative;
     border-radius: 6px;
     overflow: hidden;
+
+    &_matrix {
+      height: 34px;
+    }
+
+    &_row {
+      height: 64px;
+    }
 
     .dot {
       position: absolute;

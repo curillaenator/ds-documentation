@@ -11,13 +11,17 @@ import { DocsHeaderProps } from './interfaces';
 import styles from './styles.module.scss';
 
 export const DocsHeader: FC<DocsHeaderProps> = (props) => {
-  const { title, description, designer, developer, headerImage } = props;
+  const { title, description, designer, developer, headerImage, hasPadding = true } = props;
 
   const { colorMode } = useColorMode();
   const { links, badges } = useMeta(props);
 
   return (
-    <header className={cn(styles.header, styles[colorMode])}>
+    <header
+      className={cn(styles.header, styles[colorMode], {
+        [styles.header_withPadding]: hasPadding,
+      })}
+    >
       <div className={styles.headerInner}>
         {!!headerImage && (
           <div className={styles.imageWrapper}>

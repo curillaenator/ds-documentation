@@ -36,7 +36,11 @@ function DocCategoryGeneratedIndexPageContent({ categoryGeneratedIndex }: Props)
 
       <DocVersionBadge />
 
-      <DocsHeader title={categoryGeneratedIndex.title} description={categoryGeneratedIndex.description} />
+      <DocsHeader
+        title={categoryGeneratedIndex.title}
+        description={categoryGeneratedIndex.description}
+        hasPadding={false}
+      />
 
       <article className='margin-top--lg'>
         <DocCardList items={category.items} className={styles.list} />

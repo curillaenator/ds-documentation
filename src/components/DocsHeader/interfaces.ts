@@ -12,4 +12,6 @@ type FrontMatterHeaderMeta =
   | 'json'
   | 'sass';
 
-export type DocsHeaderProps = Partial<Record<FrontMatterHeaderMeta, string>>;
+export interface DocsHeaderProps extends Partial<Record<FrontMatterHeaderMeta, string>> {
+  hasPadding?: boolean;
+}
