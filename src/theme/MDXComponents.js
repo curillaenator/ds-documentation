@@ -7,6 +7,7 @@ import MDXComponents from '@theme-original/MDXComponents';
 import { HeaderMetaProvider } from '@site/src/components/DocsHeader';
 import { DocViewport } from '@site/src/components/DocViewport';
 import { Divider } from '@site/src/components/Divider';
+import { VersionSelector } from '@site/src/components/VersionSelector';
 import { ExamplesGrid, Example } from '@site/src/components/ExamplesGrid';
 
 export default {
@@ -19,4 +20,5 @@ export default {
   divider: Divider,
   examples: ExamplesGrid,
   example: Example,
+  versionselector: VersionSelector,
 };

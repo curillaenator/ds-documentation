@@ -7,11 +7,12 @@ type FrontMatterHeaderMeta =
   | 'designer'
   | 'developer'
   | 'status'
-  | 'version'
+  | 'actualVersion'
   | 'headerImage'
   | 'json'
   | 'sass';
 
 export interface DocsHeaderProps extends Partial<Record<FrontMatterHeaderMeta, string>> {
   hasPadding?: boolean;
+  versions: string[];
 }

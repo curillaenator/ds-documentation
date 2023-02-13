@@ -29,8 +29,8 @@ const config = {
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['ru', 'en'],
+    defaultLocale: 'ru',
+    locales: ['ru'],
   },
 
   presets: [
@@ -41,6 +41,14 @@ const config = {
         docs: {
           // routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
+          // lastVersion: 'current',
+          // versions: {
+          //   current: {
+          //     label: '1.1.0',
+          //     path: '1.1.0',
+          //   },
+          // },
+          breadcrumbs: false,
         },
 
         blog: false,
@@ -62,7 +70,7 @@ const config = {
     [
       'docusaurus-lunr-search',
       {
-        languages: ['ru', 'en'],
+        languages: ['ru'],
         indexBaseUrl: true,
       },
     ],
@@ -96,6 +104,11 @@ const config = {
             position: 'right',
             label: 'Design System & UI Kit Docs',
           },
+          // {
+          //   type: 'docsVersionDropdown',
+          //   position: 'right',
+          //   dropdownActiveClassDisabled: true,
+          // },
         ],
       },
 

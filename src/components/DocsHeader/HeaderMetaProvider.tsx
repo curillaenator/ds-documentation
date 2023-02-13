@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 
 import { DocsHeaderProps } from './interfaces';
 
@@ -6,6 +6,9 @@ import { DocItemContext } from '@site/src/services/docItemContext';
 
 export const HeaderMetaProvider = (props: DocsHeaderProps) => {
   const { setHeaderContext = () => {} } = useContext(DocItemContext);
+
+  // не добавлять props в зависимости, приводит к бесконечному рендеру
   useEffect(() => setHeaderContext(props), [setHeaderContext]);
-  return <div style={{ display: 'none' }} />;
+  return null;
+  // return <div style={{ display: 'none' }} />;
 };

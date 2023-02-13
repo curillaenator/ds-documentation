@@ -5,7 +5,7 @@ import { useWindowSize } from '@docusaurus/theme-common';
 import { useDoc } from '@docusaurus/theme-common/internal';
 import DocItemPaginator from '@theme/DocItem/Paginator';
 import DocVersionBanner from '@theme/DocVersionBanner';
-import DocVersionBadge from '@theme/DocVersionBadge';
+// import DocVersionBadge from '@theme/DocVersionBadge';
 import DocItemFooter from '@theme/DocItem/Footer';
 import DocItemTOCMobile from '@theme/DocItem/TOC/Mobile';
 import DocItemTOCDesktop from '@theme/DocItem/TOC/Desktop';
@@ -42,26 +42,31 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
   const { hidden, mobile, desktop } = useDocTOC();
 
   const [headerMeta, setHeaderMeta] = useState<DocsHeaderProps | null>(null);
+  const [selectedVersion, setSelectedVersion] = useState<string>('');
+
   const handleHeaderMeta = useCallback((newHeaderMeta: DocsHeaderProps) => setHeaderMeta(newHeaderMeta), []);
+  const handleSelectedVersion = useCallback((newVersion: string) => setSelectedVersion(newVersion), []);
 
   return (
     <DocItemContext.Provider
       value={{
         ...headerMeta,
+        selectedVersion,
+        setSelectedVersion: handleSelectedVersion,
         setHeaderContext: handleHeaderMeta,
       }}
     >
+      <DocVersionBanner />
+
       <DocsHeader {...headerMeta} />
 
       <div className={cn('row', styles.docItemRow)}>
         <div className={cn('col', !hidden && styles.docItemCol)}>
-          <DocVersionBanner />
-
           <div className={styles.docItemContainer}>
             <article>
               {/* <DocBreadcrumbs /> */}
 
-              <DocVersionBadge />
+              {/* <DocVersionBadge /> */}
 
               {mobile}
 

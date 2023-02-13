@@ -1,6 +1,8 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useContext } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import cn from 'classnames';
+
+import { DocItemContext } from '@site/src/services/docItemContext';
 
 import { Badge, BadgeProps } from '../Badge';
 import { LinkButton } from '../LinkButton';
@@ -11,7 +13,16 @@ import { DocsHeaderProps } from './interfaces';
 import styles from './styles.module.scss';
 
 export const DocsHeader: FC<DocsHeaderProps> = (props) => {
-  const { title, description, designer, developer, headerImage, hasPadding = true } = props;
+  const { title, description, designer, developer, headerImage, hasPadding = true, versions, actualVersion } = props;
+
+  const { setSelectedVersion } = useContext(DocItemContext);
+
+  useEffect(() => {
+    if (actualVersion && versions.length) {
+      const index = versions.findIndex((v) => v === actualVersion);
+      setSelectedVersion(versions[index]);
+    }
+  }, [actualVersion, versions, setSelectedVersion]);
 
   const { colorMode } = useColorMode();
   const { links, badges } = useMeta(props);
@@ -31,6 +42,12 @@ export const DocsHeader: FC<DocsHeaderProps> = (props) => {
 
         {!!badges.length && (
           <div className={styles.badges}>
+            <select onChange={(e) => setSelectedVersion(e.target.value)}>
+              {versions.map((v) => (
+                <option key={v}>{v}</option>
+              ))}
+            </select>
+
             {badges.map(({ title, appearance }, i) => (
               <Badge key={`${title}${i}`} appearance={appearance as BadgeProps['appearance']}>
                 {title}

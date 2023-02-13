@@ -11,8 +11,8 @@ import styles from './styles/navbarItem.module.scss';
 function DefaultNavbarItemDesktop(props: DesktopOrMobileNavBarItemProps) {
   const { className, isDropdownItem = false, ...rest } = props;
 
-  const dropdownClassName = 'dropdown__link';
-  const defaultClassName = cn('navbar__item navbar__link', styles.navbarItem);
+  const dropdownClassName = cn('dropdown__link', styles.noShrink);
+  const defaultClassName = cn('navbar__item navbar__link', styles.navbarItem, styles.noShrink);
 
   const element = (
     <NavbarNavLink
