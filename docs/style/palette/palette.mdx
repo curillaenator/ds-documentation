@@ -9,7 +9,7 @@ import CardSource from '!!raw-loader!../components/Card';
 
 import { Card } from '../components/Card';
 
-import { ColorMatrix, Opacities } from './components';
+import { ColorMatrix, Opacities, Color } from './components';
 import {
   PALETTE,
   COLOR_MATRIX,
@@ -50,14 +50,14 @@ import sampleCard from './assets/sampleCard.png';
   <examples cols={2} mb={32}>
     {PALETTE.slice(0, 4).map((card) => (
       <example key={card.name} exampleCode={card.exampleCode}>
-        <Card {...card} />
+        <Card {...card} valueComp={<Color style={card.valueStyle} />} />
       </example>
     ))}
   </examples>
   <examples cols={4}>
     {PALETTE.slice(4).map((card) => (
       <example key={card.name} exampleCode={card.exampleCode}>
-        <Card {...card} />
+        <Card {...card} valueComp={<Color style={card.valueStyle} />} />
       </example>
     ))}
   </examples>

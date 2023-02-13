@@ -4,18 +4,18 @@ import cn from 'classnames';
 import { Badge } from '@site/src/components/Badge';
 import { useViewportContext } from '@site/src/components/DocViewport';
 
-import { CardProps } from '../interfaces';
+import { CardProps } from './interfaces';
 import styles from './card.module.scss';
 
 export const Card: FC<CardProps> = (props) => {
-  const { title, name, subtitles = [], valueStyle, valueComp, colorMode: extarnalColorMode } = props;
+  const { title, name, subtitles = [], valueComp, colorMode: extarnalColorMode } = props;
 
   const { colorMode: viewportColorMode } = useViewportContext();
   const colorMode = extarnalColorMode || viewportColorMode;
 
   return (
     <div className={cn(styles.card, styles[colorMode])}>
-      {!!valueComp ? valueComp : <div className={cn(styles.colorValue)} style={valueStyle} />}
+      {valueComp}
 
       <span className={styles.title}>{title.toLowerCase()}</span>
 

@@ -7,6 +7,7 @@ description: 'Библиотека для работы с цветом'
 
 import headerImage from './assets/header.png';
 import { Card } from '../components/Card';
+import { Color } from './components/Color.tsx';
 import { COLORS } from './constants';
 
 <headermeta
@@ -30,14 +31,14 @@ import { COLORS } from './constants';
   <examples cols={3} mb={32}>
     {COLORS.neutral.slice(0, 3).map((card) => (
       <example key={card.name} exampleCode={card.exampleCode}>
-        <Card {...card} />
+        <Card {...card} valueComp={<Color style={card.valueStyle} />} />
       </example>
     ))}
   </examples>
   <examples cols={4}>
     {COLORS.neutral.slice(3).map((card) => (
       <example key={card.name} exampleCode={card.exampleCode}>
-        <Card {...card} />
+        <Card {...card} valueComp={<Color style={card.valueStyle} />} />
       </example>
     ))}
   </examples>
@@ -51,14 +52,14 @@ import { COLORS } from './constants';
   <examples cols={3} mb={32}>
     {COLORS['accent-1'].slice(0, 3).map((card) => (
       <example key={card.name} exampleCode={card.exampleCode}>
-        <Card {...card} />
+        <Card {...card} valueComp={<Color style={card.valueStyle} />} />
       </example>
     ))}
   </examples>
   <examples cols={4}>
     {COLORS['accent-1'].slice(3).map((card) => (
       <example key={card.name} exampleCode={card.exampleCode}>
-        <Card {...card} />
+        <Card {...card} valueComp={<Color style={card.valueStyle} />} />
       </example>
     ))}
   </examples>
@@ -72,14 +73,14 @@ import { COLORS } from './constants';
   <examples cols={3} mb={32}>
     {COLORS['accent-2'].slice(0, 3).map((card) => (
       <example key={card.name} exampleCode={card.exampleCode}>
-        <Card {...card} />
+        <Card {...card} valueComp={<Color style={card.valueStyle} />} />
       </example>
     ))}
   </examples>
   <examples cols={4}>
     {COLORS['accent-2'].slice(3).map((card) => (
       <example key={card.name} exampleCode={card.exampleCode}>
-        <Card {...card} />
+        <Card {...card} valueComp={<Color style={card.valueStyle} />} />
       </example>
     ))}
   </examples>
@@ -93,14 +94,14 @@ import { COLORS } from './constants';
   <examples cols={3} mb={32}>
     {COLORS['informative'].slice(0, 3).map((card) => (
       <example key={card.name} exampleCode={card.exampleCode}>
-        <Card {...card} />
+        <Card {...card} valueComp={<Color style={card.valueStyle} />} />
       </example>
     ))}
   </examples>
   <examples cols={4}>
     {COLORS['informative'].slice(3).map((card) => (
       <example key={card.name} exampleCode={card.exampleCode}>
-        <Card {...card} />
+        <Card {...card} valueComp={<Color style={card.valueStyle} />} />
       </example>
     ))}
   </examples>
@@ -114,14 +115,14 @@ import { COLORS } from './constants';
   <examples cols={3} mb={32}>
     {COLORS['positive'].slice(0, 3).map((card) => (
       <example key={card.name} exampleCode={card.exampleCode}>
-        <Card {...card} />
+        <Card {...card} valueComp={<Color style={card.valueStyle} />} />
       </example>
     ))}
   </examples>
   <examples cols={4}>
     {COLORS['positive'].slice(3).map((card) => (
       <example key={card.name} exampleCode={card.exampleCode}>
-        <Card {...card} />
+        <Card {...card} valueComp={<Color style={card.valueStyle} />} />
       </example>
     ))}
   </examples>
@@ -135,14 +136,14 @@ import { COLORS } from './constants';
   <examples cols={3} mb={32}>
     {COLORS['attention'].slice(0, 3).map((card) => (
       <example key={card.name} exampleCode={card.exampleCode}>
-        <Card {...card} />
+        <Card {...card} valueComp={<Color style={card.valueStyle} />} />
       </example>
     ))}
   </examples>
   <examples cols={4}>
     {COLORS['attention'].slice(3).map((card) => (
       <example key={card.name} exampleCode={card.exampleCode}>
-        <Card {...card} />
+        <Card {...card} valueComp={<Color style={card.valueStyle} />} />
       </example>
     ))}
   </examples>
@@ -156,14 +157,14 @@ import { COLORS } from './constants';
   <examples cols={3} mb={32}>
     {COLORS['negative'].slice(0, 3).map((card) => (
       <example key={card.name} exampleCode={card.exampleCode}>
-        <Card {...card} />
+        <Card {...card} valueComp={<Color style={card.valueStyle} />} />
       </example>
     ))}
   </examples>
   <examples cols={4}>
     {COLORS['negative'].slice(3).map((card) => (
       <example key={card.name} exampleCode={card.exampleCode}>
-        <Card {...card} />
+        <Card {...card} valueComp={<Color style={card.valueStyle} />} />
       </example>
     ))}
   </examples>
