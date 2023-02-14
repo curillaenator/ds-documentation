@@ -5516,6 +5516,47 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ds-documentation@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "ds-documentation@workspace:."
+  dependencies:
+    "@docusaurus/core": ^2.3.1
+    "@docusaurus/module-type-aliases": ^2.3.1
+    "@docusaurus/preset-classic": ^2.3.1
+    "@ecp/yarn-ecp-ldap-auth-plugin": 1.0.2
+    "@kit-xyz/badge": ^0.6.5
+    "@kit-xyz/icon": ^0.3.5
+    "@mdx-js/react": ^1.6.22
+    "@pcbl-ui-v4/theme": ^8.51.7
+    "@tsconfig/docusaurus": ^1.0.5
+    "@typescript-eslint/eslint-plugin": ^5.50.0
+    "@typescript-eslint/parser": ^5.50.0
+    classnames: 2.3.1
+    clsx: ^1.2.1
+    docusaurus-lunr-search: ^2.3.2
+    docusaurus-plugin-sass: ^0.2.3
+    eslint: ^8.33.0
+    eslint-config-google: ^0.14.0
+    eslint-config-prettier: ^8.6.0
+    eslint-plugin-import: ^2.27.5
+    eslint-plugin-prettier: ^4.2.1
+    eslint-plugin-react: ^7.32.2
+    eslint-plugin-react-hooks: ^4.6.0
+    hex-rgb: ^5.0.0
+    husky: ^8.0.0
+    javascript-color-gradient: ^2.4.4
+    lint-staged: ^13.1.0
+    prettier: ^2.8.3
+    prism-react-renderer: ^1.3.5
+    raw-loader: ^4.0.2
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    rgb-hex: ^4.0.0
+    sass: ^1.57.1
+    typescript: ^4.7.4
+  languageName: unknown
+  linkType: soft
+
 "duplexer3@npm:^0.1.4":
   version: 0.1.5
   resolution: "duplexer3@npm:0.1.5"
@@ -13280,47 +13321,6 @@ __metadata:
   checksum: ac5dfa738b21f6e7f0dd6e65e1b3155036d68104e67e5d5d1bde74892e327d7e5636a076f625599dc394330a731861e87343ff184b0047fef1360a7ec0a5a36a
   languageName: node
   linkType: hard
-
-"xyz@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "xyz@workspace:."
-  dependencies:
-    "@docusaurus/core": ^2.3.1
-    "@docusaurus/module-type-aliases": ^2.3.1
-    "@docusaurus/preset-classic": ^2.3.1
-    "@ecp/yarn-ecp-ldap-auth-plugin": 1.0.2
-    "@kit-xyz/badge": ^0.6.5
-    "@kit-xyz/icon": ^0.3.5
-    "@mdx-js/react": ^1.6.22
-    "@pcbl-ui-v4/theme": ^8.51.7
-    "@tsconfig/docusaurus": ^1.0.5
-    "@typescript-eslint/eslint-plugin": ^5.50.0
-    "@typescript-eslint/parser": ^5.50.0
-    classnames: 2.3.1
-    clsx: ^1.2.1
-    docusaurus-lunr-search: ^2.3.2
-    docusaurus-plugin-sass: ^0.2.3
-    eslint: ^8.33.0
-    eslint-config-google: ^0.14.0
-    eslint-config-prettier: ^8.6.0
-    eslint-plugin-import: ^2.27.5
-    eslint-plugin-prettier: ^4.2.1
-    eslint-plugin-react: ^7.32.2
-    eslint-plugin-react-hooks: ^4.6.0
-    hex-rgb: ^5.0.0
-    husky: ^8.0.0
-    javascript-color-gradient: ^2.4.4
-    lint-staged: ^13.1.0
-    prettier: ^2.8.3
-    prism-react-renderer: ^1.3.5
-    raw-loader: ^4.0.2
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    rgb-hex: ^4.0.0
-    sass: ^1.57.1
-    typescript: ^4.7.4
-  languageName: unknown
-  linkType: soft
 
 "yallist@npm:^3.0.2":
   version: 3.1.1
