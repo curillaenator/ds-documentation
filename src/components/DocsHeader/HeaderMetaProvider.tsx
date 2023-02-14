@@ -10,5 +10,4 @@ export const HeaderMetaProvider = (props: DocsHeaderProps) => {
   // не добавлять props в зависимости, приводит к бесконечному рендеру
   useEffect(() => setHeaderContext(props), [setHeaderContext]);
   return null;
-  // return <div style={{ display: 'none' }} />;
 };

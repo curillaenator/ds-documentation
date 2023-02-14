@@ -1,9 +1,9 @@
-import React, { FC, useContext, useState, useEffect } from 'react';
+import React, { FC, useContext, useState, useEffect, PropsWithChildren } from 'react';
 
-// import MDXContent from '@theme/MDXContent';
+import MDXContent from '@theme/MDXContent';
 import { DocItemContext } from '@site/src/services/docItemContext';
 
-interface VersionSelectorProps {
+interface VersionSelectorProps extends PropsWithChildren {
   versionPages: {
     version: string;
     page: unknown;
@@ -11,10 +11,10 @@ interface VersionSelectorProps {
 }
 
 export const VersionSelector: FC<VersionSelectorProps> = (props) => {
-  const { versionPages } = props;
+  const { versionPages, children } = props;
   const { selectedVersion } = useContext(DocItemContext);
 
-  const [pageI, setPageI] = useState<number>(0);
+  const [pageI, setPageI] = useState<number | null>(null);
 
   useEffect(() => {
     if (!selectedVersion) return;
@@ -27,6 +27,8 @@ export const VersionSelector: FC<VersionSelectorProps> = (props) => {
   }, [versionPages, selectedVersion]);
 
   const Doc = versionPages[pageI].page as React.ElementType;
+
+  if (!pageI) return <MDXContent>{children}</MDXContent>;
 
   return <Doc />;
 };
