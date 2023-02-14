@@ -2357,50 +2357,74 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@kit-base/badge@npm:0.5.0":
-  version: 0.5.0
-  resolution: "@kit-base/badge@npm:0.5.0"
+"@kit-base/avatar@npm:0.2.0":
+  version: 0.2.0
+  resolution: "@kit-base/avatar@npm:0.2.0"
   dependencies:
     classnames: 2.3.1
   peerDependencies:
     react: "*"
-  checksum: 74a45199a457f2f2ebe541f29cf634522a551afb7c281898f481f733e563cc36ddcdb3cf92d93a6445172638f59a78731ae696394d804c4e851b2ccbcbeb54fb
+  checksum: 610b921adcd846ce43715e06730379a1f4c07d3994e7fe22ee534cdc889a4e939eb2e433f4f3dccba4459baed9925dd4cfc61df1d2f21f9ad8e63a92be268e89
   languageName: node
   linkType: hard
 
-"@kit-base/icon@npm:0.2.4":
-  version: 0.2.4
-  resolution: "@kit-base/icon@npm:0.2.4"
-  dependencies:
-    classnames: 2.3.1
+"@kit-base/common-types@npm:0.0.2":
+  version: 0.0.2
+  resolution: "@kit-base/common-types@npm:0.0.2"
   peerDependencies:
+    "@testing-library/dom": "*"
+    "@testing-library/jest-dom": "*"
+    "@testing-library/react": "*"
+    "@testing-library/react-hooks": "*"
+    "@testing-library/user-event": "*"
+    dayjs: "*"
+    jest: "*"
+    jest-canvas-mock: "*"
+    jest-fetch-mock: "*"
+    jest-styled-components: "*"
     react: "*"
-  checksum: b75070950418948e65e895f145ddacefddb5e851ff278515a3873e4f1de60fff1ef7b2fdc7d62f89e79515317c528fee77a430ee382f4d399be09d91aa007976
+    react-dom: "*"
+    styled-components: "*"
+    ts-jest: "*"
+  checksum: 55ed5af991697e71ce96029c31b4cca04ef2e8fa310401e282e7de6dc8c062bc1183a04c30e654b656fa8e2acb807c7d1cf2e18ce5701c12f60c06e19bdbc271
   languageName: node
   linkType: hard
 
-"@kit-xyz/badge@npm:^0.6.5":
-  version: 0.6.5
-  resolution: "@kit-xyz/badge@npm:0.6.5"
+"@kit-base/uikit-utils@npm:0.2.1":
+  version: 0.2.1
+  resolution: "@kit-base/uikit-utils@npm:0.2.1"
   dependencies:
-    "@kit-base/badge": 0.5.0
-    classnames: 2.3.1
+    bowser: 2.11.0
+    qs: 6.9.4
   peerDependencies:
-    "@kit-xyz/icon": "*"
     react: "*"
-  checksum: cdf82e553f0799da8e1bac09f5cddfda5ca9e9592a5476e4a9a138d617ad9f48fdd0b9ce59befe853d17039303f240f1c58b8b186bde4e38cf5ffac0ca8a6839
+    react-router-dom: "*"
+  checksum: 3a3920a7fd08816045576eaeaf7be5abf63f351e41053407a25c2dadf1b042f80e71a707c39dd62b9bc2c8c160f2b8020856dabe23ac93215f5a9f522dbf81a2
   languageName: node
   linkType: hard
 
-"@kit-xyz/icon@npm:^0.3.5":
-  version: 0.3.5
-  resolution: "@kit-xyz/icon@npm:0.3.5"
+"@kit-cls/avatar@npm:0.3.0":
+  version: 0.3.0
+  resolution: "@kit-cls/avatar@npm:0.3.0"
   dependencies:
-    "@kit-base/icon": 0.2.4
+    "@kit-base/avatar": 0.2.0
+    "@kit-base/uikit-utils": 0.2.1
+    "@kit-cls/skeleton": 0.1.0
     classnames: 2.3.1
   peerDependencies:
     react: "*"
-  checksum: d3051efba1fbd718ec8c5a8dc4314df9871bd24087a8804adbff09487d09a2fa619e73d27a5e9c96de40bf85d70a070f9249e8b070d3f945e65a46fc844f4016
+  checksum: da636acb53a65528da77ab69ca33d5bbac2eb52d2b071cd7b6335e65fc9b9f3af95ff1f791688e9f7a740cb8210b531936e48b0648800300ad25537921d7acab
+  languageName: node
+  linkType: hard
+
+"@kit-cls/skeleton@npm:0.1.0":
+  version: 0.1.0
+  resolution: "@kit-cls/skeleton@npm:0.1.0"
+  dependencies:
+    classnames: 2.3.1
+  peerDependencies:
+    react: "*"
+  checksum: b9a4372fa7f7c0a7023e45aa866859a14523f92f2044dd291c8cffb75a94a1a2e8ca9c864dd313483f9d794cf62c66a4dc52585241c2c79a69ba79bd9cb89bd6
   languageName: node
   linkType: hard
 
@@ -4092,6 +4116,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bowser@npm:2.11.0":
+  version: 2.11.0
+  resolution: "bowser@npm:2.11.0"
+  checksum: 29c3f01f22e703fa6644fc3b684307442df4240b6e10f6cfe1b61c6ca5721073189ca97cdeedb376081148c8518e33b1d818a57f781d70b0b70e1f31fb48814f
+  languageName: node
+  linkType: hard
+
 "boxen@npm:^5.0.0":
   version: 5.1.2
   resolution: "boxen@npm:5.1.2"
@@ -5524,8 +5555,8 @@ __metadata:
     "@docusaurus/module-type-aliases": ^2.3.1
     "@docusaurus/preset-classic": ^2.3.1
     "@ecp/yarn-ecp-ldap-auth-plugin": 1.0.2
-    "@kit-xyz/badge": ^0.6.5
-    "@kit-xyz/icon": ^0.3.5
+    "@kit-base/common-types": 0.0.2
+    "@kit-cls/avatar": 0.3.0
     "@mdx-js/react": ^1.6.22
     "@pcbl-ui-v4/theme": ^8.51.7
     "@tsconfig/docusaurus": ^1.0.5
@@ -10452,6 +10483,13 @@ __metadata:
   dependencies:
     side-channel: ^1.0.4
   checksum: 6e1f29dd5385f7488ec74ac7b6c92f4d09a90408882d0c208414a34dd33badc1a621019d4c799a3df15ab9b1d0292f97c1dd71dc7c045e69f81a8064e5af7297
+  languageName: node
+  linkType: hard
+
+"qs@npm:6.9.4":
+  version: 6.9.4
+  resolution: "qs@npm:6.9.4"
+  checksum: 5ac0bd145f32d346d20c2fdcf19c8e548c5916458851e32527efb25be0c2cff8a3a81140c145c98a1184779b5b625c91bc7c50e147073bffb978fb7f4a9c8c8a
   languageName: node
   linkType: hard
 
