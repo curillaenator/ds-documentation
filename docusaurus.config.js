@@ -11,13 +11,14 @@ const config = {
   tagline: 'Platform V Documentation',
   favicon: 'img/favicon.ico',
   // Set the production url of your site here
-  url: 'https://example.com',
+  url: 'https://curillaenator.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  // baseUrl: '/',
+  baseUrl: '/ds-documentation/',
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'SberTech',
+  organizationName: 'curillaenator',
   projectName: 'ds-documentation', // Usually your repo name.
 
   onBrokenLinks: 'throw',
