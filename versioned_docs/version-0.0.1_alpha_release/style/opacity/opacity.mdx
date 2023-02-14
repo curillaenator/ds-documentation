@@ -1,0 +1,43 @@
+---
+sidebar_label: 'Opacity'
+sidebar_position: 4
+title: 'Opacity'
+description: 'Значения по толщине обводки, их скруглений, и их стиль оформления'
+---
+
+import { OPACITIES, OPACITIES_LAYOUT } from './constants';
+import { Card } from '../components/Card';
+import { Opacity } from './components/Opacity.tsx';
+
+import headerImage from './assets/header.png';
+import opacityImage from './assets/picture.png';
+
+<headermeta
+  title='Opacity'
+  description='Применение для любого слоя прозрачности. Раздел показывает значения и правила шага свойства прозрачности'
+  designer='Олег Астахов'
+  developer='Кирилл Артуров'
+  versions={['1.0']}
+  actualVersion='1.0'
+  status='Work in progress'
+  json='JSON'
+  sass='SASS'
+  bitbucketLink='https://google.com'
+  figmaLink='https://google.com'
+  jiraLink='https://google.com'
+  headerImage={headerImage}
+/>
+
+## Values
+
+<docviewport>
+  {OPACITIES_LAYOUT.map(({ from, to, cols, mb }) => (
+    <examples cols={cols} mb={mb}>
+      {OPACITIES.slice(from, to).map((card) => (
+        <example key={card.name} exampleCode={card.exampleCode}>
+          <Card {...card} valueComp={<Opacity backgroundImage={opacityImage} style={{ opacity: card.value }} />} />
+        </example>
+      ))}
+    </examples>
+  ))}
+</docviewport>
