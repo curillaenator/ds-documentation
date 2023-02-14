@@ -13,9 +13,23 @@
 }
 
 .rootPage {
-  border-bottom: 2px solid var(--ifm-toc-border-color);
+  border-right: 2px solid var(--site-common-bgc);
+  // border-bottom: 2px solid var(--site-common-bgc);
 }
 
 .docsPage {
+  position: relative;
   border-right: 2px solid var(--ifm-toc-border-color);
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(var(--logo-after-element-w) - 2px);
+    height: 2px;
+    background-color: var(--site-common-bgc);
+    transform: translateY(2px);
+    transition: width var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+  }
 }

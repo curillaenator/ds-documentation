@@ -10,6 +10,8 @@ import { useThemeConfig, NavbarLogo } from '@docusaurus/theme-common';
 import { useLocation } from '@docusaurus/router';
 import ThemedImage from '@theme/ThemedImage';
 
+import { baseUrl } from '@site/docusaurus.config';
+
 import styles from './styles.module.scss';
 
 interface LogoThemedImage {
@@ -62,7 +64,7 @@ export default function Logo(props) {
   // and provide a sensible fallback otherwise.
   const alt = logo?.alt ?? fallbackAlt;
 
-  const isRoot = pathname === '/';
+  const isRoot = pathname === baseUrl;
 
   return (
     <Link

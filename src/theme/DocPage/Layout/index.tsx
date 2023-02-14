@@ -12,6 +12,7 @@ import styles from './styles.module.css';
 export default function DocPageLayout({ children }: Props): JSX.Element {
   const sidebar = useDocsSidebar();
   const [hiddenSidebarContainer, setHiddenSidebarContainer] = useState(false);
+
   return (
     <Layout wrapperClassName={styles.docsWrapper}>
       <BackToTopButton />

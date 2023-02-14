@@ -2,6 +2,8 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+
+  border-bottom: 2px solid var(--ifm-toc-border-color);
 }
 
 .navBarleft {
@@ -14,13 +16,13 @@
 }
 
 .navBarRight {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   flex-shrink: 1;
   width: 100%;
   padding: 0 64px;
-  border-bottom: 2px solid var(--ifm-toc-border-color);
 }
 
 .navBarleft,
@@ -55,7 +57,7 @@
     background-color: var(--custom-btn-bg);
     border-radius: 8px;
 
-    font-family: "SB Sans Text";
+    font-family: 'SB Sans Text';
     font-style: normal;
     font-weight: 600;
     font-size: 16px;

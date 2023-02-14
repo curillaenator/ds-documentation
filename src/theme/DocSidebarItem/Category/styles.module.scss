@@ -31,6 +31,8 @@
     padding: 0;
     border: none;
     background-color: transparent;
+    width: 32px;
+    height: 32px;
 
     .collapseIcon {
       stroke: var(--color-neutral-700);
@@ -47,7 +49,8 @@
 }
 
 .menu_sublist {
-  padding: 32px 0 32px 48px !important;
+  // padding: 32px 0 32px 48px !important;
+  padding: 0 !important;
   margin-top: 0 !important;
 }
 

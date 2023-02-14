@@ -28,11 +28,21 @@ export default function DocPageLayoutSidebar({
   const { pathname } = useLocation();
 
   const [hiddenSidebar, setHiddenSidebar] = useState(false);
+
   const toggleSidebar = useCallback(() => {
     if (hiddenSidebar) {
       setHiddenSidebar(false);
     }
-    setHiddenSidebarContainer((value) => !value);
+
+    setHiddenSidebarContainer((value) => {
+      if (value) {
+        document.documentElement.style.setProperty('--logo-after-element-w', 'var(--doc-sidebar-width)');
+      } else {
+        document.documentElement.style.setProperty('--logo-after-element-w', 'var(--doc-sidebar-hidden-width)');
+      }
+
+      return !value;
+    });
   }, [setHiddenSidebarContainer, hiddenSidebar]);
 
   return (

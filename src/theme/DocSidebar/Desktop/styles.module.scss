@@ -1,10 +1,22 @@
 @media (min-width: 997px) {
   .sidebar {
+    position: relative;
     display: flex;
     flex-direction: column;
     height: 100%;
     padding-top: var(--ifm-navbar-height);
     width: var(--doc-sidebar-width);
+
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   top: calc(var(--ifm-navbar-height) - 10px);
+    //   left: 0;
+    //   width: calc(100% - 2px);
+    //   height: 20px;
+    //   background-color: white;
+    //   z-index: 4000;
+    // }
   }
 
   .sidebarWithHideableNavbar {
