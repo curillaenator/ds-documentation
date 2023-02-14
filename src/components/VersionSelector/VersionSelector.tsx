@@ -1,34 +1,35 @@
-import React, { FC, useContext, useState, useEffect, PropsWithChildren } from 'react';
+import { useContext, useState, useEffect, PropsWithChildren, ReactNode } from 'react';
 
-import MDXContent from '@theme/MDXContent';
+// import MDXContent from '@theme/MDXContent';
 import { DocItemContext } from '@site/src/services/docItemContext';
 
 interface VersionSelectorProps extends PropsWithChildren {
   versionPages: {
     version: string;
-    page: unknown;
+    page: ReactNode;
   }[];
 }
 
-export const VersionSelector: FC<VersionSelectorProps> = (props) => {
+export const VersionSelector = (props: VersionSelectorProps) => {
   const { versionPages, children } = props;
   const { selectedVersion } = useContext(DocItemContext);
 
-  const [pageI, setPageI] = useState<number | null>(null);
+  const [Page, setPage] = useState<ReactNode>(null);
 
   useEffect(() => {
     if (!selectedVersion) return;
 
     const pageIndex = versionPages.findIndex((v) => v.version === selectedVersion);
 
-    if (pageIndex === -1) return;
+    if (pageIndex === -1) {
+      setPage(null);
+      return;
+    }
 
-    setPageI(pageIndex);
+    setPage(versionPages[pageIndex].page);
   }, [versionPages, selectedVersion]);
 
-  const Doc = versionPages[pageI].page as React.ElementType;
+  if (!Page) return children;
 
-  if (!pageI) return <MDXContent>{children}</MDXContent>;
-
-  return <Doc />;
+  return Page;
 };

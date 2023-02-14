@@ -104,11 +104,11 @@ const config = {
             position: 'right',
             label: 'Design System & UI Kit Docs',
           },
-          // {
-          //   type: 'docsVersionDropdown',
-          //   position: 'right',
-          //   dropdownActiveClassDisabled: true,
-          // },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            dropdownActiveClassDisabled: true,
+          },
         ],
       },
 

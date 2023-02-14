@@ -21,4 +21,7 @@ export default {
   examples: ExamplesGrid,
   example: Example,
   versionselector: VersionSelector,
+  crutch: () => {
+    return null;
+  },
 };
