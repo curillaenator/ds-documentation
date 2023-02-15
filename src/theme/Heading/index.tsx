@@ -13,7 +13,7 @@ export default function Heading({ as: As, id, ...props }: Props): JSX.Element {
   } = useThemeConfig();
   // H1 headings do not need an id because they don't appear in the TOC.
   if (As === 'h1' || !id) {
-    return <As {...props} id={undefined} />;
+    return <As {...props} id={undefined} className={styles.invisible} />;
   }
 
   const anchorTitle = translate(

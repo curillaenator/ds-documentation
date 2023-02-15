@@ -1,10 +1,17 @@
 @mixin headings {
-  --ifm-h1-font-size: 55px !important;
-  --ifm-h2-font-size: 44px !important;
-  --ifm-h3-font-size: 1.25rem;
-  --ifm-h4-font-size: 1rem;
-  --ifm-h5-font-size: 0.875rem;
-  --ifm-h6-font-size: 0.85rem;
+  --heading-h1-fz: 55px !important;
+  --heading-h2-fz: 44px !important;
+  --heading-h3-fz: 1.25rem;
+  --heading-h4-fz: 1rem;
+  --heading-h5-fz: 0.875rem;
+  --heading-h6-fz: 0.85rem;
+
+  --ifm-h1-font-size: var(--heading-h1-fz);
+  --ifm-h2-font-size: var(--heading-h2-fz);
+  --ifm-h3-font-size: var(--heading-h3-fz);
+  --ifm-h4-font-size: var(--heading-h4-fz);
+  --ifm-h5-font-size: var(--heading-h5-fz);
+  --ifm-h6-font-size: var(--heading-h6-fz);
 
   --heading-h1-lh: 64px;
   --heading-h2-lh: 56px;

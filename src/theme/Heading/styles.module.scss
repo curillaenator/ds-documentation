@@ -27,6 +27,10 @@ See https://twitter.com/JoshWComeau/status/1332015868725891076
   opacity: 1;
 }
 
+.invisible {
+  display: none;
+}
+
 @each $heading in ('h1', 'h2', 'h3', 'h4', 'h5', 'h6') {
   .#{'' + $heading} {
     --ifm-heading-line-height: var(--heading-#{$heading}-lh);

@@ -8,6 +8,8 @@ import MDXContent from '@theme/MDXContent';
 
 import type { Props } from '@theme/DocItem/Content';
 
+import styles from './styles.module.scss';
+
 /**
  Title can be declared inside md content or declared through
  front matter and added manually. To make both cases consistent,
@@ -27,7 +29,7 @@ const DocItemContent = ({ children }: Props): JSX.Element => {
   // const syntheticTitle = shouldRender ? metadata.title : null;
 
   return (
-    <div className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown')}>
+    <div className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown', styles.resetMarkdown)}>
       {/* {syntheticTitle && <DocsHeader {...frontMatter} />} */}
 
       <MDXContent>{children}</MDXContent>

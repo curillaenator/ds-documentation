@@ -1,0 +1,9 @@
+.resetMarkdown {
+  @each $heading in (h1, h2, h3, h4, h5, h6) {
+    & > #{'' + $heading} {
+      --ifm-h2-font-size: var(--heading-#{$heading}-fz);
+      margin-bottom: var(--ifm-heading-margin-bottom);
+      margin-top: var(--ifm-heading-margin-top);
+    }
+  }
+}
