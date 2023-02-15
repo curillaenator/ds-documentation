@@ -15,7 +15,6 @@
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
     "prepare": "husky install",
-    "lint": "eslint --fix ./",
     "lint:scripts": "eslint ./ --fix --quiet"
   },
   "dependencies": {
