@@ -27,12 +27,7 @@ const DocItemContent = ({ children }: Props): JSX.Element => {
   // const syntheticTitle = shouldRender ? metadata.title : null;
 
   return (
-    <div
-      className={clsx(
-        ThemeClassNames.docs.docMarkdown,
-        // 'markdown'
-      )}
-    >
+    <div className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown')}>
       {/* {syntheticTitle && <DocsHeader {...frontMatter} />} */}
 
       <MDXContent>{children}</MDXContent>
