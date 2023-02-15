@@ -1,4 +1,5 @@
 import React, { FC, ButtonHTMLAttributes } from 'react';
+
 import styles from './styles.module.scss';
 
 export const Button: FC<ButtonHTMLAttributes<HTMLButtonElement>> = (props) => (

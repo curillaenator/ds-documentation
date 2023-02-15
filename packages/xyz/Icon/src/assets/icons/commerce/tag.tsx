@@ -1,0 +1,17 @@
+import * as React from 'react';
+import { SVGProps, Ref, forwardRef } from 'react';
+
+const Tag = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
+  <svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' ref={ref} {...props}>
+    <path
+      d='M7.8 7.91999H7.8012M11.4997 2.42594L3.93834 3.93821L2.42606 11.4996C2.40185 11.6206 2.4079 11.7458 2.44368 11.864C2.47946 11.9822 2.54386 12.0897 2.63117 12.177L12.4236 21.9694C12.4933 22.0391 12.5759 22.0943 12.6669 22.132C12.7579 22.1697 12.8555 22.1891 12.9539 22.1891C13.0524 22.1891 13.15 22.1697 13.241 22.132C13.332 22.0943 13.4146 22.0391 13.4843 21.9694L21.9696 13.4842C22.0392 13.4145 22.0945 13.3318 22.1321 13.2408C22.1698 13.1498 22.1892 13.0523 22.1892 12.9538C22.1892 12.8553 22.1698 12.7578 22.1321 12.6668C22.0945 12.5758 22.0392 12.4931 21.9696 12.4235L12.1771 2.63105C12.0898 2.54374 11.9823 2.47934 11.8641 2.44356C11.7459 2.40778 11.6208 2.40173 11.4997 2.42594Z'
+      stroke='currentColor'
+      strokeWidth='inherit'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+);
+
+const ForwardRef = forwardRef(Tag);
+export default ForwardRef;

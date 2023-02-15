@@ -1,0 +1,21 @@
+$theme-light: (
+  color-default: (
+    content-general: rgb(255, 255, 255),
+    background: var(--av_df_bg, rgb(99, 102, 241)),
+    background-gradient:
+      linear-gradient(
+        to right,
+        var(--color-informative-400),
+        var(--color-primary-500)
+      ),
+    border: rgb(255, 255, 255),
+    filter: var(--av_df_flt, none),
+  ),
+  state-disabled: (
+    content-general: rgb(212, 212, 212),
+    background: var(--av_s-db_bg, rgb(245, 245, 245)),
+    background-gradient: var(--av_s-db_bg-gr, rgb(245, 245, 245)),
+    border: rgb(255, 255, 255),
+    filter: var(--av_s-db_flt, saturate(100%) opacity(40%)),
+  ),
+);

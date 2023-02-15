@@ -5,7 +5,6 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 
 import styles from './styles.module.scss';
-
 import header from './assets/header.png';
 import compsStyles from './assets/compsStyles.png';
 import docs from './assets/docs.png';
@@ -34,71 +33,71 @@ export default function Home() {
   и гибкой темизацией их отображения'
     >
       <header className={styles.header}>
-        <img src={header} />
+        <img src={header} alt='temporary' />
       </header>
 
       <section className={styles.section}>
-        <img src={compsStyles} />
+        <img src={compsStyles} alt='temporary' />
       </section>
 
       <section className={styles.section}>
-        <img src={docs} />
+        <img src={docs} alt='temporary' />
       </section>
 
       <section className={styles.section}>
-        <img src={arch} />
+        <img src={arch} alt='temporary' />
       </section>
 
       <section className={styles.section}>
-        <img src={workStart} />
+        <img src={workStart} alt='temporary' />
       </section>
 
       <section className={styles.section}>
-        <img src={benefits} />
+        <img src={benefits} alt='temporary' />
       </section>
 
       <section className={styles.section}>
-        <img src={chars} />
+        <img src={chars} alt='temporary' />
       </section>
 
       <section className={styles.section}>
-        <img src={disSources} />
+        <img src={disSources} alt='temporary' />
       </section>
 
       <section className={styles.section}>
-        <img src={sync} />
+        <img src={sync} alt='temporary' />
       </section>
 
       <section className={styles.section}>
-        <img src={devSources} />
+        <img src={devSources} alt='temporary' />
       </section>
 
       <section className={styles.section}>
-        <img src={goalsTasks} />
+        <img src={goalsTasks} alt='temporary' />
       </section>
 
       <section className={styles.section}>
-        <img src={prior} />
+        <img src={prior} alt='temporary' />
       </section>
 
       <section className={styles.section}>
-        <img src={integration} />
+        <img src={integration} alt='temporary' />
       </section>
 
       <section className={styles.section}>
-        <img src={detailization} />
+        <img src={detailization} alt='temporary' />
       </section>
 
       <section className={styles.section}>
-        <img src={statuses} />
+        <img src={statuses} alt='temporary' />
       </section>
 
       <section className={styles.section}>
-        <img src={support} />
+        <img src={support} alt='temporary' />
       </section>
 
       <section className={styles.section}>
-        <img src={team} />
+        <img src={team} alt='temporary' />
       </section>
     </Layout>
   );

@@ -1,0 +1,17 @@
+import * as React from 'react';
+import { SVGProps, Ref, forwardRef } from 'react';
+
+const Bus = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
+  <svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' ref={ref} {...props}>
+    <path
+      d='M3.9375 6.75H20.0625M3.9375 11.25H20.0625M20.0625 18H3.9375M20.0625 18V6C20.0625 5.40326 19.8254 4.83097 19.4035 4.40901C18.9815 3.98705 18.4092 3.75 17.8125 3.75H6.1875C5.59076 3.75 5.01847 3.98705 4.59651 4.40901C4.17455 4.83097 3.9375 5.40326 3.9375 6V18M20.0625 18V20.25C20.0625 20.4489 19.9835 20.6397 19.8428 20.7803C19.7022 20.921 19.5114 21 19.3125 21H17.0625C16.8636 21 16.6728 20.921 16.5322 20.7803C16.3915 20.6397 16.3125 20.4489 16.3125 20.25V18M3.9375 18V20.25C3.9375 20.4489 4.01652 20.6397 4.15717 20.7803C4.29782 20.921 4.48859 21 4.6875 21H6.9375C7.13641 21 7.32718 20.921 7.46783 20.7803C7.60848 20.6397 7.6875 20.4489 7.6875 20.25V18M16.1402 14.6391H16.1414M7.74023 14.6391H7.74144'
+      stroke='currentColor'
+      strokeWidth='inherit'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+);
+
+const ForwardRef = forwardRef(Bus);
+export default ForwardRef;

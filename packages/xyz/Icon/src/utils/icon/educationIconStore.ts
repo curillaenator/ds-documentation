@@ -1,0 +1,26 @@
+const educationIconStore = {
+  'education-graduation-cap-solid': './education/graduationCapSolid.tsx',
+  'education-bookmarks-simple-solid': './education/bookmarksSimpleSolid.tsx',
+  'education-bookmarks-solid': './education/bookmarksSolid.tsx',
+  'education-bookmark-simple-solid': './education/bookmarkSimpleSolid.tsx',
+  'education-bookmark-solid': './education/bookmarkSolid.tsx',
+  'education-book-open-solid': './education/bookOpenSolid.tsx',
+  'education-chalkboard-teacher-solid': './education/chalkboardTeacherSolid.tsx',
+  'education-book-bookmark-solid': './education/bookBookmarkSolid.tsx',
+  'education-chalkboard-solid': './education/chalkboardSolid.tsx',
+  'education-book-solid': './education/bookSolid.tsx',
+  'education-chalkboard-simple-solid': './education/chalkboardSimpleSolid.tsx',
+  'education-graduation-cap': './education/graduationCap.tsx',
+  'education-bookmarks-simple': './education/bookmarksSimple.tsx',
+  'education-bookmarks': './education/bookmarks.tsx',
+  'education-bookmark-simple': './education/bookmarkSimple.tsx',
+  'education-bookmark': './education/bookmark.tsx',
+  'education-book-open': './education/bookOpen.tsx',
+  'education-chalkboard-teacher': './education/chalkboardTeacher.tsx',
+  'education-book-bookmark': './education/bookBookmark.tsx',
+  'education-chalkboard': './education/chalkboard.tsx',
+  'education-book': './education/book.tsx',
+  'education-chalkboard-simple': './education/chalkboardSimple.tsx',
+};
+
+export default educationIconStore;

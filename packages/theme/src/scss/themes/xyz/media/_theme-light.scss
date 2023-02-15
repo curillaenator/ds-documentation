@@ -1,0 +1,15 @@
+$theme-light: (
+  color-transparent: rgba(0, 0, 0, 0),
+  color-dark: rgb(23, 23, 23),
+  color-neutral: rgb(115, 115, 115),
+  color-primary: rgb(99, 102, 241),
+  color-secondary: rgb(59, 130, 246),
+  color-informative: rgb(59, 130, 246),
+  color-positive: rgb(16, 185, 129),
+  color-attention: rgb(245, 158, 11),
+  color-negative: rgb(239, 68, 68),
+  state-disabled: rgb(115, 115, 115),
+  state-skeleton: rgba(0, 0, 0, 0),
+  state-skeleton-background:
+    linear-gradient(0deg, rgb(212, 212, 212) 0%, rgb(115, 115, 115) 100%),
+);

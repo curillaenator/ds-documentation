@@ -4,3 +4,8 @@
 build
 node_modules
 .eslintrc.json
+tools
+src/theme
+package.json
+/packages/common-types/src/index.d.ts
+*.config.js

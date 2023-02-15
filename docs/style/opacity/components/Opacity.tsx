@@ -12,7 +12,7 @@ export const Opacity: FC<OpactityProps> = (props) => {
 
   return (
     <div className={styles.opacity} style={style}>
-      <img src={backgroundImage} />
+      <img src={backgroundImage} alt='opacity' />
     </div>
   );
 };

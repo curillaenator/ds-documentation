@@ -1,11 +1,11 @@
 import React, { FC, ReactNode, CSSProperties } from 'react';
 import cn from 'classnames';
-
 import { useViewportContext } from '@site/src/components/DocViewport';
+import { Button } from '@site/src/components/Button';
+
 import styles from './styles.module.scss';
 
 // заменить на компонент кита
-import { Button } from '@site/src/components/Button';
 
 interface ExampleProps {
   children: ReactNode;
