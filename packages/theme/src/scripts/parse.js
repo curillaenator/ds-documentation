@@ -1,4 +1,4 @@
-/* eslint-disable import/no-dynamic-require, @typescript-eslint/no-var-requires, global-require */
+/* eslint-disable */
 const path = require('path');
 
 const {

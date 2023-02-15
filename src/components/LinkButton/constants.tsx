@@ -1,4 +1,5 @@
 import React from 'react';
+
 import jira from './assets/jiraIcon.png';
 
 export const ICONS_ASSOC: Record<string, JSX.Element> = {
@@ -40,5 +41,5 @@ export const ICONS_ASSOC: Record<string, JSX.Element> = {
       />
     </svg>
   ),
-  jira: <img src={jira} />,
+  jira: <img src={jira} alt='Jira' />,
 };

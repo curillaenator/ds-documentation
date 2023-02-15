@@ -1,11 +1,10 @@
 import React, { FC } from 'react';
 import cn from 'classnames';
-
 import { useViewportContext } from '@site/src/components/DocViewport';
 
-import styles from './effect.module.scss';
-
 import settingsImg from '../assets/effectSettings.png';
+
+import styles from './effect.module.scss';
 
 const ROWS = [
   { title: 'effect-4', color: 'white-60', zIndex: 40 },

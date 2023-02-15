@@ -1,5 +1,4 @@
 import { useState, useCallback, useEffect } from 'react';
-
 import { useColorMode } from '@docusaurus/theme-common';
 
 type LocalColorMode = 'dark' | 'light' | 'color';

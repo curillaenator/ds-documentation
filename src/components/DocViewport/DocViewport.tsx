@@ -1,18 +1,13 @@
-import React, { FC, ReactNode, useState, useCallback } from 'react';
+import React, { FC, ReactNode, useState, useCallback, useMemo } from 'react';
 import cn from 'classnames';
 import CodeBlock from '@theme/CodeBlock';
-// import Details from '@theme/MDXComponents/Details';
-
 import { ColorModeToggle } from '@site/src/components/ColorModeToggle';
+import { Button } from '@site/src/components/Button';
 
 import { useLocalColorMode } from './hooks/useLocalColorMode';
 import { ViewportContext } from './context';
-
 import { DocViewportProps } from './interfaces';
 import styles from './styles.module.scss';
-
-// заменить на компонент кита
-import { Button } from '@site/src/components/Button';
 
 export const DocViewport: FC<DocViewportProps> = (props) => {
   const { modes = ['light', 'dark', 'color'], codeBlock, language = 'jsx', children } = props;
@@ -26,15 +21,17 @@ export const DocViewport: FC<DocViewportProps> = (props) => {
     setOpen(true);
   }, []);
 
-  return (
-    <ViewportContext.Provider
-      value={{
-        colorMode: localColorMode,
+  const contextValue = useMemo(
+    () => ({
+      colorMode: localColorMode,
+      codeBlock: selectedCodeBlock,
+      selectCodeBlock,
+    }),
+    [localColorMode, selectedCodeBlock, selectCodeBlock],
+  );
 
-        codeBlock: selectedCodeBlock,
-        selectCodeBlock,
-      }}
-    >
+  return (
+    <ViewportContext.Provider value={contextValue}>
       <>
         <div className={cn(styles.viewport, styles[localColorMode])}>
           {!!modes.length && (

@@ -1,14 +1,12 @@
 import React, { FC, useEffect, useContext } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import cn from 'classnames';
-
 import { DocItemContext } from '@site/src/services/docItemContext';
 
 import { Badge, BadgeProps } from '../Badge';
 import { LinkButton } from '../LinkButton';
 
 import { useMeta } from './hooks/useMeta';
-
 import { DocsHeaderProps } from './interfaces';
 import styles from './styles.module.scss';
 
@@ -36,7 +34,7 @@ export const DocsHeader: FC<DocsHeaderProps> = (props) => {
       <div className={styles.headerInner}>
         {!!headerImage && (
           <div className={styles.imageWrapper}>
-            <img src={headerImage} />
+            <img src={headerImage} alt='docHeaderImage' />
           </div>
         )}
 
@@ -48,9 +46,9 @@ export const DocsHeader: FC<DocsHeaderProps> = (props) => {
               ))}
             </select>
 
-            {badges.map(({ title, appearance }, i) => (
-              <Badge key={`${title}${i}`} appearance={appearance as BadgeProps['appearance']}>
-                {title}
+            {badges.map(({ title: badgeTitle, appearance }) => (
+              <Badge key={badgeTitle} appearance={appearance as BadgeProps['appearance']}>
+                {badgeTitle}
               </Badge>
             ))}
           </div>
@@ -69,14 +67,14 @@ export const DocsHeader: FC<DocsHeaderProps> = (props) => {
 
           {!!links.length && (
             <div className={styles.contenLinks}>
-              {links.map(({ link, title }, i) => (
+              {links.map(({ link, title: linkTitle }) => (
                 <LinkButton
-                  key={`${title}${i}`}
+                  key={linkTitle}
                   href={link}
-                  appearance={title === 'bitbucket' ? 'primary' : 'outline'}
-                  icon={title}
+                  appearance={linkTitle === 'bitbucket' ? 'primary' : 'outline'}
+                  icon={linkTitle}
                 >
-                  {title.slice(0, 1).toLocaleUpperCase() + title.slice(1)}
+                  {linkTitle.slice(0, 1).toLocaleUpperCase() + linkTitle.slice(1)}
                 </LinkButton>
               ))}
             </div>

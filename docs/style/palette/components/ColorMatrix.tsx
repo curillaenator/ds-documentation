@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import cn from 'classnames';
-
 import { useViewportContext } from '@site/src/components/DocViewport';
 
 import styles from './colormatrix.module.scss';
@@ -15,12 +14,12 @@ export const ColorMatrix: FC<ColorMatrixProps> = (props) => {
       className={cn(styles.container, styles[viewportColorMode], styles[`container_${type}`])}
       style={{ marginBottom: mb }}
     >
-      {colorMatrix.map((color, i) => {
+      {colorMatrix.map((color) => {
         const { x, y } = color.position;
 
         return (
           <div
-            key={`${color}-${i}`}
+            key={color.value}
             className={cn(styles.tile, styles[`tile_${type}`])}
             style={{ backgroundColor: color.value }}
           >

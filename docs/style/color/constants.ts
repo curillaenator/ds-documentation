@@ -4,7 +4,7 @@ import hexRgb from 'hex-rgb';
 
 import { CardProps } from '../interfaces';
 
-const color = json.values.style.color;
+const { color } = json.values.style;
 
 const COLOR_NAMES = [
   'neutral',
@@ -25,9 +25,7 @@ const hexToRgba = (hex: string) => {
   const { red, green, blue, alpha } = hexRgb(hex);
   return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
 };
-const rgbaToHex = (rgba: string) => {
-  return `#${rgbHex(rgba)}`;
-};
+const rgbaToHex = (rgba: string) => `#${rgbHex(rgba)}`;
 
 export const COLORS: Record<string, CardProps[]> = Object.fromEntries(
   COLOR_NAMES.map((name) => {

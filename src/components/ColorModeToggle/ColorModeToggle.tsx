@@ -2,8 +2,8 @@
 
 import React, { FC } from 'react';
 import cn from 'classnames';
-import { icons } from './icons';
 
+import { icons } from './icons';
 import { ColorModeToggleProps } from './interfaces';
 import styles from './styles.module.scss';
 

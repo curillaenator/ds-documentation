@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import { useContext, useEffect } from 'react';
+import { DocItemContext } from '@site/src/services/docItemContext';
 
 import { DocsHeaderProps } from './interfaces';
-
-import { DocItemContext } from '@site/src/services/docItemContext';
 
 export const HeaderMetaProvider = (props: DocsHeaderProps) => {
   const { setHeaderContext = () => {} } = useContext(DocItemContext);

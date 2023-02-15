@@ -1,6 +1,4 @@
 import { useContext, useState, useEffect, PropsWithChildren, ReactNode } from 'react';
-
-// import MDXContent from '@theme/MDXContent';
 import { DocItemContext } from '@site/src/services/docItemContext';
 
 interface VersionSelectorProps extends PropsWithChildren {

@@ -1,18 +1,17 @@
+/* eslint-disable import/no-webpack-loader-syntax, import/extensions */
+
 import Gradient from 'javascript-color-gradient';
 import hexRgb from 'hex-rgb';
-
 import json from '@site/packages/theme/src/dist/XYZ.json';
 
 // @ts-expect-error no types
-import CardSource from '!!raw-loader!../components/Card';
+import CardSource from '!!raw-loader!../components/Card.tsx';
 // @ts-expect-error no types
-import BlackSource from '!!raw-loader!./examples/Black';
+import BlackSource from '!!raw-loader!./examples/Black.ts';
 // @ts-expect-error no types
-import WhiteSource from '!!raw-loader!./examples/White';
+import WhiteSource from '!!raw-loader!./examples/White.ts';
 // @ts-expect-error no types
-import ColorSource from '!!raw-loader!./examples/Color';
-
-import { CardProps } from '../interfaces';
+import ColorSource from '!!raw-loader!./examples/Color.ts';
 
 const COLOR_JSON = json.values.style.palette;
 
@@ -35,7 +34,7 @@ const hexToRgba = (hex: string) => {
   return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
 };
 
-export const PALETTE: CardProps[] = DEFAULT.map((palette) => ({
+export const PALETTE = DEFAULT.map((palette) => ({
   ...palette,
   title: palette.title,
   subtitles: [`HEX: ${palette.hex}`, `RGB: ${hexToRgba(palette.hex)}`],
@@ -45,11 +44,9 @@ export const PALETTE: CardProps[] = DEFAULT.map((palette) => ({
 
 // Sample combination
 
-const makeGradient = (from: string, to: string, steps = 25): string[] => {
+const makeGradient = (from: string, to: string, steps = 25): string[] =>
   // конструктор возвращает набор steps цветов, включая последний, но не первый. первый добавляется
-  return [from, ...new Gradient().setColorGradient(from, to).setMidpoint(steps).getColors()];
-};
-
+  [from, ...new Gradient().setColorGradient(from, to).setMidpoint(steps).getColors()];
 interface MatrixColor {
   value: string;
   position: { x: number; y: number };
@@ -60,9 +57,7 @@ const makeColorMatrix = (hexColor: string, darkest: string, lightest: string): M
   const lightestToDarkest = makeGradient(lightest, darkest);
 
   return colorToDarkest
-    .map((color, y) =>
-      makeGradient(color, lightestToDarkest[y]).map((color, x) => ({ value: color, position: { x, y } })),
-    )
+    .map((color, y) => makeGradient(color, lightestToDarkest[y]).map((c, x) => ({ value: c, position: { x, y } })))
     .flat();
 };
 

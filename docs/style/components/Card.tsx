@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import cn from 'classnames';
-
 import { Badge } from '@site/src/components/Badge';
 import { useViewportContext } from '@site/src/components/DocViewport';
 

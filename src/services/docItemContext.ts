@@ -1,5 +1,4 @@
 import { createContext } from 'react';
-
 import { DocsHeaderProps } from '@site/src/components/DocsHeader';
 
 interface ContextType extends Partial<DocsHeaderProps> {
