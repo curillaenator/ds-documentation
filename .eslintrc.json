@@ -34,6 +34,7 @@
     "import/no-unresolved": "off",
     "no-console": "warn",
     "@typescript-eslint/no-empty-function": "off",
-    "require-jsdoc": "off"
+    "require-jsdoc": "off",
+    "@typescript-eslint/no-non-null-assertion": "off"
   }
 }
