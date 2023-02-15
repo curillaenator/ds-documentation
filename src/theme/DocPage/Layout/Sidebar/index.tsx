@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 
-import React, { type ReactNode, useState, useCallback } from 'react';
+import React, { type ReactNode, useState, useCallback, useEffect } from 'react';
 import clsx from 'clsx';
 import { ThemeClassNames } from '@docusaurus/theme-common';
 // @ts-expect-error no types for import
@@ -10,7 +10,7 @@ import DocSidebar from '@theme/DocSidebar';
 import ExpandButton from '@theme/DocPage/Layout/Sidebar/ExpandButton';
 import type { Props } from '@theme/DocPage/Layout/Sidebar';
 
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 // Reset sidebar state when sidebar changes
 // Use React key to unmount/remount the children
@@ -18,6 +18,10 @@ import styles from './styles.module.css';
 function ResetOnSidebarChange({ children }: { children: ReactNode }) {
   const sidebar = useDocsSidebar();
   return <React.Fragment key={sidebar?.name ?? 'noSidebar'}>{children}</React.Fragment>;
+}
+
+function setStyleProperty(prop: string, value: string) {
+  document.documentElement.style.setProperty(prop, value);
 }
 
 export default function DocPageLayoutSidebar({
@@ -36,14 +40,18 @@ export default function DocPageLayoutSidebar({
 
     setHiddenSidebarContainer((value) => {
       if (value) {
-        document.documentElement.style.setProperty('--logo-after-element-w', 'var(--doc-sidebar-width)');
+        setStyleProperty('--navbar-items-left-w', 'var(--doc-sidebar-width)');
       } else {
-        document.documentElement.style.setProperty('--logo-after-element-w', 'var(--doc-sidebar-hidden-width)');
+        setStyleProperty('--navbar-items-left-w', 'var(--doc-sidebar-hidden-width)');
       }
 
       return !value;
     });
   }, [setHiddenSidebarContainer, hiddenSidebar]);
+
+  useEffect(() => {
+    return () => setStyleProperty('--navbar-items-left-w', 'var(--doc-sidebar-width)');
+  }, []);
 
   return (
     <aside

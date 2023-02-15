@@ -22,7 +22,7 @@
     "@kit-base/common-types": "0.0.2",
     "@kit-cls/avatar": "0.3.0",
     "@mdx-js/react": "^1.6.22",
-    "@pcbl-ui-v4/theme": "^8.51.7",
+    "@pcbl-ui-v4/theme": "8.51.7",
     "classnames": "2.3.1",
     "clsx": "^1.2.1",
     "docusaurus-lunr-search": "^2.3.2",
@@ -33,6 +33,7 @@
     "raw-loader": "^4.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-scroll": "^1.8.9",
     "rgb-hex": "^4.0.0",
     "sass": "^1.57.1"
   },

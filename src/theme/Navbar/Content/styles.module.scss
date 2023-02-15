@@ -1,18 +1,39 @@
 .navBarLayout {
+  --navbar-divider-c: var(--ifm-toc-border-color);
+
   width: 100%;
   display: flex;
   justify-content: space-between;
 
   border-bottom: 2px solid var(--ifm-toc-border-color);
+
+  &_rootPage {
+    --navbar-divider-c: transparent;
+  }
 }
 
 .navBarleft {
+  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: flex-start;
 
   flex-shrink: 0;
-  width: fit-content;
+  width: calc(var(--navbar-items-left-w) - 2px);
+  transition: width var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+
+  .beard {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--site-common-bgc);
+    transform: translateY(2px);
+    transition: width var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+    z-index: 10;
+  }
 }
 
 .navBarRight {
@@ -23,6 +44,7 @@
   flex-shrink: 1;
   width: 100%;
   padding: 0 64px;
+  border-left: 2px solid var(--navbar-divider-c);
 }
 
 .navBarleft,

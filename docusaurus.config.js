@@ -81,7 +81,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Preview image on sharing via direct link
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/social-card.jpg',
 
       docs: {
         sidebar: {
@@ -105,11 +105,11 @@ const config = {
             position: 'right',
             label: 'Design System & UI Kit Docs',
           },
-          {
-            type: 'docsVersionDropdown',
-            position: 'right',
-            dropdownActiveClassDisabled: true,
-          },
+          // {
+          //   type: 'docsVersionDropdown',
+          //   position: 'right',
+          //   dropdownActiveClassDisabled: true,
+          // },
         ],
       },
 

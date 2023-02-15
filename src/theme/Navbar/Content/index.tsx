@@ -1,6 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
 import { useThemeConfig } from '@docusaurus/theme-common';
+import { useLocation } from '@docusaurus/router';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import {
   splitNavbarItems,
@@ -34,17 +36,29 @@ function NavbarItems({ items }: { items: NavbarItemConfig[] }): JSX.Element {
 }
 
 export default function NavbarContent(): JSX.Element {
+  const { siteConfig } = useDocusaurusContext();
+
   const mobileSidebar = useNavbarMobileSidebar();
+  const { pathname } = useLocation();
 
   const items = useNavbarItems();
   const [leftItems, rightItems] = splitNavbarItems(items);
 
   const searchBarItem = items.find((item) => item.type === 'search');
 
+  const isRootPage = pathname === siteConfig.baseUrl;
+
   return (
-    <div className={cn(styles.navBarLayout)}>
+    <div
+      className={cn(styles.navBarLayout, {
+        [styles.navBarLayout_rootPage]: isRootPage,
+      })}
+    >
       <div className={cn(styles.navBarleft)}>
+        {!isRootPage && <div className={styles.beard} />}
+
         {!mobileSidebar.disabled && <NavbarMobileSidebarToggle />}
+
         <NavbarLogo />
         <NavbarItems items={leftItems} />
       </div>
