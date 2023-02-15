@@ -1,2 +1,2 @@
 export { Badge } from './Badge';
-export { BadgeProps } from './interfaces';
+export type { BadgeProps } from './interfaces';
