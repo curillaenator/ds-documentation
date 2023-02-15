@@ -1,0 +1,67 @@
+---
+sidebar_label: 'Badge'
+title: 'Badge'
+description: 'Badge'
+---
+
+import { Badge } from '@kit-xyz/badge';
+import pkg from '@kit-xyz/badge/package.json';
+
+<headermeta
+  title='Badge'
+  description='Badge'
+  designer='Олег Астахов'
+  developer='Кирилл Артуров'
+  versions={[pkg.version]}
+  actualVersion={pkg.version}
+  status='Work in progress'
+  json='JSON'
+  sass='SASS'
+  bitbucketLink='https://google.com'
+  figmaLink='https://google.com'
+  jiraLink='https://google.com'
+/>
+
+# Badge
+
+## Base
+
+Базовое использование
+
+<docviewport codeBlock={undefined}>
+  <examples cols={1} mb={32}>
+    <example exampleCode={undefined}>
+      <Badge iconLeftName='system-bell-ringing' size='2xl' textSecondary='3'>
+        Важно
+      </Badge>
+    </example>
+  </examples>
+</docviewport>
+
+<divider />
+
+## Size
+
+Размером управляет проп <b>size</b>
+
+<docviewport codeBlock={undefined}>
+  <examples cols={3} mb={32}>
+    <example exampleCode={undefined}>
+      <Badge iconLeftName='system-bell-ringing' size='2xl' textSecondary='3'>
+        Важно
+      </Badge>
+    </example>
+    <example exampleCode={undefined}>
+      <Badge iconLeftName='system-bell-ringing' size='xl' textSecondary='3'>
+        Важно
+      </Badge>
+    </example>
+    <example exampleCode={undefined}>
+      <Badge iconLeftName='system-bell-ringing' size='l' textSecondary='3'>
+        Важно
+      </Badge>
+    </example>
+  </examples>
+</docviewport>
+
+<divider />

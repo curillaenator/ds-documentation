@@ -20,10 +20,8 @@
   "dependencies": {
     "@docusaurus/core": "^2.3.1",
     "@docusaurus/preset-classic": "^2.3.1",
-    "@kit-base/common-types": "0.0.2",
-    "@kit-cls/avatar": "0.3.0",
     "@mdx-js/react": "^1.6.22",
-    "@pcbl-ui-v4/theme": "8.51.7",
+    "@pcbl/fe-scripts": "^2.9.2",
     "classnames": "2.3.1",
     "clsx": "^1.2.1",
     "docusaurus-lunr-search": "^2.3.2",
@@ -41,6 +39,8 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^2.3.1",
     "@ecp/yarn-ecp-ldap-auth-plugin": "1.0.2",
+    "@rollup/plugin-image": "3.0.1",
+    "@rollup/plugin-typescript": "9.0.2",
     "@tsconfig/docusaurus": "^1.0.5",
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.50.0",
@@ -54,6 +54,8 @@
     "husky": "^8.0.0",
     "lint-staged": "^13.1.0",
     "prettier": "^2.8.3",
+    "rollup": "3.2.5",
+    "rollup-plugin-styles": "4.0.0",
     "typescript": "^4.7.4"
   },
   "browserslist": {
@@ -70,6 +72,14 @@
   },
   "engines": {
     "node": ">=16.14"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "packages/common-types/*",
+      "packages/baseUI/*",
+      "packages/xyz/*"
+    ]
   },
   "packageManager": "yarn@3.2.0"
 }

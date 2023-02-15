@@ -1,0 +1,38 @@
+$scale: (
+  width: (
+    2xl: 64px,
+    m: 40px,
+  ),
+  height: (
+    2xl: 64px,
+    m: 40px,
+  ),
+  border-width: (
+    2xl: 4px,
+    m: 4px,
+  ),
+  border-radius-circular: (
+    2xl: 32px,
+    m: 20px,
+  ),
+  border-radius-rounded: (
+    2xl: 20px,
+    m: 8px,
+  ),
+  text-font-size: (
+    2xl: 18px,
+    m: 14px,
+  ),
+  notion-size: (
+    2xl: 10.4px,
+    m: 10.4px,
+  ),
+  notion-offset-rectangular: (
+    2xl: -4px,
+    m: -4px,
+  ),
+  notion-offset-circular: (
+    2xl: -3px,
+    m: -3px,
+  ),
+);

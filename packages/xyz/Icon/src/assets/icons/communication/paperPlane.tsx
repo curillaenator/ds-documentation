@@ -1,0 +1,17 @@
+import * as React from 'react';
+import { SVGProps, Ref, forwardRef } from 'react';
+
+const PaperPlane = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
+  <svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' ref={ref} {...props}>
+    <path
+      d='M11.9888 17.25V11.25M11.3347 3.41852L2.46663 19.2543C2.39203 19.3875 2.35986 19.5403 2.37443 19.6923C2.38901 19.8443 2.44963 19.9882 2.54819 20.1049C2.64675 20.2215 2.77855 20.3052 2.92599 20.3449C3.07343 20.3846 3.22947 20.3784 3.37327 20.3271L11.7368 17.3401C11.8999 17.2818 12.0782 17.2818 12.2413 17.3401L20.6048 20.3271C20.7486 20.3784 20.9047 20.3846 21.0521 20.3449C21.1996 20.3052 21.3314 20.2215 21.4299 20.1049C21.5285 19.9882 21.5891 19.8443 21.6037 19.6923C21.6182 19.5403 21.5861 19.3875 21.5115 19.2543L12.6434 3.41852C12.5783 3.3022 12.4833 3.20534 12.3683 3.13793C12.2533 3.07051 12.1224 3.03497 11.989 3.03497C11.8557 3.03497 11.7248 3.07051 11.6098 3.13793C11.4948 3.20534 11.3998 3.3022 11.3347 3.41852Z'
+      stroke='currentColor'
+      strokeWidth='inherit'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+);
+
+const ForwardRef = forwardRef(PaperPlane);
+export default ForwardRef;

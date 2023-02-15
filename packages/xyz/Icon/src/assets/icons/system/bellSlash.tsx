@@ -1,0 +1,17 @@
+import * as React from 'react';
+import { SVGProps, Ref, forwardRef } from 'react';
+
+const BellSlash = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
+  <svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' ref={ref} {...props}>
+    <path
+      d='M4.5 3.7499L19.5 20.2499M9 17.9999V18.7499C9 19.5456 9.31607 20.3086 9.87868 20.8712C10.4413 21.4338 11.2044 21.7499 12 21.7499C12.7956 21.7499 13.5587 21.4338 14.1213 20.8712C14.6839 20.3086 15 19.5456 15 18.7499V17.9999M17.4544 17.9998H4.5921C4.46021 17.9994 4.33075 17.9643 4.21677 17.898C4.10278 17.8316 4.00831 17.7364 3.94289 17.6219C3.87747 17.5073 3.8434 17.3776 3.84413 17.2457C3.84486 17.1138 3.88035 16.9845 3.94704 16.8707C4.5661 15.8057 5.26891 13.8573 5.26891 10.4997V9.74973C5.26657 8.37791 5.68338 7.03812 6.46354 5.90974M8.67327 3.88067C9.70149 3.29321 10.8673 2.98931 12.0514 3.00003C15.763 3.02762 18.7318 6.11265 18.7318 9.83458V10.4998C18.7318 13 19.1212 14.7188 19.5756 15.8733'
+      stroke='currentColor'
+      strokeWidth='inherit'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+);
+
+const ForwardRef = forwardRef(BellSlash);
+export default ForwardRef;

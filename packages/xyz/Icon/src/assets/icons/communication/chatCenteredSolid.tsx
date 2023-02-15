@@ -1,0 +1,14 @@
+import * as React from 'react';
+import { SVGProps, Ref, forwardRef } from 'react';
+
+const ChatCenteredSolid = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
+  <svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' ref={ref} {...props}>
+    <path
+      d='M20.25 3.75H3.75C3.35231 3.75045 2.97105 3.90864 2.68984 4.18984C2.40864 4.47105 2.25045 4.85231 2.25 5.25V17.2499C2.25045 17.6476 2.40864 18.0289 2.68984 18.3101C2.97105 18.5913 3.35231 18.7494 3.75 18.7499L9.32529 18.75L10.7138 21.064C10.8471 21.2861 11.0356 21.4699 11.261 21.5975C11.4864 21.7251 11.741 21.7922 12 21.7922C12.259 21.7922 12.5136 21.7251 12.739 21.5975C12.9644 21.4699 13.1529 21.2861 13.2862 21.064L14.6746 18.75H20.2499C20.6476 18.7496 21.0289 18.5914 21.3101 18.3102C21.5913 18.029 21.7495 17.6477 21.75 17.25V5.25C21.7495 4.85231 21.5914 4.47105 21.3102 4.18984C21.029 3.90864 20.6477 3.75045 20.25 3.75Z'
+      fill='currentColor'
+    />
+  </svg>
+);
+
+const ForwardRef = forwardRef(ChatCenteredSolid);
+export default ForwardRef;

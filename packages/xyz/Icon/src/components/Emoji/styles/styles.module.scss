@@ -1,0 +1,13 @@
+@use '../../../../../../theme/src/scss/themes/xyz/media/index' as xyz-media;
+
+@function get-shape-value($schema-name, $size: 'l') {
+  @return map-get(xyz-media.$emoji-scale, $schema-name, $size);
+}
+
+$sizes: (2xl, xl, l, m, s, xs);
+@each $size in $sizes {
+  ._#{$size} {
+    --ic-w: #{get-shape-value(width, $size)};
+    --ic-h: #{get-shape-value(height, $size)};
+  }
+}

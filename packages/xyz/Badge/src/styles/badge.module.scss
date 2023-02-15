@@ -1,0 +1,61 @@
+@use '../../../../theme/src/scss/badge/' as badge;
+
+$sizes: (2xl, xl, l, m, s, xs);
+$color-schemas: map-keys(badge.$theme-light);
+
+@function get-scale($prop, $size) {
+  @return map-get(map-get(badge.$scale, $prop), $size);
+}
+
+@function get-style($value, $group: 'content') {
+  @return map-get(map-get(badge.$style, $group), $value);
+}
+
+@function get-color($prop, $schema) {
+  @return map-get(map-get(badge.$theme-light, $schema), $prop);
+}
+
+.badgeVariables {
+  --bdg-ff: #{get-style('font-family')};
+  --bdg-fw: #{get-style('font-weight')};
+
+  --bdg-bdrs: var(--bdg-bdrs-ro);
+  --bdg-bd-sh: inset 0px 0px 0px var(--bdg-bdw) var(--bdg-bd-c);
+}
+
+._elevated {
+  --bdg-sh: var(--bdg-drop-sh);
+}
+
+._outlined {
+  --bdg-sh: var(--bdg-bd-sh);
+}
+
+._circular {
+  --bdg-bdrs: var(--bdg-bdrs-cc);
+}
+
+@each $size in $sizes {
+  ._size_#{$size} {
+    --bdg-gp: #{get-scale('gap-x', $size)};
+    --bdg-mw: #{get-scale('width', $size)};
+    --bdg-h: #{get-scale('height', $size)};
+    --bdg-pd: #{get-scale('padding-y', $size)} #{get-scale('padding-x', $size)};
+    --bdg-bdw: #{get-scale('border-width', $size)};
+    --bdg-bdrs-ro: #{get-scale('border-radius-rounded', $size)};
+    --bdg-bdrs-cc: #{get-scale('border-radius-circular', $size)};
+    --bdg-fz: #{get-scale('text-font-size', $size)};
+    --bdg-lh: #{get-scale('text-line-height', $size)};
+    --bdg-txt-pd: #{get-scale('text-padding-y', $size)} #{get-scale('text-padding-x', $size)};
+  }
+}
+
+@each $schema in $color-schemas {
+  ._#{$schema} {
+    --bdg-bg-c: #{get-color('background', $schema)};
+    --bdg-txt-c: #{get-color('content-general', $schema)};
+    --bdg-txt-sc-c: #{get-color('content-additional', $schema)};
+    --bdg-drop-sh: #{get-color('shadow', $schema)};
+    --bdg-bd-c: #{get-color('border', $schema)};
+  }
+}

@@ -1,0 +1,39 @@
+.badge {
+  --bdg-direction: row;
+  --bdg-sh: 0 0 0 0 transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: var(--bdg-direction);
+  flex-shrink: 0;
+  gap: var(--bdg-gp, 16px);
+  width: fit-content;
+  min-width: var(--bdg-mw, none);
+  height: var(--bdg-h, 56px);
+  padding: var(--bdg-pd, 17px);
+  border-radius: var(--bdg-bdrs);
+
+  font-family: var(--bdg-ff);
+  font-weight: var(--bdg-fw, 600);
+  font-size: var(--bdg-fz, 16px);
+
+  box-shadow: var(--bdg-sh);
+  background-color: var(--bdg-bg-c, #6366f1);
+  color: var(--bdg-txt-c, rgb(245, 245, 245));
+
+  span {
+    white-space: nowrap;
+    line-height: var(--bdg-lh, 20px);
+    padding: var(--bdg-txt-pd, 0px);
+    letter-spacing: var(--bdg-txt-lts, 0px);
+  }
+
+  .additional {
+    color: var(--bdg-txt-sc-c, rgba(245, 245, 245, 0.6));
+  }
+}
+
+._reversed {
+  --bdg-direction: row-reverse;
+}

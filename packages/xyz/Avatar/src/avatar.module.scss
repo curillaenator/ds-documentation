@@ -1,0 +1,70 @@
+@use '../../../theme/src/scss/avatar/' as avatar;
+
+$sizes: (2xl, m);
+$color-schemas: map-keys(avatar.$theme-light);
+
+@function get-scale($prop, $size) {
+  @return map-get(avatar.$scale, $prop, $size);
+}
+
+@function get-color($prop, $theme) {
+  @return map-get(avatar.$theme-light, $theme, $prop);
+}
+
+@function get-style($prop) {
+  @return map-get(avatar.$style, 'content', $prop);
+}
+
+.avatarVariables {
+  --av-ff: #{get-style('font-family')};
+  --av-fw: #{get-style('font-weight')};
+  --av-nt-c: #{get-style('notion-color')};
+  --av-ttn: #{get-style('text-case')};
+}
+
+._rectangular {
+  --av-bdrs: var(--av-bdrs-ro);
+  --av-nt-offset: var(--av-nt-offset-ro);
+  --av-i-bdrs: calc(#{var(--av-bdrs-ro)} - #{var(--av-bdw)});
+}
+
+._circular {
+  --av-bdrs: var(--av-bdrs-cc);
+  --av-nt-offset: var(--av-nt-offset-cc);
+  --av-i-bdrs: 50%;
+}
+
+._withBgColor {
+  --av-bg: var(--av-bg-c);
+}
+
+._withGradient {
+  --av-bg: var(--av-bg-grad);
+}
+
+@each $size in $sizes {
+  ._size_#{'' + $size} {
+    --av-gp-x: 0px;
+    --av-gp-y: 0px;
+    --av-w: #{get-scale('width', $size)};
+    --av-h: #{get-scale('height', $size)};
+    --av-bdw: #{get-scale('border-width', $size)};
+    --av-bdrs-cc: #{get-scale('border-radius-circular', $size)};
+    --av-bdrs-ro: #{get-scale('border-radius-rounded', $size)};
+    --av-txt-fz: #{get-scale('text-font-size', $size)};
+    --av-txt-lh: 1;
+    --av-nt-sz: #{get-scale('notion-size', $size)};
+    --av-nt-offset-ro: #{get-scale('notion-offset-rectangular', $size)};
+    --av-nt-offset-cc: #{get-scale('notion-offset-circular', $size)};
+  }
+}
+
+@each $schema in $color-schemas {
+  ._#{'' + $schema} {
+    --av-ct-gn: #{get-color('content-general', $schema)};
+    --av-bg-c: #{get-color('background', $schema)};
+    --av-bg-grad: #{get-color('background-gradient', $schema)};
+    --av-bdc: #{get-color('border', $schema)};
+    --av-i-filter: #{get-color('filter', $schema)};
+  }
+}

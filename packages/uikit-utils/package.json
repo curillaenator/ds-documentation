@@ -1,0 +1,47 @@
+{
+  "name": "@kit-base/uikit-utils",
+  "version": "0.3.1",
+  "description": "Общий набор утилит для компонентов кита",
+  "license": "UNLICENSED",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public",
+    "main": "build/index.js",
+    "types": "build/index.d.ts",
+    "type": "git",
+    "registry": "https://nexus-dev.pcbltools.ru/repository/npm-public/"
+  },
+  "main": "src/index",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "run -T rimraf build && yarn build:raw",
+    "build:raw": "run -T tsc -p tsconfig.build.json",
+    "build:watch": "yarn build:raw --watch",
+    "test": "run -T pcbl-fe  test",
+    "checkDep": "run -T pcbl-fe  checkDependencies",
+    "pack": "run -T pcbl-fe  pack",
+    "revertPack": "run -T pcbl-fe  revertPack",
+    "clean": "run -T pcbl-fe  clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.pcbltools.ru/bitbucket/projects/EDUPOWER/repos/uikit4/browse/packages/ui/uikit-utils",
+    "directory": "packages/ui"
+  },
+  "dependencies": {
+    "bowser": "2.11.0",
+    "qs": "6.9.4"
+  },
+  "devDependencies": {
+    "@kit-base/common-types": "0.0.2",
+    "@types/css-mediaquery": "^0.1.1",
+    "css-mediaquery": "^0.1.2"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-router-dom": "*"
+  },
+  "files": [
+    "/build"
+  ]
+}

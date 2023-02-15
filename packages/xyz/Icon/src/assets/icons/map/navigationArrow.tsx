@@ -1,0 +1,17 @@
+import * as React from 'react';
+import { SVGProps, Ref, forwardRef } from 'react';
+
+const NavigationArrow = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
+  <svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' ref={ref} {...props}>
+    <path
+      d='M3.50537 4.45932L8.99959 20.3315C9.05133 20.481 9.14899 20.6103 9.27863 20.7009C9.40826 20.7915 9.56322 20.8388 9.72136 20.8361C9.8795 20.8333 10.0327 20.7807 10.1591 20.6856C10.2855 20.5905 10.3787 20.4579 10.4252 20.3068L12.6335 13.1297C12.6695 13.0127 12.7335 12.9064 12.82 12.8199C12.9065 12.7334 13.0129 12.6694 13.1298 12.6334L20.3069 10.425C20.458 10.3785 20.5906 10.2854 20.6857 10.159C20.7808 10.0326 20.8334 9.87938 20.8362 9.72124C20.8389 9.5631 20.7916 9.40814 20.701 9.27851C20.6104 9.14888 20.4811 9.05121 20.3316 8.99947L4.45945 3.50525C4.32644 3.45921 4.18316 3.45152 4.04599 3.48307C3.90883 3.51462 3.78331 3.58413 3.68378 3.68366C3.58426 3.78318 3.51475 3.90871 3.4832 4.04587C3.45165 4.18304 3.45933 4.32632 3.50537 4.45932V4.45932Z'
+      stroke='currentColor'
+      strokeWidth='inherit'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+);
+
+const ForwardRef = forwardRef(NavigationArrow);
+export default ForwardRef;

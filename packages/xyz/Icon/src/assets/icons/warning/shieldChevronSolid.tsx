@@ -1,0 +1,14 @@
+import * as React from 'react';
+import { SVGProps, Ref, forwardRef } from 'react';
+
+const ShieldChevronSolid = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
+  <svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' ref={ref} {...props}>
+    <path
+      d='M19.4999 3H4.49993C4.10225 3.00045 3.72098 3.15863 3.43977 3.43984C3.15857 3.72105 3.00039 4.10231 2.99994 4.5V9.99999C2.99994 18.3862 10.1086 21.1679 11.5336 21.6404C11.836 21.743 12.1638 21.743 12.4662 21.6404C13.8912 21.1679 20.9998 18.3862 20.9998 9.99999V4.5C20.9994 4.10231 20.8412 3.72104 20.56 3.43984C20.2788 3.15863 19.8975 3.00045 19.4999 3ZM4.49993 4.5H19.4999V9.99999C19.4999 11.6577 19.1816 13.0653 18.6752 14.2572L12.43 9.88557C12.3039 9.79733 12.1538 9.75001 11.9999 9.75001C11.846 9.75001 11.6959 9.79733 11.5698 9.88557L5.32454 14.2572C4.81817 13.0653 4.49993 11.6577 4.49993 9.99998V4.5Z'
+      fill='currentColor'
+    />
+  </svg>
+);
+
+const ForwardRef = forwardRef(ShieldChevronSolid);
+export default ForwardRef;

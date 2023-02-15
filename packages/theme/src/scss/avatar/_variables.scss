@@ -1,0 +1,15 @@
+$variables: (
+  theme-light: (
+    --av_df_bg: rgb(99, 102, 241),
+    --av_df_bg-gr:
+      linear-gradient(
+        to right,
+        var(--color-informative-400),
+        var(--color-primary-500)
+      ),
+    --av_df_flt: none,
+    --av_s-db_bg: rgb(245, 245, 245),
+    --av_s-db_bg-gr: rgb(245, 245, 245),
+    --av_s-db_flt: saturate(100%) opacity(40%),
+  ),
+);
