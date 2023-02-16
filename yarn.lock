@@ -7782,6 +7782,7 @@ __metadata:
     "@rollup/plugin-image": 3.0.1
     "@rollup/plugin-typescript": 9.0.2
     "@tsconfig/docusaurus": 1.0.5
+    "@types/rimraf": 3.0.2
     "@typescript-eslint/eslint-plugin": 5.50.0
     "@typescript-eslint/parser": 5.50.0
     classnames: 2.3.1
@@ -7795,7 +7796,7 @@ __metadata:
     husky: 8.0.0
     javascript-color-gradient: 2.4.4
     lint-staged: 13.1.0
-    prettier: 2.8.3
+    prettier: 2.8.4
     prism-react-renderer: 1.3.5
     raw-loader: 4.0.2
     react: 17.0.2
@@ -7805,7 +7806,7 @@ __metadata:
     rimraf: 3.0.2
     rollup: 3.2.5
     rollup-plugin-styles: 4.0.0
-    sass: 1.57.1
+    sass: 1.58.0
     typescript: 4.9.5
   languageName: unknown
   linkType: soft
@@ -14486,12 +14487,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.8.3":
-  version: 2.8.3
-  resolution: "prettier@npm:2.8.3"
+"prettier@npm:2.8.4":
+  version: 2.8.4
+  resolution: "prettier@npm:2.8.4"
   bin:
     prettier: bin-prettier.js
-  checksum: 92f2ceb522d454370e02082aa74ad27388672f7cee8975028b59517c069fe643bdc73e322675c8faf2ff173d7a626d1a6389f26b474000308e793aa25fff46e5
+  checksum: c173064bf3df57b6d93d19aa98753b9b9dd7657212e33b41ada8e2e9f9884066bb9ca0b4005b89b3ab137efffdf8fbe0b462785aba20364798ff4303aadda57e
   languageName: node
   linkType: hard
 
@@ -15736,16 +15737,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:1.57.1":
-  version: 1.57.1
-  resolution: "sass@npm:1.57.1"
+"sass@npm:1.58.0":
+  version: 1.58.0
+  resolution: "sass@npm:1.58.0"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: 734a08781bcbe0e8defb2d54864e7012014ed3e68ba5fcb766189b002929019fc37b2f83a18d4be0b5f69ad77317c92396ce6112447ab47a194ed600ae1afb27
+  checksum: a7219634881d2de6441fb619787fb1a02e3fa0333fb715be26aa335ba49d6bdb4f1105d9df70a80a67200893022b08346745783dc49046095d94fc6e044492d6
   languageName: node
   linkType: hard
 
