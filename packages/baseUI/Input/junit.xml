@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="3" failures="0" errors="0" time="42.321">
+  <testsuite name="Компонент Input" errors="0" failures="0" skipped="0" timestamp="2022-08-26T09:44:33" time="34.919" tests="3">
+    <testcase classname="Компонент Input рендерится в базовом режиме" name="Компонент Input рендерится в базовом режиме" time="0.034">
+    </testcase>
+    <testcase classname="Компонент Input дизейблится" name="Компонент Input дизейблится" time="0.007">
+    </testcase>
+    <testcase classname="Компонент Input рендерится с пользовательскими элементами (adornment)" name="Компонент Input рендерится с пользовательскими элементами (adornment)" time="0.08">
+    </testcase>
+  </testsuite>
+</testsuites>

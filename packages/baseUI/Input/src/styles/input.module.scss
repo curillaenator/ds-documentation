@@ -1,0 +1,111 @@
+.container {
+  --inp-pointer-events: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--inp-gp-y, 16px);
+  width: 100%;
+  pointer-events: var(--inp-pointer-events);
+}
+
+._interactive {
+  --inp-pointer-events: all;
+}
+
+.content {
+  position: relative;
+  outline: none;
+
+  display: flex;
+  flex-shrink: 0;
+  gap: var(--inp-gp-x, 16px);
+  align-items: center;
+  width: 100%;
+  height: var(--inp-h, 64px);
+  padding: 0 var(--inp-pd-x, 20px);
+  background-color: var(--inp-bgc, rgb(229, 229, 229));
+  border-radius: var(--inp-bdrs);
+
+  box-shadow: var(--inp-drop-sh, 0px 0px 0px 0px rgba(0, 0, 0, 0)), inset 0 0 0 var(--inp-bdw, 2px) var(--inp-bdc, rgba(0, 0, 0, 0));
+
+  font-family: var(--inp-ff);
+  font-size: var(--inp-fz, 14px);
+  line-height: var(--inp-lh, 20px);
+  font-weight: var(--inp-fw, 600);
+
+  color: var(--inp-ct-gn, rgb(23, 23, 23));
+
+  ._withHover & {
+    &:hover {
+      --inp-bdc: var(--inp-bdc-h);
+      --inp-ph-c: var(--inp-ph-c-h);
+      --inp-ct-gn: var(--inp-ct-gn-h);
+    }
+  }
+
+  ._active & {
+    --inp-bdc: var(--inp-bdc-a);
+    --inp-ph-c: var(--inp-ph-c-a);
+    --inp-ct-gn: var(--inp-ct-gn-a);
+  }
+
+  .overlayWrapper {
+    position: relative;
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 100%;
+    height: calc(var(--inp-h, 64px) - var(--inp-bdw, 2px) * 2);
+
+    .input {
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      outline: none;
+      pointer-events: var(--inp-pointer-events);
+
+      font-size: var(--inp-fz, 16px);
+      font-weight: var(--inp-fw, 400);
+      line-height: var(--inp-lh, 24px);
+      color: var(--inp-ct-gn, rgb(23, 23, 23));
+
+      &:focus {
+        outline: none;
+      }
+
+      &:placeholder-shown {
+        text-overflow: ellipsis;
+      }
+
+      &:-webkit-autofill {
+        transition: all 50000s ease-in-out 0s !important;
+        transition-property: background-color, color !important;
+      }
+
+      &::placeholder {
+        color: var(--inp-ph-c);
+      }
+
+      &:disabled {
+        color: var(--inp-ct-gn, rgb(23, 23, 23));
+      }
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      pointer-events: none;
+      width: calc(var(--inp-fz, 16px) * 2);
+      background-image: linear-gradient(to right, var(--inp-bgc, rgb(229, 229, 229)), rgba(255, 255, 255, 0));
+
+      &_right {
+        right: 0;
+        background-image: linear-gradient(to left, var(--inp-bgc, rgb(229, 229, 229)), rgba(255, 255, 255, 0));
+      }
+    }
+  }
+
+  .accessibilityStatus {
+    display: none;
+  }
+}

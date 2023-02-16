@@ -1,0 +1,19 @@
+$style: (
+  content: (
+    font-family: "SB Sans Interface, Arial, Helvetica, sans-serif",
+    text-case: None,
+    text-decoration: None,
+    font-weight: 400,
+    placeholder: var(--inp__plchldr, rgba(0, 0, 0, 0.6)),
+    placeholder-active: var(--inp__plchldr-ctv, rgba(0, 0, 0, 0.6)),
+  ),
+  meta: (
+    font-size: 14px,
+    font-weight: 400,
+    meta-text: var(--inp__mt-txt, rgba(0, 0, 0, 0.6)),
+  ),
+  action: (
+    adornment: var(--inp__drnmnt, rgb(64, 64, 64)),
+    adornment-hovered: var(--inp__drnmnt-hvrd, #4450d2),
+  ),
+);

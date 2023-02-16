@@ -1,0 +1,27 @@
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+
+  .text {
+    font-size: var(--inp-meta-fz, 14px);
+    font-weight: var(--inp-meta-fw, 400);
+    line-height: var(--inp-meta-lh, 20px);
+    text-align: left;
+
+    &_left {
+      color: var(--inp-meta-static-c);
+    }
+
+    &_leftStated {
+      color: var(--inp-start-meta-c);
+    }
+
+    &_right {
+      color: var(--inp-end-meta-c);
+      text-align: right;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.actionButton {
+  flex-shrink: 0;
+  outline: none;
+  color: var(--inp-action-btn);
+
+  &:hover,
+  &:focus {
+    color: var(--inp-action-btn-h);
+  }
+
+  .icon {
+    transform: scale(1.33);
+  }
+}
