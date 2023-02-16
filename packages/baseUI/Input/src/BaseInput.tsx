@@ -29,6 +29,7 @@ export const BaseInput = forwardRef<HTMLInputElement, InputProps>((props, ref) =
     wrapperRef,
     className,
     contentClassName,
+    inputClassName,
     ...rest
   } = useInputProps(props, ref);
 
@@ -63,7 +64,7 @@ export const BaseInput = forwardRef<HTMLInputElement, InputProps>((props, ref) =
             data-testid={dataTestId}
             disabled={disabled}
             onScroll={handleScroll}
-            className={cn(styles.input)}
+            className={cn(styles.input, inputClassName)}
             tabIndex={0}
             autoComplete={rest.autoComplete || 'off'}
           />

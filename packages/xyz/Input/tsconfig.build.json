@@ -15,5 +15,5 @@
     "types": ["react"]
   },
   "include": ["src", "@types"],
-  "exclude": ["**/stories", "**/*.stories.*", "**/*.test.*"]
+  "exclude": ["**/*.test.*"]
 }

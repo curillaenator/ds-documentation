@@ -14,6 +14,7 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
   active?: boolean;
   setActive?: (active: boolean) => void;
   contentClassName?: string;
+  inputClassName?: string;
 }
 
 export interface IsOverlay {

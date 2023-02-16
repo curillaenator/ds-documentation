@@ -16,7 +16,7 @@
   "main": "src/index",
   "types": "src/index.ts",
   "scripts": {
-    "build": "run -T rimraf build && yarn run -T rollup -c --bundleConfigAsCjs && yarn setVersion",
+    "build": "run -T rimraf build && yarn run -T rollup -c --bundleConfigAsCjs",
     "build:raw": "run -T tsc -p tsconfig.build.json",
     "build:watch": "yarn build:raw --watch",
     "test": "run -T pcbl-fe  test",

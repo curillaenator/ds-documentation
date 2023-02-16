@@ -1,27 +1,29 @@
-/* eslint-disable react/prop-types, react-hooks/exhaustive-deps */
+// eslint-disable react/prop-types, react-hooks/exhaustive-deps
 
 import React, { useRef, useCallback, useState } from 'react';
-import classnames from 'classnames';
+import cn from 'classnames';
 import { useHistory } from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { usePluginData } from '@docusaurus/useGlobalData';
 import useIsBrowser from '@docusaurus/useIsBrowser';
+import { useColorMode } from '@docusaurus/theme-common';
 
-import { MGlass } from './MGlass';
-import { Input } from '@site/src/components/Input';
+import { Input } from '@kit-xyz/input';
 
 import styles from './styles.module.scss';
+// заменить на имепрот из темы
+import vars from './input.module.css';
 
 const Search = (props) => {
   const initialized = useRef(false);
   const searchBarRef = useRef(null);
   const history = useHistory();
   const isBrowser = useIsBrowser();
-  const { siteConfig = {} } = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   const { baseUrl } = siteConfig;
 
-  const [focused, setFocused] = useState(false);
   const [indexReady, setIndexReady] = useState(false);
+  const { colorMode } = useColorMode();
 
   const initAlgolia = (searchDocs, searchIndex, DocSearch) => {
     new DocSearch({
@@ -49,13 +51,15 @@ const Search = (props) => {
 
   const getSearchDoc = () => {
     return process.env.NODE_ENV === 'production'
-      ? fetch(`${baseUrl}${pluginData.fileNames.searchDoc}`).then((content) => content.json())
+      ? //@ts-expect-error no types for pluginData
+        fetch(`${baseUrl}${pluginData.fileNames.searchDoc}`).then((content) => content.json())
       : Promise.resolve([]);
   };
 
   const getLunrIndex = () => {
     return process.env.NODE_ENV === 'production'
-      ? fetch(`${baseUrl}${pluginData.fileNames.lunrIndex}`).then((content) => content.json())
+      ? //@ts-expect-error no types for pluginData
+        fetch(`${baseUrl}${pluginData.fileNames.lunrIndex}`).then((content) => content.json())
       : Promise.resolve([]);
   };
 
@@ -76,8 +80,6 @@ const Search = (props) => {
 
   const toggleSearchIconClick = useCallback(
     (e) => {
-      setFocused((prev) => !prev);
-
       if (!searchBarRef.current.contains(e.target)) {
         searchBarRef.current.focus();
       }
@@ -96,7 +98,7 @@ const Search = (props) => {
       <span
         aria-label='expand searchbar'
         role='button'
-        className={classnames('search-icon', {
+        className={cn('search-icon', {
           'search-icon-hidden': props.isSearchBarExpanded,
         })}
         onClick={toggleSearchIconClick}
@@ -110,15 +112,17 @@ const Search = (props) => {
         type='search'
         placeholder={indexReady ? 'Поиск' : 'Дев режим...'}
         aria-label='Search'
-        appearance={focused ? 'focused' : 'neutral'}
+        size='l'
         onClick={loadAlgolia}
         onMouseOver={loadAlgolia}
         onFocus={toggleSearchIconClick}
         onBlur={toggleSearchIconClick}
-        disabled={!indexReady}
-        leftIcon={<MGlass />}
-        wrapperClassName={styles.searchBox}
-        inputClassName={classnames({
+        // disabled={!indexReady}
+        className={cn(styles.searchBox, vars[colorMode])}
+        iconLeft='system-magnifying-glass'
+        // clearable
+        uncontrolled
+        inputClassName={cn({
           'search-bar-expanded': props.isSearchBarExpanded,
           'search-bar': !props.isSearchBarExpanded,
         })}

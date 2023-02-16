@@ -26,7 +26,8 @@
   background-color: var(--inp-bgc, rgb(229, 229, 229));
   border-radius: var(--inp-bdrs);
 
-  box-shadow: var(--inp-drop-sh, 0px 0px 0px 0px rgba(0, 0, 0, 0)), inset 0 0 0 var(--inp-bdw, 2px) var(--inp-bdc, rgba(0, 0, 0, 0));
+  box-shadow: var(--inp-drop-sh, 0px 0px 0px 0px rgba(0, 0, 0, 0)),
+    inset 0 0 0 var(--inp-bdw, 2px) var(--inp-bdc, rgba(0, 0, 0, 0));
 
   font-family: var(--inp-ff);
   font-size: var(--inp-fz, 14px);
@@ -62,7 +63,9 @@
       background-color: transparent;
       outline: none;
       pointer-events: var(--inp-pointer-events);
+      border: none;
 
+      font-family: 'SB Sans Text', sans-serif;
       font-size: var(--inp-fz, 16px);
       font-weight: var(--inp-fw, 400);
       line-height: var(--inp-lh, 24px);
