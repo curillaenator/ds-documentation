@@ -32,7 +32,6 @@
     "directory": "packages/xyz"
   },
   "dependencies": {
-    "@kit-base/icon": "0.2.4",
     "classnames": "2.3.1"
   },
   "devDependencies": {

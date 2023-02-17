@@ -3154,17 +3154,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@kit-base/icon@0.2.4, @kit-base/icon@workspace:packages/baseUI/Icon":
-  version: 0.0.0-use.local
-  resolution: "@kit-base/icon@workspace:packages/baseUI/Icon"
-  dependencies:
-    "@kit-base/common-types": 0.0.2
-    classnames: 2.3.1
-  peerDependencies:
-    react: "*"
-  languageName: unknown
-  linkType: soft
-
 "@kit-base/input@0.4.4, @kit-base/input@workspace:packages/baseUI/Input":
   version: 0.0.0-use.local
   resolution: "@kit-base/input@workspace:packages/baseUI/Input"
@@ -3223,7 +3212,6 @@ __metadata:
   resolution: "@kit-xyz/icon@workspace:packages/xyz/Icon"
   dependencies:
     "@kit-base/common-types": 0.0.2
-    "@kit-base/icon": 0.2.4
     classnames: 2.3.1
   peerDependencies:
     react: "*"
