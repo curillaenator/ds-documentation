@@ -1,0 +1,24 @@
+@use '../../../../theme/src/scss/themes/xyz/media' as xyz-media;
+
+@function get-shape-value($schema-name, $size: '2xl') {
+  @return map-get(xyz-media.$scale, $schema-name, $size);
+}
+
+@function get-color-value($schema-name: 'color-dark') {
+  @return map-get(xyz-media.$theme-light, $schema-name);
+}
+
+$sizes: (2xl, xl, l, m, s, xs);
+
+@each $size in $sizes {
+  ._size_#{'' + $size} {
+    --ic-stroke-w: #{get-shape-value(border-width, $size)};
+    --ic-w: #{get-shape-value(width, $size)};
+    --ic-h: #{get-shape-value(height, $size)};
+  }
+}
+@each $color-schema in map-keys(xyz-media.$theme-light) {
+  ._#{'' + $color-schema} {
+    --ic-c: #{get-color-value($color-schema)};
+  }
+}

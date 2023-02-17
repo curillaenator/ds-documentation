@@ -1,8 +1,0 @@
-{
-  "extends": "@pcbl/fe-scripts/configs/tsconfig.json",
-  "compilerOptions": {
-    "rootDir": "./",
-    "baseUrl": "./src"
-  },
-  "include": ["src", "@types"]
-}

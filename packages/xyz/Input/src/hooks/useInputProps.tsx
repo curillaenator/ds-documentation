@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import { Meta, useActiveControl, InputProps as BaseInputProps } from '@kit-base/input';
-// import { Icon } from '@kit-xyz/icon';
+import { Icon } from '@kit-xyz/icon';
 
 import { Action } from '../components/Action';
 import { DEFAULT_TEST_ID, STATE_LABEL_ASSOC } from '../constants';
@@ -48,8 +48,9 @@ export const useInputProps = (props: InputProps): BaseInputProps => {
     status: STATE_LABEL_ASSOC[state || ''],
     disabled,
 
-    // nodeLeft: iconLeft ? <Icon size={size} name={iconLeft} className={styles.noShrink} /> : undefined,
+    nodeLeft: iconLeft ? <Icon size={size} name={iconLeft} className={styles.noShrink} /> : undefined,
     nodeRight: isClearable ? (
+      // @ts-expect-error нет пакета иконок
       <Action dataTestId={dataTestId} iconName='math-x-solid' onClick={onClearInput} size={size} />
     ) : undefined,
 
