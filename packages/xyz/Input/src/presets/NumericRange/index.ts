@@ -1,2 +1,2 @@
 export { NumericRange } from './NumericRange';
-export { NumericRangeProps } from './interfaces';
+export type { NumericRangeProps } from './interfaces';
