@@ -1,6 +1,5 @@
 ---
 sidebar_label: 'Input'
-sidebar_position: 3
 title: 'Input'
 description: 'Базовый элемент формы, для взаимодействия с пользователем'
 ---
@@ -40,7 +39,7 @@ Input может быть как контролируемым, так и нет.
 <docviewport codeBlock={Base}>
   <examples cols={1}>
     <example exampleCode={Base}>
-      <Input iconLeft='arrow-clockwise-solid' placeholder='Placeholder' uncontrolled />
+      <Input iconLeft='arrow-clockwise-solid' value='input value' onChage={() => {}} placeholder='Placeholder' />
     </example>
   </examples>
 </docviewport>

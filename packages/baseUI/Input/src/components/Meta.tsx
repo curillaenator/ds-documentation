@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import cn from 'classnames';
 
-import { MetaProps } from './interfaces';
+import type { MetaProps } from './interfaces';
 import styles from './meta.module.scss';
 
 export const Meta: FC<MetaProps> = (props) => {

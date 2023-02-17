@@ -1,5 +1,5 @@
 module.exports = {
-  "rules": {
+  rules: {
     'no-underscore-dangle': 'off',
-  }
+  },
 };
