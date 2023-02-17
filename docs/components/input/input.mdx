@@ -1,0 +1,47 @@
+---
+sidebar_label: 'Input'
+title: 'Input'
+description: 'Базовый элемент формы, для взаимодействия с пользователем'
+---
+
+import { Input } from '@kit-xyz/input';
+import pkg from '@kit-xyz/input/package.json';
+
+import { Base } from './examples';
+
+<headermeta
+  title='Input'
+  description='Базовый элемент формы, для взаимодействия с пользователем. Включает в себя несколько типов нативного инпута, такие как: text, email, tel, password, url, также принимает такие же проперти, что и нативный элемент input.'
+  designer='Олег Астахов'
+  developer='Кирилл Артуров'
+  versions={[pkg.version]}
+  actualVersion={pkg.version}
+  status='Work in progress'
+  json='JSON'
+  sass='SASS'
+  bitbucketLink='https://google.com'
+  figmaLink='https://google.com'
+  jiraLink='https://google.com'
+/>
+
+# Input
+
+## Base
+
+Input может быть как контролируемым, так и нет. В случае неконтролируемого варианта необходимо передать проп uncontrolled. Для контролируемого компонента, разработчику необходимо предоставить состояние и его обработчик для инпута через проперти <b>value</b> и <b>onChange</b>.
+
+Для контролируемого варианта c каунтером и лимитом вводимых символов пакет дополнительно экспортирует хук <i>useLimitCounter</i>, содержащий в себе необходимые пропсы.
+
+<p>
+  <i>{`const { value, onChage, onClearInput, endMetaText } = useLimitCounter(42);`}</i>
+</p>
+
+<docviewport codeBlock={Base}>
+  <examples cols={1}>
+    <example exampleCode={Base}>
+      <Input iconLeft='arrow-clockwise-solid' value='input value' onChange={() => {}} placeholder='Placeholder' />
+    </example>
+  </examples>
+</docviewport>
+
+<divider />

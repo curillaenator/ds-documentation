@@ -1,0 +1,1 @@
+<Input iconLeft='arrow-clockwise-solid' placeholder='Placeholder' uncontrolled />

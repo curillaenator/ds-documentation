@@ -1,0 +1,85 @@
+@use '../../../../theme/src/scss/input/' as input;
+
+$sizes: (2xl, xl, l, m, s, xs);
+$color-schemas: map-keys(input.$theme-light);
+
+@function get-scale($prop, $size: 2xl) {
+  @return map-get(input.$scale, $prop, $size);
+}
+
+@function get-style($value, $group: 'content') {
+  @return map-get(input.$style, $group, $value);
+}
+
+@function get-color($prop, $schema: 'color-light-solid') {
+  @return map-get(input.$theme-light, $schema, $prop);
+}
+
+.inputVariables {
+  --inp-ph-c: #{get-style('placeholder')};
+  --inp-ph-c-a: #{get-style('placeholder-active')};
+
+  --inp-ff: #{get-style('font-family')};
+  --inp-fw: #{get-style('font-weight')};
+
+  --inp-meta-fw: #{get-style('font-weight', 'meta')};
+  --inp-meta-static-c: #{get-style('meta-text', 'meta')};
+
+  --inp-action-btn: #{get-style('adornment', 'action')};
+  --inp-action-btn-h: #{get-style('adornment-hovered', 'action')};
+}
+
+@each $size in $sizes {
+  ._size_#{'' + $size} {
+    --inp-h: #{get-scale('height', $size)};
+
+    --inp-gp-x: #{get-scale('gap-x', $size)};
+    --inp-gp-y: #{get-scale('gap-y', $size)};
+
+    --inp-bdw: #{get-scale('border-width', $size)};
+    --inp-bdrs-ro: #{get-scale('border-radius-rounded', $size)};
+    --inp-bdrs-cc: #{get-scale('border-radius-circular', $size)};
+
+    --inp-pd-x: #{get-scale('padding-x', $size)};
+    --inp-pd-y: #{get-scale('padding-y', $size)};
+
+    --inp-txt-pd: #{get-scale('text-padding-y', $size)} #{get-scale('text-padding-x', $size)};
+    --inp-fz: #{get-scale('text-font-size', $size)};
+    --inp-lh: #{get-scale('text-line-height', $size)};
+
+    --inp-meta-fz: #{get-scale('meta-font-size', $size)};
+    --inp-meta-lh: #{get-scale('meta-line-height', $size)};
+  }
+}
+
+@each $schema in $color-schemas {
+  ._#{'' + $schema} {
+    --inp-ct-gn: #{get-color('content-general', $schema)};
+    --inp-ct-gn-h: #{get-color('content-general', $schema)};
+    --inp-ct-gn-a: #{get-color('content-general', $schema)};
+    --inp-ct-ad: #{get-color('content-additional', $schema)};
+
+    --inp-bgc: #{get-color('background', $schema)};
+
+    --inp-bdc: #{get-color('border', $schema)};
+    --inp-bdc-h: #{get-color('border-hovered', $schema)};
+    --inp-bdc-a: #{get-color('border-active', $schema)};
+
+    --inp-drop-sh: #{get-color('drop-shadow', $schema)};
+
+    --inp-start-meta-c: #{get-color('start-meta-text', $schema)};
+    --inp-end-meta-c: #{get-color('end-meta-text', $schema)};
+  }
+}
+
+._rounded {
+  --inp-bdrs: var(--inp-bdrs-ro);
+}
+
+._circular {
+  --inp-bdrs: var(--inp-bdrs-cc);
+}
+
+.noShrink {
+  flex-shrink: 0;
+}

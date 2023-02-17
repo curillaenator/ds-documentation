@@ -1,0 +1,59 @@
+$scale: (
+  2xl: (
+    font-size: 20px,
+    margin-bottom: 24px,
+  ),
+  xl: (
+    font-size: 20px,
+    margin-bottom: 24px,
+  ),
+  l: (
+    font-size: 20px,
+    margin-bottom: 24px,
+  ),
+  m: (
+    font-size: 16px,
+    margin-bottom: 20px,
+  ),
+  s: (
+    font-size: 16px,
+    margin-bottom: 20px,
+  ),
+  xs: (
+    font-size: 16px,
+    margin-bottom: 20px,
+  ),
+);
+
+.shell {
+  --inp-rng-cp-fz: #{map-get($scale, 2xl, 'font-size')};
+  --inp-rng-cp-mb: #{map-get($scale, 2xl, 'margin-bottom')};
+  --inp-rng-cp-c: var(--colol-neutral-900, #171717);
+
+  width: 100%;
+
+  &_disabled {
+    --inp-rng-cp-c: var(--colol-neutral-500, #737373);
+  }
+
+  .caption {
+    margin-bottom: var(--inp-rng-cp-mb);
+    font-size: var(--inp-rng-cp-fz);
+    font-weight: 600;
+    color: var(--inp-rng-cp-c);
+  }
+
+  .inputs {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+}
+
+@each $size in map-keys($scale) {
+  .shell_#{'' + $size} {
+    --inp-rng-cp-fz: #{map-get($scale, $size, 'font-size')};
+    --inp-rng-cp-mb: #{map-get($scale, $size, 'margin-bottom')};
+  }
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="13" failures="0" errors="0" time="17.308">
+  <testsuite name="Тесты компонента NumericInput" errors="0" failures="0" skipped="0" timestamp="2022-08-26T09:52:24" time="4.242" tests="3">
+    <testcase classname="Тесты компонента NumericInput NumericInput рендерится в базовом режиме" name="Тесты компонента NumericInput NumericInput рендерится в базовом режиме" time="0.043">
+    </testcase>
+    <testcase classname="Тесты компонента NumericInput При попытке ввести число в колбэк передается число" name="Тесты компонента NumericInput При попытке ввести число в колбэк передается число" time="0.101">
+    </testcase>
+    <testcase classname="Тесты компонента NumericInput При попытке ввести символ в колбэк передается пустая строка" name="Тесты компонента NumericInput При попытке ввести символ в колбэк передается пустая строка" time="0.028">
+    </testcase>
+  </testsuite>
+  <testsuite name="Тесты компонента Input" errors="0" failures="0" skipped="0" timestamp="2022-08-26T09:52:24" time="4.293" tests="6">
+    <testcase classname="Тесты компонента Input Input рендерится в базовом режиме" name="Тесты компонента Input Input рендерится в базовом режиме" time="0.039">
+    </testcase>
+    <testcase classname="Тесты компонента Input Input рендерится в другом размере, типе и радиусе" name="Тесты компонента Input Input рендерится в другом размере, типе и радиусе" time="0.008">
+    </testcase>
+    <testcase classname="Тесты компонента Input Input рендерится в success и error" name="Тесты компонента Input Input рендерится в success и error" time="0.012">
+    </testcase>
+    <testcase classname="Тесты компонента Input Рендерятся messages" name="Тесты компонента Input Рендерятся messages" time="0.012">
+    </testcase>
+    <testcase classname="Тесты компонента Input Input дизейблится" name="Тесты компонента Input Input дизейблится" time="0.005">
+    </testcase>
+    <testcase classname="Тесты компонента Input Input clearable" name="Тесты компонента Input Input clearable" time="0.022">
+    </testcase>
+  </testsuite>
+  <testsuite name="Тесты для компонента NumericRange" errors="0" failures="0" skipped="0" timestamp="2022-08-26T09:52:24" time="4.662" tests="4">
+    <testcase classname="Тесты для компонента NumericRange NumericRange выводит переданные через range значения" name="Тесты для компонента NumericRange NumericRange выводит переданные через range значения" time="0.049">
+    </testcase>
+    <testcase classname="Тесты для компонента NumericRange NumericRange выводит введенные числа" name="Тесты для компонента NumericRange NumericRange выводит введенные числа" time="0.524">
+    </testcase>
+    <testcase classname="Тесты для компонента NumericRange NumericRange выводит плейсходеры" name="Тесты для компонента NumericRange NumericRange выводит плейсходеры" time="0.008">
+    </testcase>
+    <testcase classname="Тесты для компонента NumericRange NumericRange выводит заголовок" name="Тесты для компонента NumericRange NumericRange выводит заголовок" time="0.013">
+    </testcase>
+  </testsuite>
+</testsuites>
