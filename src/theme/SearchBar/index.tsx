@@ -8,7 +8,10 @@ import { usePluginData } from '@docusaurus/useGlobalData';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import { useColorMode } from '@docusaurus/theme-common';
 
-import { Input } from '@kit-xyz/input';
+// import { Input } from '@kit-xyz/input';
+
+import { MGlass } from './MGlass';
+import { Input } from '@site/src/components/Input';
 
 import styles from './styles.module.scss';
 // заменить на имепрот из темы
@@ -22,6 +25,7 @@ const Search = (props) => {
   const { siteConfig } = useDocusaurusContext();
   const { baseUrl } = siteConfig;
 
+  const [focused, setFocused] = useState(false);
   const [indexReady, setIndexReady] = useState(false);
   const { colorMode } = useColorMode();
 
@@ -80,6 +84,8 @@ const Search = (props) => {
 
   const toggleSearchIconClick = useCallback(
     (e) => {
+      setFocused((prev) => !prev);
+
       if (!searchBarRef.current.contains(e.target)) {
         searchBarRef.current.focus();
       }
@@ -112,16 +118,19 @@ const Search = (props) => {
         type='search'
         placeholder={indexReady ? 'Поиск' : 'Дев режим...'}
         aria-label='Search'
-        size='l'
+        // size='l'
+        appearance={focused ? 'focused' : 'neutral'}
         onClick={loadAlgolia}
         onMouseOver={loadAlgolia}
         onFocus={toggleSearchIconClick}
         onBlur={toggleSearchIconClick}
-        // disabled={!indexReady}
-        className={cn(styles.searchBox, vars[colorMode])}
-        iconLeft='system-magnifying-glass'
+        disabled={!indexReady}
+        // className={cn(styles.searchBox, vars[colorMode])}
+        wrapperClassName={styles.searchBox}
+        leftIcon={<MGlass />}
+        // iconLeft='system-magnifying-glass'
         // clearable
-        uncontrolled
+        // uncontrolled
         inputClassName={cn({
           'search-bar-expanded': props.isSearchBarExpanded,
           'search-bar': !props.isSearchBarExpanded,
