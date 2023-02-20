@@ -6,6 +6,7 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
+    "cm": "npx lint-staged && git-cz",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "deploy:gh": "GIT_USER=curillaenator USE_SSH=true yarn deploy",
@@ -44,6 +45,8 @@
     "@types/rimraf": "3.0.2",
     "@typescript-eslint/eslint-plugin": "5.50.0",
     "@typescript-eslint/parser": "5.50.0",
+    "commitizen": "4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "8.34.0",
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-testing-library": "5.0.1",
@@ -55,6 +58,53 @@
     "rollup-plugin-styles": "4.0.0",
     "sass": "1.58.0",
     "typescript": "4.9.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog",
+      "maxHeaderWidth": 172,
+      "disableScopeLowerCase": true,
+      "types": {
+        "feat": {
+          "description": "A new feature",
+          "value": "feat"
+        },
+        "fix": {
+          "description": "A bug fix",
+          "value": "fix"
+        },
+        "ci": {
+          "description": "CI related changes",
+          "value": "ci"
+        },
+        "chore": {
+          "value": "chore",
+          "description": "Build process or auxiliary tool changes"
+        },
+        "docs": {
+          "value": "docs",
+          "description": "Documentation only changes"
+        },
+        "style": {
+          "value": "style",
+          "description": "Markup, white-space, formatting, missing semi-colons..."
+        },
+        "refactor": {
+          "description": "A code change that neither fixes a bug or adds a feature",
+          "value": "refactor"
+        },
+        "perf": {
+          "description": "A code change that improves performance",
+          "value": "perf"
+        },
+        "test": {
+          "value": "test",
+          "description": "Adding missing tests"
+        }
+      },
+      "commitUrlFormat": "https://bitbucket.pcbltools.ru/bitbucket/projects/EDUPOWER/repos/uikit/commits/{{hash}}",
+      "compareUrlFormat": "https://bitbucket.pcbltools.ru/bitbucket/projects/EDUPOWER/repos/uikit/commits/{{hash}}"
+    }
   },
   "browserslist": {
     "production": [
