@@ -2,11 +2,15 @@
   "name": "ds-documentation",
   "version": "0.0.1",
   "private": true,
+  "license": "UNLICENSED",
+  "description": "Монорепозиторий дизайн-системы",
+  "bin": {
+    "pcbl-fe": "@pcbl/fe-scripts/bin/pcbl-fe.js"
+  },
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
-    "cm": "npx lint-staged && git-cz",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "deploy:gh": "GIT_USER=curillaenator USE_SSH=true yarn deploy",
@@ -14,6 +18,8 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
+    "cm": "npx lint-staged && npx git-cz",
+    "setVersion": "pcbl-fe setVersion",
     "typecheck": "npx tsc",
     "prepare": "husky install",
     "lint": "npx eslint ./ --fix --quiet"
@@ -46,7 +52,8 @@
     "@typescript-eslint/eslint-plugin": "5.50.0",
     "@typescript-eslint/parser": "5.50.0",
     "commitizen": "4.3.0",
-    "cz-conventional-changelog": "^3.3.0",
+    "cz-conventional-changelog": "3.3.0",
+    "cz-customizable": "7.0.0",
     "eslint": "8.34.0",
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-testing-library": "5.0.1",
@@ -61,49 +68,17 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog",
-      "maxHeaderWidth": 172,
-      "disableScopeLowerCase": true,
-      "types": {
-        "feat": {
-          "description": "A new feature",
-          "value": "feat"
-        },
-        "fix": {
-          "description": "A bug fix",
-          "value": "fix"
-        },
-        "ci": {
-          "description": "CI related changes",
-          "value": "ci"
-        },
-        "chore": {
-          "value": "chore",
-          "description": "Build process or auxiliary tool changes"
-        },
-        "docs": {
-          "value": "docs",
-          "description": "Documentation only changes"
-        },
-        "style": {
-          "value": "style",
-          "description": "Markup, white-space, formatting, missing semi-colons..."
-        },
-        "refactor": {
-          "description": "A code change that neither fixes a bug or adds a feature",
-          "value": "refactor"
-        },
-        "perf": {
-          "description": "A code change that improves performance",
-          "value": "perf"
-        },
-        "test": {
-          "value": "test",
-          "description": "Adding missing tests"
-        }
-      },
+      "path": "./node_modules/cz-customizable",
       "commitUrlFormat": "https://bitbucket.pcbltools.ru/bitbucket/projects/EDUPOWER/repos/uikit/commits/{{hash}}",
       "compareUrlFormat": "https://bitbucket.pcbltools.ru/bitbucket/projects/EDUPOWER/repos/uikit/commits/{{hash}}"
+    },
+    "cz-customizable": {
+      "config": "tools/fe-scripts/configs/commitizen.js"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
     }
   },
   "browserslist": {
