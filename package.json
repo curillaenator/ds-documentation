@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "17.4.4",
-    "@commitlint/config-conventional": "^17.4.4",
+    "@commitlint/config-conventional": "17.4.4",
     "@docusaurus/module-type-aliases": "2.3.1",
     "@ecp/eslint-config-pnp": "1.0.27",
     "@ecp/yarn-ecp-ldap-auth-plugin": "1.0.2",
