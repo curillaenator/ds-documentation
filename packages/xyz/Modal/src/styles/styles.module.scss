@@ -7,8 +7,8 @@
 }
 
 .transition {
-  --mdl-animation-time: 0.2s;
-  --mdl-animation-method: ease-in-out;
+  --mdl-animation-time: 0.3s;
+  --mdl-animation-method: cubic-bezier(0.49, 0, 0.92, 0.82);
 }
 
 .overlay {
