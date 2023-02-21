@@ -54,6 +54,7 @@ $breakpoint: 1660px;
       display: none;
       border-radius: 50%;
       background-color: var(--color-neutral-100);
+      z-index: 10;
 
       &_matrix {
         width: 16px;

@@ -19,7 +19,7 @@ export const ColorMatrix: FC<ColorMatrixProps> = (props) => {
 
         return (
           <div
-            key={color.value}
+            key={`${color.value}-${x}-${y}`}
             className={cn(styles.tile, styles[`tile_${type}`])}
             style={{ backgroundColor: color.value }}
           >
