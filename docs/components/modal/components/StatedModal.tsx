@@ -1,6 +1,6 @@
 import React, { FC, useState, useCallback } from 'react';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import { Button } from '@kit-xyz/button';
-import { Modal } from '@kit-xyz/modal';
 
 export const StatedModal: FC = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -11,9 +11,17 @@ export const StatedModal: FC = () => {
     <>
       <Button onClick={handleToggle}>Открыть</Button>
 
-      <Modal open={open} onClose={onClose} portalId='docusaurus-portal-id'>
-        Hi!
-      </Modal>
+      <BrowserOnly>
+        {() => {
+          const { Modal } = require('@kit-xyz/modal'); // eslint-disable-line global-require
+
+          return (
+            <Modal open={open} onClose={onClose} portalId='docusaurus-portal-id'>
+              Hi!
+            </Modal>
+          );
+        }}
+      </BrowserOnly>
     </>
   );
 };
