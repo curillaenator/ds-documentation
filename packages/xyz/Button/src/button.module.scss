@@ -1,0 +1,84 @@
+@use '../../../theme/src/scss/utils/' as utils;
+@use '../../../theme/src/scss/button/' as button;
+
+@function get-color-value($value-name, $schema-name: 'color-primary-solid') {
+  @return map-get(map-get(button.$theme-light, $schema-name), $value-name);
+}
+
+@function get-shape-value($value-name, $size: '2xl') {
+  @return map-get(map-get(button.$scale, $value-name), $size);
+}
+
+.buttonVariables {
+  --btn-mh: #{get-shape-value(height)};
+  --btn-lh: #{get-shape-value(text-line-height)};
+  --btn-pd: #{get-shape-value(padding-y) get-shape-value(padding-x)};
+  --btn-fz: #{get-shape-value(text-font-size)};
+  --btn-gp: #{get-shape-value(gap-x)};
+  --btn-bdrs-ro: #{get-shape-value(border-radius-rounded)};
+  --btn-bdrs-cc: #{get-shape-value(border-radius-circular)};
+  --btn-bdw: #{get-shape-value(border-width)};
+
+  --btn-txt-pm: #{get-color-value(content-general)};
+  --btn-txt-sc: #{get-color-value(content-additional)};
+  --btn-bg: #{get-color-value('background')};
+  --btn-bg-h: #{get-color-value(background-hovered)};
+  --btn-bg-a: #{get-color-value(background-pressed)};
+  --btn-bd-sh: inset 0px 0px 0px var(--btn-bdw) #{get-color-value('border')};
+  --btn-sh: #{get-color-value(shadow)};
+}
+
+._bordered {
+  &_always {
+    --btn-bd-shadow: var(--btn-bd-sh);
+  }
+
+  &_interaction {
+    &:hover,
+    &:active {
+      --btn-bd-shadow: var(--btn-bd-sh);
+    }
+  }
+}
+
+._shape_circular {
+  --btn-bdrs: var(--btn-bdrs-cc);
+}
+
+@each $size in (2xl xl l m s xs) {
+  ._size_#{$size} {
+    --btn-mh: #{get-shape-value(height, $size)};
+    --btn-lh: #{get-shape-value(text-line-height, $size)};
+    --btn-pd: #{get-shape-value(padding-y, $size) get-shape-value(padding-x, $size)};
+    --btn-fz: #{get-shape-value(text-font-size, $size)};
+    --btn-gp: #{get-shape-value(gap-x, $size)};
+    --btn-bdrs-ro: #{get-shape-value(border-radius-rounded, $size)};
+    --btn-bdrs-cc: #{get-shape-value(border-radius-circular, $size)};
+    --btn-bdw: #{get-shape-value(border-width, $size)};
+  }
+}
+
+@each $color-schema in map-keys(button.$theme-light) {
+  ._#{utils.kebab-to-camel-case($color-schema)} {
+    --btn-txt-pm: #{get-color-value(content-general, $color-schema)};
+    --btn-txt-sc: #{get-color-value(content-additional, $color-schema)};
+    --btn-bg: #{get-color-value('background', $color-schema)};
+
+    @if get-color-value(background-hovered, $color-schema) {
+      --btn-bg-h: #{get-color-value(background-hovered, $color-schema)};
+    }
+    @if get-color-value(background-pressed, $color-schema) {
+      --btn-bg-a: #{get-color-value(background-pressed, $color-schema)};
+    }
+    @if get-color-value(background-loading, $color-schema) {
+      --btn-bg-l: #{get-color-value(background-loading, $color-schema)};
+    }
+
+    --btn-bd-sh: 0px 0px 0px var(--btn-bdw) #{get-color-value('border', $color-schema)} inset;
+    --btn-sh: #{get-color-value(shadow, $color-schema)};
+  }
+}
+
+._loading {
+  background: var(--btn-bg-l);
+}

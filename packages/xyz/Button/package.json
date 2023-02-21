@@ -1,0 +1,51 @@
+{
+  "name": "@kit-xyz/button",
+  "version": "0.3.10",
+  "description": "Компонент кнопка, может отображать иконку",
+  "license": "UNLICENSED",
+  "sideEffects": [
+    "*.css"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "main": "build/index.js",
+    "types": "build/index.d.ts",
+    "type": "git",
+    "registry": "https://nexus-dev.pcbltools.ru/repository/npm-public/"
+  },
+  "main": "src/index",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "run -T rimraf build && yarn run -T rollup -c --bundleConfigAsCjs && yarn setVersion",
+    "build:raw": "run -T tsc -p tsconfig.build.json",
+    "build:watch": "yarn build:raw --watch",
+    "test": "run -T pcbl-fe  test",
+    "checkDep": "run -T pcbl-fe  checkDependencies",
+    "pack": "run -T pcbl-fe  pack",
+    "revertPack": "run -T pcbl-fe  revertPack",
+    "setVersion": "run -T pcbl-fe  setVersion",
+    "clean": "run -T pcbl-fe  clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.pcbltools.ru/bitbucket/projects/EDUPOWER/repos/uikit4/browse/packages/xyz/Button",
+    "directory": "packages/ui"
+  },
+  "dependencies": {
+    "@kit-base/button": "0.3.8",
+    "@kit-base/uikit-utils": "0.3.1",
+    "classnames": "2.3.1"
+  },
+  "devDependencies": {
+    "@kit-base/common-types": "0.0.2"
+  },
+  "peerDependencies": {
+    "@kit-xyz/icon": "*",
+    "react": "*",
+    "react-router-dom": "*"
+  },
+  "files": [
+    "/build"
+  ],
+  "type": "git"
+}

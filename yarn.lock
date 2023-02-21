@@ -1625,6 +1625,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.12.1":
+  version: 7.21.0
+  resolution: "@babel/runtime@npm:7.21.0"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: 7b33e25bfa9e0e1b9e8828bb61b2d32bdd46b41b07ba7cb43319ad08efc6fda8eb89445193e67d6541814627df0ca59122c0ea795e412b99c5183a0540d338ab
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.12.7, @babel/template@npm:^7.18.10, @babel/template@npm:^7.20.7, @babel/template@npm:^7.3.3":
   version: 7.20.7
   resolution: "@babel/template@npm:7.20.7"
@@ -2548,6 +2557,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@headlessui/react@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@headlessui/react@npm:1.5.0"
+  peerDependencies:
+    react: ^16 || ^17 || ^18
+    react-dom: ^16 || ^17 || ^18
+  checksum: e3373dfb73936950d659a87718fb9fdedc599b344b30cb0d8b1ef0a2ec13d6f405c653fa51284236788658840ece82c6a8538a5a5931e595274e9590b2020079
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.11.8":
   version: 0.11.8
   resolution: "@humanwhocodes/config-array@npm:0.11.8"
@@ -3346,6 +3365,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@kit-base/button@0.3.8, @kit-base/button@workspace:packages/baseUI/Button":
+  version: 0.0.0-use.local
+  resolution: "@kit-base/button@workspace:packages/baseUI/Button"
+  dependencies:
+    "@kit-base/common-types": 0.0.2
+    "@kit-base/uikit-utils": 0.3.1
+    classnames: 2.3.1
+  peerDependencies:
+    react: "*"
+  languageName: unknown
+  linkType: soft
+
 "@kit-base/common-types@0.0.2, @kit-base/common-types@workspace:packages/common-types":
   version: 0.0.0-use.local
   resolution: "@kit-base/common-types@workspace:packages/common-types"
@@ -3379,6 +3410,20 @@ __metadata:
     classnames: 2.3.1
   peerDependencies:
     react: "*"
+  languageName: unknown
+  linkType: soft
+
+"@kit-base/modal@0.2.3, @kit-base/modal@workspace:packages/baseUI/Modal":
+  version: 0.0.0-use.local
+  resolution: "@kit-base/modal@workspace:packages/baseUI/Modal"
+  dependencies:
+    "@headlessui/react": 1.5.0
+    "@kit-base/common-types": 0.0.2
+    "@kit-base/uikit-utils": 0.3.1
+    classnames: 2.3.1
+  peerDependencies:
+    react: "*"
+    react-dom: "*"
   languageName: unknown
   linkType: soft
 
@@ -3423,6 +3468,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@kit-xyz/button@0.3.10, @kit-xyz/button@workspace:packages/xyz/Button":
+  version: 0.0.0-use.local
+  resolution: "@kit-xyz/button@workspace:packages/xyz/Button"
+  dependencies:
+    "@kit-base/button": 0.3.8
+    "@kit-base/common-types": 0.0.2
+    "@kit-base/uikit-utils": 0.3.1
+    classnames: 2.3.1
+  peerDependencies:
+    "@kit-xyz/icon": "*"
+    react: "*"
+    react-router-dom: "*"
+  languageName: unknown
+  linkType: soft
+
 "@kit-xyz/icon@workspace:packages/xyz/Icon":
   version: 0.0.0-use.local
   resolution: "@kit-xyz/icon@workspace:packages/xyz/Icon"
@@ -3443,6 +3503,19 @@ __metadata:
     classnames: 2.3.1
   peerDependencies:
     "@kit-xyz/icon": "*"
+    react: "*"
+  languageName: unknown
+  linkType: soft
+
+"@kit-xyz/modal@workspace:packages/xyz/Modal":
+  version: 0.0.0-use.local
+  resolution: "@kit-xyz/modal@workspace:packages/xyz/Modal"
+  dependencies:
+    "@kit-base/common-types": 0.0.2
+    "@kit-base/modal": 0.2.3
+    "@kit-xyz/button": 0.3.10
+    classnames: 2.3.1
+  peerDependencies:
     react: "*"
   languageName: unknown
   linkType: soft
@@ -4463,6 +4536,15 @@ __metadata:
     "@types/webpack": ^4
     "@types/webpack-dev-server": 3
   checksum: 95f426add9d802921e56c20688716eaa260ee52b3c158cf099c8295defe363049f5debb45c79cc55cb9a5848828de2be750b178faca5949994862ec22cbfd19a
+  languageName: node
+  linkType: hard
+
+"@types/react-dom@npm:17.0.9":
+  version: 17.0.9
+  resolution: "@types/react-dom@npm:17.0.9"
+  dependencies:
+    "@types/react": "*"
+  checksum: b7e898e1a22643a371f58e801a3d1d8cf13a82d77063c24be73e840ef8d877ca1d04adc5db168d0dac3167dc050a26b1d70efc5fe8566a7f46a3c488a8322989
   languageName: node
   linkType: hard
 
@@ -8315,6 +8397,7 @@ __metadata:
     "@rollup/plugin-image": 3.0.1
     "@rollup/plugin-typescript": 9.0.2
     "@tsconfig/docusaurus": 1.0.5
+    "@types/react-dom": 17.0.9
     "@types/rimraf": 3.0.2
     "@typescript-eslint/eslint-plugin": 5.50.0
     "@typescript-eslint/parser": 5.50.0
@@ -8336,6 +8419,7 @@ __metadata:
     raw-loader: 4.0.2
     react: 17.0.2
     react-dom: 17.0.2
+    react-router-dom: 5.2.0
     react-scroll: 1.8.9
     rgb-hex: 4.0.0
     rimraf: 3.0.2
@@ -13616,6 +13700,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mini-create-react-context@npm:^0.4.0":
+  version: 0.4.1
+  resolution: "mini-create-react-context@npm:0.4.1"
+  dependencies:
+    "@babel/runtime": ^7.12.1
+    tiny-warning: ^1.0.3
+  peerDependencies:
+    prop-types: ^15.0.0
+    react: ^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
+  checksum: f8cb2c7738aac355fe9ce7e8425f371b7fa90daddd5133edda4ccfdc18c49043b2ec04be6f3abf09b60a0f52549d54f158d5bfd81cdfb1a658531e5b9fe7bc6a
+  languageName: node
+  linkType: hard
+
 "mini-css-extract-plugin@npm:^2.6.1":
   version: 2.7.2
   resolution: "mini-css-extract-plugin@npm:2.7.2"
@@ -15971,6 +16068,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-router-dom@npm:5.2.0":
+  version: 5.2.0
+  resolution: "react-router-dom@npm:5.2.0"
+  dependencies:
+    "@babel/runtime": ^7.1.2
+    history: ^4.9.0
+    loose-envify: ^1.3.1
+    prop-types: ^15.6.2
+    react-router: 5.2.0
+    tiny-invariant: ^1.0.2
+    tiny-warning: ^1.0.0
+  peerDependencies:
+    react: ">=15"
+  checksum: 98d2d35f9540ac4a3c14dc023623fc8411a6a6338e95d726370e07b27c3bc6e854516537c8e3f9ad2483c4bbd579ba28cce9aff843a19fe8ebff663318886335
+  languageName: node
+  linkType: hard
+
 "react-router-dom@npm:^5.3.3":
   version: 5.3.4
   resolution: "react-router-dom@npm:5.3.4"
@@ -15985,6 +16099,26 @@ __metadata:
   peerDependencies:
     react: ">=15"
   checksum: b86a6f2f5222f041e38adf4e4b32c7643d6735a1a915ef25855b2db285fd059d72ba8d62e5bcd5d822b8ef9520a80453209e55077f5a90d0f72e908979b8f535
+  languageName: node
+  linkType: hard
+
+"react-router@npm:5.2.0":
+  version: 5.2.0
+  resolution: "react-router@npm:5.2.0"
+  dependencies:
+    "@babel/runtime": ^7.1.2
+    history: ^4.9.0
+    hoist-non-react-statics: ^3.1.0
+    loose-envify: ^1.3.1
+    mini-create-react-context: ^0.4.0
+    path-to-regexp: ^1.7.0
+    prop-types: ^15.6.2
+    react-is: ^16.6.0
+    tiny-invariant: ^1.0.2
+    tiny-warning: ^1.0.0
+  peerDependencies:
+    react: ">=15"
+  checksum: 6fc908729110a65a5676a9e41333e0f511a3c0ff84c93c0dc704330cf3e02124c93aaeab8031b0e2c71712390d9278fff848eeebfbdda36dca3201142f309973
   languageName: node
   linkType: hard
 
@@ -18133,7 +18267,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tiny-warning@npm:^1.0.0":
+"tiny-warning@npm:^1.0.0, tiny-warning@npm:^1.0.3":
   version: 1.0.3
   resolution: "tiny-warning@npm:1.0.3"
   checksum: da62c4acac565902f0624b123eed6dd3509bc9a8d30c06e017104bedcf5d35810da8ff72864400ad19c5c7806fc0a8323c68baf3e326af7cb7d969f846100d71

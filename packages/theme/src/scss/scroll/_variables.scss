@@ -1,0 +1,18 @@
+$variables: (
+  theme-light: (
+    --scrl_dk_thmb: rgb(23, 23, 23),
+    --scrl_dk_thmb-h: rgb(99, 102, 241),
+    --scrl_dk_trck: rgba(23, 23, 23, 0.2),
+    --scrl_dk_trck-h: rgba(99, 102, 241, 0.2),
+    --scrl_s-db_thmb: rgba(163, 163, 163, 0.2),
+    --scrl_s-db_trck: rgba(229, 229, 229, 0.2),
+  ),
+  theme-dark: (
+    --scrl_dk_thmb: rgb(245, 245, 245),
+    --scrl_dk_thmb-h: rgb(99, 102, 241),
+    --scrl_dk_trck: rgba(245, 245, 245, 0.2),
+    --scrl_dk_trck-h: rgba(99, 102, 241, 0.2),
+    --scrl_s-db_thmb: rgba(163, 163, 163, 0.2),
+    --scrl_s-db_trck: rgba(229, 229, 229, 0.2),
+  ),
+);
