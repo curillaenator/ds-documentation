@@ -2,8 +2,9 @@
 .husky
 .yarn
 build
+static
 node_modules
-.eslintrc.json
+.eslintrc.js
 tools
 src/theme
 package.json
