@@ -1,6 +1,9 @@
 import React, { FC, useState, useCallback } from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import CodeBlock from '@theme/CodeBlock';
 import { Button } from '@kit-xyz/button';
+
+import { base } from '../examples';
 
 export const StatedModal: FC = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -17,7 +20,7 @@ export const StatedModal: FC = () => {
 
           return (
             <Modal open={open} onClose={onClose} portalId='docusaurus-portal-id'>
-              Hi!
+              <CodeBlock language='jsx'>{base}</CodeBlock>
             </Modal>
           );
         }}

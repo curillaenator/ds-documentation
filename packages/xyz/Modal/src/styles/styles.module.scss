@@ -7,19 +7,23 @@
 }
 
 .transition {
-  --mdl-animation-time: 0.3s;
+  --mdl-animation-time: 0.2s;
   --mdl-animation-method: cubic-bezier(0.49, 0, 0.92, 0.82);
 }
 
 .overlay {
-  --mdl-overlay-bgc: rgba(229, 229, 229, 0.4);
+  // --mdl-overlay-bgc: rgba(229, 229, 229, 0.4);
+  --mdl-overlay-bgc: rgba(255, 255, 255);
 }
 
 .container {
   --mdl-ctr-maw: calc(100% - 224px);
   --mdl-ctr-scrollbody-mg: 64px 0;
 
-  --mdl-ct-pd: 32px;
+  // --mdl-ct-pd: 32px;
+  --mdl-ct-pd: 0px;
+  // --mdl-ct-bdrs: 32px;
+  --mdl-ct-bdrs: 0px;
   --mdl-ct-bgc: rgb(255, 255, 255);
 
   display: flex;
@@ -51,7 +55,7 @@
     padding: var(--mdl-ct-pd);
     background-color: var(--mdl-ct-bgc);
     box-shadow: var(--mdl-drop-sh), var(--mdl-bd-sh);
-    border-radius: 32px;
+    border-radius: var(--mdl-ct-bdrs);
 
     &_scrollable {
       overflow-y: auto;
