@@ -1,0 +1,95 @@
+@mixin reset-button() {
+  font-family: inherit;
+  font-size: 100%;
+  overflow: visible;
+  border: none;
+}
+
+.button {
+  @include reset-button();
+
+  --btn-bdrs: var(--btn-bdrs-ro);
+  --btn-bd-sh: 0 0 0 0 transparent;
+  --btn-drop-sh: 0 0 0 0 transparent;
+
+  line-height: var(--btn-lh, 1);
+  display: inline-flex;
+  justify-content: center;
+  flex-flow: row nowrap;
+  align-items: center;
+  z-index: 0;
+  position: relative;
+  min-height: var(--btn-mh);
+  padding: var(--btn-pd);
+  font-size: var(--btn-fz);
+  background-color: var(--btn-bg);
+  color: var(--btn-txt-pm);
+  box-shadow: var(--btn-bd-sh), var(--btn-drop-sh);
+  border-radius: var(--btn-bdrs);
+  border: var(--btn-bd);
+  border-color: var(--btn-bdc);
+  pointer-events: none;
+  cursor: default;
+  gap: var(--btn-gp);
+}
+
+._interactive {
+  pointer-events: all;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    color: var(--btn-txt-pm-h, var(--btn-txt-pm));
+    background-color: var(--btn-bg-h);
+    border-color: var(--btn-bdc-h);
+  }
+
+  &:active {
+    --btn-drop-sh: 0 0 0 0 transparent;
+    color: var(--btn-txt-pm-a, var(--btn-txt-pm));
+    background-color: var(--btn-bg-a);
+    border-color: var(--btn-bdc-a);
+  }
+}
+
+._elevated {
+  --btn-drop-sh: var(--btn-sh);
+}
+
+._width_full {
+  width: 100%;
+}
+
+.iconLeft {
+  order: -1;
+}
+
+.iconRight {
+  order: 2;
+}
+
+.text {
+  padding: 0 var(--btn-txt-pd-x, 0);
+}
+
+.textSecondary {
+  order: 1;
+  color: var(--btn-txt-sc);
+
+  ._reversed & {
+    order: -1;
+  }
+}
+
+@keyframes button-icon-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.iconLoading {
+  animation: button-icon-spin 1s linear infinite;
+}

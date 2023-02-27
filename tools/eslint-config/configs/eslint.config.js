@@ -4,6 +4,9 @@ module.exports = {
   // затем запустить `yarn eslint ./` и править полученные ошибки
   plugins: ['testing-library', 'prettier'],
   settings: {
+    react: {
+      version: 'detect',
+    },
     'import/resolver': {
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.mdx', '.md'],

@@ -1,0 +1,67 @@
+---
+sidebar_label: 'Button'
+title: 'Button'
+description: 'Button'
+---
+
+import { Button } from '@kit-xyz/button';
+import pkg from '@kit-xyz/button/package.json';
+
+<headermeta
+  title='Button'
+  description='Button'
+  designer='Олег Астахов'
+  developer='Кирилл Артуров'
+  versions={[pkg.version]}
+  actualVersion={pkg.version}
+  status='Work in progress'
+  json='JSON'
+  sass='SASS'
+  bitbucketLink='https://google.com'
+  figmaLink='https://google.com'
+  jiraLink='https://google.com'
+/>
+
+# Button
+
+## Base
+
+Базовое использование
+
+<docviewport codeBlock={undefined}>
+  <examples cols={1} mb={32}>
+    <example exampleCode={undefined}>
+      <Button iconLeftName='system-bell-ringing' size='2xl'>
+        Важно
+      </Button>
+    </example>
+  </examples>
+</docviewport>
+
+<divider />
+
+## Size
+
+Размером управляет проп <b>size</b>
+
+<docviewport codeBlock={undefined}>
+  <examples cols={3} mb={32}>
+    <example exampleCode={undefined}>
+      <Button iconLeftName='system-bell-ringing' size='2xl'>
+        Важно
+      </Button>
+    </example>
+    <example exampleCode={undefined}>
+      <Button iconLeftName='system-bell-ringing' size='xl'>
+        Важно
+      </Button>
+    </example>
+    <example exampleCode={undefined}>
+      <Button iconRightName='system-upload-simple' size='l'>
+        Важно
+      </Button>
+    </example>
+  </examples>
+</docviewport>
+
+<divider />

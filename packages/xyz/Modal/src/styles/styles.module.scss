@@ -1,0 +1,86 @@
+@use '../../../../theme/src/scss/mixins/scroll' as scroll;
+
+@import './fades', './close';
+
+.scroll {
+  @include scroll.scrollbar('xs', 'onLight');
+}
+
+.transition {
+  --mdl-animation-time: 0.2s;
+  --mdl-animation-method: cubic-bezier(0.49, 0, 0.92, 0.82);
+}
+
+.overlay {
+  // --mdl-overlay-bgc: rgba(229, 229, 229, 0.4);
+  --mdl-overlay-bgc: rgba(255, 255, 255);
+}
+
+.container {
+  --mdl-ctr-maw: calc(100% - 224px);
+  --mdl-ctr-scrollbody-mg: 64px 0;
+
+  // --mdl-ct-pd: 32px;
+  --mdl-ct-pd: 0px;
+  // --mdl-ct-bdrs: 32px;
+  --mdl-ct-bdrs: 0px;
+  --mdl-ct-bgc: rgb(255, 255, 255);
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 384px;
+  max-width: var(--mdl-ctr-maw);
+  min-height: 256px;
+  max-height: calc(100% - 128px);
+
+  &_scrollable {
+    margin: var(--mdl-ctr-scrollbody-mg);
+    height: fit-content;
+    max-height: unset;
+  }
+
+  &_withoutButton {
+    --mdl-ctr-maw: calc(100% - 128px);
+  }
+
+  @include close;
+  @include fades;
+
+  .content {
+    flex: 0 1 auto;
+    width: 100%;
+    height: 100%;
+    min-height: 256px;
+    padding: var(--mdl-ct-pd);
+    background-color: var(--mdl-ct-bgc);
+    box-shadow: var(--mdl-drop-sh), var(--mdl-bd-sh);
+    border-radius: var(--mdl-ct-bdrs);
+
+    &_scrollable {
+      overflow-y: auto;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    --mdl-ctr-scrollbody-mg: 0;
+
+    min-width: 100vw;
+    min-height: 0;
+    max-height: calc(100% - 64px);
+    border-radius: 32px 32px 0 0;
+    align-self: flex-end;
+
+    .content {
+      border-radius: 32px 32px 0 0;
+      height: fit-content;
+      min-height: unset;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@mixin fades {
+  .fade {
+    --mdl-fade-t: inset 0px var(--mdl-ct-pd) calc(var(--mdl-ct-pd) / 2) calc(-1 * var(--mdl-ct-pd) / 2) var(--mdl-ct-bgc);
+    --mdl-fade-b: inset 0px calc(-1 * var(--mdl-ct-pd)) calc(var(--mdl-ct-pd) / 2) calc(-1 * var(--mdl-ct-pd) / 2) var(--mdl-ct-bgc);
+
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: var(--mdl-ct-pd);
+    z-index: 10;
+
+    &_top {
+      top: 0;
+      border-radius: 32px 32px 0 0;
+      box-shadow: var(--mdl-fade-t);
+    }
+
+    &_bottom {
+      bottom: 0;
+      border-radius: 0 0 32px 32px;
+      box-shadow: var(--mdl-fade-b);
+    }
+  }
+}

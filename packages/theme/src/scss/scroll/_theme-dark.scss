@@ -1,0 +1,12 @@
+$theme-dark: (
+  color-dark: (
+    thumb: var(--scrl_dk_thmb, rgb(245, 245, 245)),
+    thumb-hovered: var(--scrl_dk_thmb-h, rgb(99, 102, 241)),
+    track: var(--scrl_dk_trck, rgba(245, 245, 245, 0.2)),
+    track-hovered: var(--scrl_dk_trck-h, rgba(99, 102, 241, 0.2)),
+  ),
+  state-disabled: (
+    thumb: var(--scrl_s-db_thmb, rgba(163, 163, 163, 0.2)),
+    track: var(--scrl_s-db_trck, rgba(229, 229, 229, 0.2)),
+  ),
+);

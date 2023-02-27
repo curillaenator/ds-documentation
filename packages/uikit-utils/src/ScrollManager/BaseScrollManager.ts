@@ -44,7 +44,8 @@ export class BaseScrollManager<T extends HTMLElement> implements ScrollManager {
 
   private elementDisableScroll(element: HTMLElement) {
     const { document, window } = this._options;
-    const scrollBaWidth = getScrollbarSize(document, window);
+
+    const scrollbarWidth = getScrollbarSize(document, window);
     const paddingRight = getPaddingRight(element, window);
 
     if (element.style.paddingRight) {
@@ -52,10 +53,12 @@ export class BaseScrollManager<T extends HTMLElement> implements ScrollManager {
     }
 
     if (element.style.overflow) {
-      saveDataAttribute(element, 'overflow', 'hidden');
+      saveDataAttribute(element, 'overflow', element.style.overflow);
     }
-    element.style.paddingRight = `${scrollBaWidth + paddingRight}px`;
+
+    element.style.paddingRight = `${scrollbarWidth + paddingRight}px`;
     element.style.overflow = 'hidden';
+
     this._scrollDisabled = true;
   }
 
@@ -65,6 +68,7 @@ export class BaseScrollManager<T extends HTMLElement> implements ScrollManager {
 
     removeDataAttribute(element, 'paddingRight');
     removeDataAttribute(element, 'overflow');
+
     this._scrollDisabled = false;
   }
 }
